@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
+import Image from "next/image";
 
 const Carousel = dynamic(() => import("../../components/ui/Carousel"), { ssr: false });
 
@@ -71,8 +72,8 @@ const Hero = () => {
 
         {/* Subtitle */}
         <p className="max-w-[598px] text-[20px] leading-[145%] tracking-[-0.01em] font-nohemi md:-mb-[30px]">
-          <span className="font-bold">Driven By Creativity. Powered By Technology.</span> <br />
-          We craft innovative strategic solutions that bring your ideas to life.
+          <span className="font-normal">Driven By Creativity. Powered By Technology. </span>
+           We craft innovative strategic solutions that bring your ideas to life.
         </p>
 
         {/* CTA Button */}
@@ -90,9 +91,13 @@ const Hero = () => {
             alt="Call Icon"
             width={24}
             height={24}
+            style={{ width: "auto", height: "auto" }} // Ensures aspect ratio is maintained
             className="flex-shrink-0"
           />
+
+
         </button>
+
 
         {/* Modal */}
         {isModalOpen && (
