@@ -38,8 +38,8 @@ const Navbar = () => {
         {/* Desktop Nav Links */}
         <div className="hidden md:flex items-center justify-center gap-8 bg-[#F0F2F5] w-[318px] h-[55px] py-4 px-10 rounded-full">
           <a href="/about" className="font-nohemi text-[#101928] text-base font-medium">About</a>
-          <a href="#" className="font-nohemi text-[#101928] text-base font-medium">Services</a>
-          <a href="#" className="font-nohemi text-[#101928] text-base font-medium">Projects</a>
+          <a href="/services" className="font-nohemi text-[#101928] text-base font-medium">Services</a>
+          <a href="/projects" className="font-nohemi text-[#101928] text-base font-medium">Projects</a>
         </div>
 
         {/* CTA Button */}
@@ -70,9 +70,9 @@ const Navbar = () => {
       {isMobileMenuOpen && (
         <div className="md:hidden w-full bg-white shadow-md absolute top-[100px] left-0 p-6 z-50">
           <div className="flex flex-col gap-6">
-            <a href="#" className="font-nohemi text-[#101928] text-base font-medium">About</a>
-            <a href="#" className="font-nohemi text-[#101928] text-base font-medium">Services</a>
-            <a href="#" className="font-nohemi text-[#101928] text-base font-medium">Projects</a>
+            <a href="/about" className="font-nohemi text-[#101928] text-base font-medium">About</a>
+            <a href="/services" className="font-nohemi text-[#101928] text-base font-medium">Services</a>
+            <a href="/projects" className="font-nohemi text-[#101928] text-base font-medium">Projects</a>
             <button role="button" onClick={openCalendlyPopup} className="font-medium tracking-relaxed font-nohemi flex items-center gap-2 bg-purple text-white w-full h-[56px] px-4 py-4 rounded-full">
               <span>Book a Call</span>
               <Image src="/images/call-icon.webp" alt="Call Icon" width={24} height={24} />

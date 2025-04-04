@@ -3,7 +3,7 @@ import { FaFacebook, FaInstagram, FaTwitter, FaEnvelope } from 'react-icons/fa';
 
 const Footer = () => {
     return (
-        <footer className="footer mt-24 w-full h-auto bg-[#1A0632] px-6 md:px-24 py-10">
+        <footer className="footer mt-24 w-full h-auto bg-[#1A0632] px-6 md:px-24 py-10 pt-24">
             <div className="w-full max-w-[1248px] mx-auto flex flex-col md:flex-row items-start justify-between gap-8 rounded-[32px] border border-gray-600 p-8">
                 {/* Left Side (Logo) */}
                 <div className="w-full md:w-[298px] h-[208px] flex flex-col items-center justify-center border-b md:border-b-0 md:border-r border-gray-600">

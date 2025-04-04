@@ -6,10 +6,11 @@ import { motion, AnimatePresence } from "framer-motion";
 const AboutSection = () => {
   const [isVisible, setIsVisible] = useState(false);
 
-  // Handle visibility on scroll
   useEffect(() => {
     const handleScroll = () => {
       const section = document.getElementById("about-section");
+      if (!section) return; // ✅ Prevents accessing null
+
       const rect = section.getBoundingClientRect();
       if (rect.top <= window.innerHeight * 0.75) {
         setIsVisible(true);
@@ -21,7 +22,6 @@ const AboutSection = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Animated text effect
   const fadeInWords = (text, customClass = "text-[#667185]") => {
     return text.split(" ").map((word, i) => (
       <motion.span
@@ -46,7 +46,6 @@ const AboutSection = () => {
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
       >
-        {/* Animated Image */}
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={isVisible ? { opacity: 1, scale: 1 } : {}}
@@ -62,20 +61,19 @@ const AboutSection = () => {
           />
         </motion.div>
 
-        {/* Animated Text Content */}
-        <p className="text-[32px] font-nohemi font-[500] leading-[116%] tracking-[-0.04em]">
+        <p className="text-[32px] font-nohemi font-[500] leading-[116%] tracking-wide">
           {fadeInWords("At Hokage, we specialize in", "text-[#667185]")}
-          <span className="font-[600] text-black font-nohemi tracking-tight">
+          <span className="font-[600] text-black font-nohemi tracking-wide">
             crafting next-gen web experiences
           </span>{" "}
           {fadeInWords("that blend creativity with cutting-edge technology.", "text-[#667185]")}
         </p>
 
-        <p className="text-[32px] font-nohemi font-[500] leading-[116%] tracking-[-0.04em]">
-          <span className="font-[600] text-black font-nohemi tracking-tight">
+        <p className="text-[32px] font-nohemi font-[500] leading-[116%] tracking-wide">
+          <span className="font-[600] text-black font-nohemi tracking-wide">
             We deliver tailored solutions
           </span>
-          {fadeInWords("for upgrading your site or creating a new digital platform.", "text-[#667185]")}
+          {fadeInWords(" for upgrading your site or creating a new digital platform.", "text-[#667185]")}
         </p>
       </div>
     </section>

@@ -73,7 +73,7 @@ const Hero = () => {
         {/* Subtitle */}
         <p className="max-w-[598px] text-[20px] leading-[145%] tracking-[-0.01em] font-nohemi md:-mb-[30px]">
           <span className="font-normal">Driven By Creativity. Powered By Technology. </span>
-           We craft innovative strategic solutions that bring your ideas to life.
+           We craft innovative and strategic solutions that bring your ideas to life.
         </p>
 
         {/* CTA Button */}

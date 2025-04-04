@@ -1,3 +1,112 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: 'Vastago Grotesque';
+  src: url('/fonts/VastagoGrotesk-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* Improves CLS by showing fallback font first */
+}
+
+@font-face {
+  font-family: 'Nohemi';
+  src: url('/fonts/Nohemi-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* Improves CLS by showing fallback font first */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Vastago Grotesque", sans-serif;
+}
+
+p, a, span, button {
+  font-family: "Nohemi", sans-serif;
+}
+
+.loader-container {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  cursor: pointer;
+}
+
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+main {
+  flex: 1;
+}
+
+/* Center images properly inside each slide */
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 500px; /* Set a fixed height to prevent large scaling */
+}
+
+/* Ensure images fit well inside the slide */
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  max-height: 500px;
+  object-fit: contain; /* Prevent cropping while keeping the aspect ratio */
+}
+
+
+
+.chatbot {
+  max-width: 400px;
+  height: 500px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.messages {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 8px;
+}
+
+.input-box {
+  display: flex;
+}
+
+
+
+@media (max-width: 640px) {
+  .fixed {
+    bottom: 4rem !important;
+    right: 1rem !important;
+  }
+}
