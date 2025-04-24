@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const Carousel = dynamic(() => import("../../components/ui/Carousel"), { ssr: false });
 
-const images = ["b2b", "b2b", "b2b", "b2b", "b2b"];
+const images = ["MP", "itl", "kings", "daylee", "enauf"];
 
 const Hero = () => {
   const [showCTA, setShowCTA] = useState(true);

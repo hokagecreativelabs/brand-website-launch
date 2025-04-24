@@ -8,29 +8,29 @@ const projects = [
     id: 1,
     title: "The ITL Conference, Canada",
     slug: "itl-conference-canada",
-    image: "/images/clients/proj.png",
+    image: "/images/projects/itl.png",
     tags: ["8 weeks", "Conference Web Application", "MERN Stack"],
   },
   {
     id: 2,
     title: "Mfon Usoro Books",
     slug: "mfon-usoro-books",
-    image: "/images/clients/proj.png",
+    image: "/images/projects/mp.png",
     tags: ["2 weeks", "Book Launch Web Application", "UI/UX Design + Web Development"],
   },
   {
     id: 3,
-    title: "Asake Foods",
-    slug: "asake-foods",
-    image: "/images/clients/proj.png",
-    tags: ["1 week", "Local Food Store", "Logo + Full Brand Identity"],
+    title: "The Cyber Lawyer",
+    slug: "cyber-lawyer",
+    image: "/images/projects/daylee.png",
+    tags: ["1 week", "Portfolio Website", "Personal Branding"],
   },
   {
     id: 4,
-    title: "Party Deal",
-    slug: "party-deal-ng",
-    image: "/images/clients/proj.png",
-    tags: ["1 week", "Catering Services Company", "Logo + Full Brand Identity"],
+    title: "KingsWord",
+    slug: "kings-word",
+    image: "/images/projects/kings.png",
+    tags: ["4 weeks", "Church Website", "Website + Custom Dashboard"],
   },
 ];
 
@@ -67,7 +67,7 @@ export default function SelectedWorks() {
                   alt={project.title}
                   width={500}
                   height={400}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
             </Link>

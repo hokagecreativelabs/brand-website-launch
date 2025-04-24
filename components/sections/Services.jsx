@@ -7,13 +7,13 @@ const services = [
   { 
     id: 1, 
     title: 'Branding', 
-    description: 'Transform your brand with powerful, visually stunning designs that make a lasting impact. We offer from basic (logo only) to premium (Full branding + Brand guide doc) services.', 
+    description: 'Transform your brand with powerful, visually stunning designs that make a lasting impact.', 
     image: '/images/branding.jpg' 
   },
   { 
     id: 2, 
     title: 'UI/UX Design', 
-    description: 'Create user-centric, engaging interfaces that boost customer retention and elevate user experiences. Intuitive design that turns visitors into loyal users.', 
+    description: 'Create user-centric, engaging interfaces that boost customer retention and turn visitors into loyal users.', 
     image: '/images/uiux.jpg' 
   },
   { 
@@ -30,21 +30,21 @@ const services = [
   },
   { 
     id: 5, 
-    title: 'Consultations', 
-    description: 'Receive expert digital strategy guidance to refine your vision and achieve your goals. Tailored solutions for impactful results.', 
-    image: '/images/consult.jpg' 
-  },
-  { 
-    id: 6, 
     title: 'Custom Dashboards', 
     description: 'Experience data like never before with customized dashboards designed to empower smarter, data-driven decisions.', 
     image: '/images/dashboards.jpg' 
   },
   { 
-    id: 7, 
+    id: 6, 
     title: 'SEO Optimization', 
     description: 'Maximize your online visibility and climb search engine rankings. We transform traffic into measurable growth.', 
     image: '/images/seo.jpg' 
+  },
+  { 
+    id: 7, 
+    title: 'Consultations', 
+    description: 'Receive expert digital strategy guidance to refine your vision and achieve your business goals. Tailored solutions for impactful results.', 
+    image: '/images/consult.jpg' 
   },
   { 
     id: 8, 
@@ -55,7 +55,7 @@ const services = [
   { 
     id: 9, 
     title: 'DevOps & SRE', 
-    description: 'Achieve continuous integration and deployment pipelines with robust infrastructure management. Ensure the reliability, scalability, and performance of your applications and services with best practices for DevOps and Site Reliability Engineering (SRE).', 
+    description: 'Ensure the reliability, scalability, and performance of your applications and services with best practices for DevOps and Site Reliability Engineering (SRE).', 
     image: '/images/devops.jpg' 
   },
 ];

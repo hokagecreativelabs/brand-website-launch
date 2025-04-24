@@ -13,7 +13,7 @@ export default function Home() {
       <Hero />
       <AboutSection />
       <ServicesSection />
-      <TrustedBy />
+      {/* <TrustedBy /> */}
       <SelectedWorks />
       <TestimonialSection />
       <RenderedServices />
