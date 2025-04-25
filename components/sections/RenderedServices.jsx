@@ -62,15 +62,16 @@ export default function RenderedServices() {
             transition={{ duration: 0.8 }}
           >
             <div className="p-7 rounded-2xl border border-[#D0D5DD] w-full bg-white text-left">
-              <h4 className="font-medium tracking-tight text-[20px] md:text-[24px]">
+              <h3 className="font-medium tracking-tight text-[20px] md:text-[24px]">
                 Starter 
-                <span className="bg-green-200 px-[12px] py-[6px] ml-2 rounded-full text-[#0A955A] text-[12px] md:text-[14px]">
+                {/* Fixed contrast for Small Projects tag */}
+                <span className="bg-green-100 px-[12px] py-[6px] ml-2 rounded-full text-[#07753F] text-[12px] md:text-[14px] font-semibold tracking-wide">
                   Small Projects
                 </span>
-              </h4>
-              <h3 className="font-medium text-[24px] md:text-[32px] max-w-[344px] mt-[24px] md:mt-[32px]">
-                <span className="text-[#475367]">Ideal for </span> Small Businesses & Startups
               </h3>
+              <h4 className="font-medium text-[24px] md:text-[32px] max-w-[344px] mt-[24px] md:mt-[32px]">
+                <span className="text-[#475367]">Ideal for </span> Small Businesses & Startups
+              </h4>
             </div>
             <ul className="p-7 flex flex-col md:grid md:grid-cols-2 gap-x-4 gap-y-3 text-left">
               {["Branding", "UI/UX Design", "Basic Development", "eCommerce Shop"].map((item, index) => (
@@ -91,7 +92,8 @@ export default function RenderedServices() {
             <div className="p-7 rounded-2xl border border-[#323232] w-full bg-[#101928] text-left">
               <h4 className="font-medium tracking-tight text-[20px] md:text-[24px]">
                 Professional 
-                <span className="bg-gray-700 px-[12px] ml-2 py-[6px] rounded-full text-[#0A955A] text-[12px] md:text-[14px]">
+                {/* Fixed contrast for Big Projects tag */}
+                <span className="bg-gray-800 px-[12px] ml-2 py-[6px] rounded-full text-[#4AE58C] text-[12px] md:text-[14px] font-semibold tracking-wider">
                   Big Projects
                 </span>
               </h4>
@@ -148,12 +150,19 @@ export default function RenderedServices() {
       {isCalendlyOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white w-full max-w-[600px] h-[80vh] p-6 relative">
-            <button onClick={() => setIsCalendlyOpen(false)} className="absolute top-4 right-4 text-xl">&times;</button>
+            <button 
+              onClick={() => setIsCalendlyOpen(false)} 
+              className="absolute top-4 right-4 text-xl p-2 h-10 w-10 flex items-center justify-center"
+              aria-label="Close calendar"
+            >
+              &times;
+            </button>
             <iframe
               src="https://calendly.com/hokagecreativelabs001/30mins"
               className="w-full h-full"
               frameBorder="0"
               allowFullScreen
+              title="Calendly Scheduling"
             ></iframe>
           </div>
         </div>

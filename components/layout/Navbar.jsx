@@ -1,29 +1,55 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState, useEffect, useCallback, useRef } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isCalendlyReady, setIsCalendlyReady] = useState(false);
 
   const toggleMobileMenu = useCallback(() => {
     setIsMobileMenuOpen((prev) => !prev);
   }, []);
 
   const openCalendly = useCallback(() => {
-    window.Calendly.initPopupWidget({
-      url: "https://calendly.com/hokagecreativelabs001/30mins",
-    });
+    if (isCalendlyReady && window.Calendly) {
+      window.Calendly.initPopupWidget({
+        url: "https://calendly.com/hokagecreativelabs001/30mins",
+      });
+    }
+  }, [isCalendlyReady]);
+
+  // Handle scroll events with throttling
+  useEffect(() => {
+    let lastScrollTime = 0;
+    const throttleMs = 100;
+
+    const handleScroll = () => {
+      const now = Date.now();
+      if (now - lastScrollTime > throttleMs) {
+        lastScrollTime = now;
+        setIsScrolled(window.scrollY > 50);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Check if Calendly is loaded
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    if (typeof window !== 'undefined') {
+      const checkCalendly = () => {
+        if (window.Calendly) {
+          setIsCalendlyReady(true);
+        } else {
+          setTimeout(checkCalendly, 200);
+        }
+      };
+      checkCalendly();
+    }
   }, []);
 
   return (
@@ -33,15 +59,15 @@ const Navbar = () => {
       }`}
     >
       <div className="w-full max-w-[1248px] h-full flex items-center justify-between relative">
-        {/* Logo */}
+        {/* Logo - Fixed dimensions to prevent layout shift */}
         <div className="relative w-[150px] h-[60px]">
           <Image
             src="/images/LOGO.webp"
             alt="Logo"
             fill
-            sizes="(max-width: 768px) 120px, (max-width: 1200px) 150px, 180px"
+            sizes="150px"
             priority
-            className="object-contain"
+            className="object-contain pl-4"
           />
         </div>
 
@@ -53,13 +79,23 @@ const Navbar = () => {
         </div>
 
         {/* Desktop CTA */}
-        <button
-          onClick={openCalendly}
-          className="hidden md:flex font-nohemi font-medium items-center justify-center gap-2 bg-purple text-white w-[150px] h-[56px] px-4 rounded-full transition duration-300 hover:bg-white hover:text-purple"
-        >
-          <span className="font-vastago">Book a Call</span>
-          <Image src="/images/call-icon.webp" alt="Call Icon" width={24} height={24} loading="lazy" />
-        </button>
+        <div className="hidden md:block w-[150px] h-[56px]">
+          <button
+            onClick={openCalendly}
+            className="font-nohemi font-medium flex items-center justify-center gap-2 bg-purple text-white w-full h-full px-4 rounded-full transition duration-300 hover:bg-white hover:text-purple"
+          >
+            <span className="font-vastago">Book a Call</span>
+            <div className="relative w-6 h-6 flex-shrink-0">
+              <Image 
+                src="/images/call-icon.webp" 
+                alt="Call Icon" 
+                fill
+                sizes="24px"
+                className="object-contain"
+              />
+            </div>
+          </button>
+        </div>
 
         {/* Mobile Hamburger */}
         <div className="relative flex md:hidden">
@@ -72,13 +108,14 @@ const Navbar = () => {
             {isMobileMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
           </button>
 
-          {/* Floating Modal Menu */}
+          {/* Floating Modal Menu - Fixed position */}
           <div
             className={`absolute top-[60px] right-0 transition-all duration-200 ease-out ${
                 isMobileMenuOpen
                 ? "opacity-100 translate-y-0 scale-100 pointer-events-auto"
                 : "opacity-0 -translate-y-2 scale-95 pointer-events-none"
             }`}
+            style={{ transformOrigin: 'top right' }}
           >
             {/* Triangle/Nub */}
             <div className="relative">
