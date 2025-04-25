@@ -1,66 +1,35 @@
-// components/sections/Hero.tsx
 "use client";
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 
 const Carousel = dynamic(() => import("../../components/ui/Carousel"), {
   ssr: false,
+  loading: () => <div className="text-white">Loading carousel...</div>,
 });
 
 const images = ["MP", "itl", "kings", "daylee", "enauf"];
-const TYPING_TEXT = "Hokage Creative Labs";
-const TYPING_SPEED = 100;
 
 const Hero = () => {
   const [showCTA, setShowCTA] = useState(true);
-  const [displayedText, setDisplayedText] = useState("");
   const [isMobile, setIsMobile] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  // Detect mobile
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const updateIsMobile = () => {
-        setIsMobile(window.innerWidth < 1024);
-      };
-      updateIsMobile();
-      window.addEventListener("resize", updateIsMobile);
-      return () => window.removeEventListener("resize", updateIsMobile);
-    }
+    const updateIsMobile = () => setIsMobile(window.innerWidth < 1024);
+    updateIsMobile();
+    window.addEventListener("resize", updateIsMobile);
+    return () => window.removeEventListener("resize", updateIsMobile);
   }, []);
 
+  // Toggle CTA on scroll
   useEffect(() => {
-    let timeoutId;
-    const animateText = () => {
-      if (displayedText.length < TYPING_TEXT.length) {
-        timeoutId = setTimeout(() => {
-          setDisplayedText(
-            TYPING_TEXT.substring(0, displayedText.length + 1)
-          );
-        }, TYPING_SPEED);
-      }
+    const handleScroll = () => {
+      setShowCTA(window.scrollY < 100);
     };
-    const startDelay = setTimeout(() => animateText(), 300);
-    return () => {
-      clearTimeout(timeoutId);
-      clearTimeout(startDelay);
-    };
-  }, [displayedText]);
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      let lastScrollTime = 0;
-      const throttleTime = 100;
-      const handleScroll = () => {
-        const now = Date.now();
-        if (now - lastScrollTime >= throttleTime) {
-          lastScrollTime = now;
-          setShowCTA(window.scrollY < 100);
-        }
-      };
-      window.addEventListener("scroll", handleScroll, { passive: true });
-      return () => window.removeEventListener("scroll", handleScroll);
-    }
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const toggleModal = useCallback(() => {
@@ -73,15 +42,11 @@ const Hero = () => {
       style={{ backgroundImage: "url('/images/bg-pattern.webp')" }}
     >
       <div className="w-full max-w-full lg:max-w-[1046px] flex flex-col items-center text-center gap-6 pt-[120px] sm:pt-[110px] px-4 sm:px-8">
-        <h1
-          className="font-vastago font-semibold text-[76px] md:text-[96px] leading-[120%] tracking-[-0.02em] min-h-[140px] relative"
-          aria-label={TYPING_TEXT}
-        >
-          {displayedText}
-          <span className="opacity-0 absolute">{TYPING_TEXT}</span>
+        <h1 className="font-vastago font-semibold text-[76px] md:text-[96px] leading-[120%] tracking-[-0.02em]">
+          Hokage Creative Labs
         </h1>
 
-        <p className="max-w-[598px] text-[20px] leading-[145%] tracking-[-0.01em] font-nohemi min-h-[64px]">
+        <p className="max-w-[598px] text-[20px] leading-[145%] tracking-[-0.01em] font-nohemi">
           <span className="font-normal">Driven By Creativity. Powered By Technology. </span>
           We craft innovative and strategic solutions that bring your ideas to life.
         </p>
@@ -91,20 +56,19 @@ const Hero = () => {
             type="button"
             aria-label="Request a Quote"
             onClick={toggleModal}
-            className={`bg-purple text-white tracking-wide flex items-center justify-center gap-[8px] w-full h-full border border-[#21083F] rounded-[40px] px-[16px] py-[16px] hover:bg-white hover:text-black transition duration-300 ease-out whitespace-nowrap ${
+            className={`bg-purple text-white tracking-wide flex items-center justify-center gap-[8px] w-full h-full border border-[#21083F] rounded-[40px] px-[16px] py-[16px] hover:bg-white hover:text-black transition duration-200 ease-out whitespace-nowrap ${
               showCTA ? "opacity-100" : "opacity-0"
             }`}
           >
             Request a Quote
-            <div className="w-6 h-6 flex-shrink-0 relative">
-              <Image
-                src="/images/right-arrow.webp"
-                alt="Arrow Icon"
-                width={24}
-                height={24}
-                className="object-contain"
-              />
-            </div>
+            <Image
+              src="/images/right-arrow.webp"
+              alt="Arrow Icon"
+              width={24}
+              height={24}
+              className="object-contain"
+              loading="lazy"
+            />
           </button>
         </div>
 
@@ -114,15 +78,15 @@ const Hero = () => {
               <Image
                 src="/optimized/idea-600.webp"
                 alt="Mobile Static Image"
-                priority
                 fill
                 sizes="(max-width: 640px) 300px, (max-width: 1024px) 600px, 900px"
                 className="object-contain rounded-[24px]"
+                loading="lazy"
               />
             </div>
           </div>
         ) : (
-          <div className="hidden lg:block">
+          <div className="hidden lg:block mt-10">
             <Carousel images={images} />
           </div>
         )}
