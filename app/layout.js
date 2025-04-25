@@ -2,6 +2,7 @@
 import Navbar from "@/components/layout/Navbar";
 import "./globals.css";
 import Footer from "@/components/layout/Footer";
+import Loader from "@/components/ui/Loader";
 import ClientScripts from "@/components/layout/ClientScripts";
 
 
