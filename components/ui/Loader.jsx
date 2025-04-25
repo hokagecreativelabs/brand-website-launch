@@ -23,7 +23,7 @@ const Loader = () => {
         >
           <motion.img
             src="/images/icon.webp"
-            alt="Hokage Creative Labs Logo"
+            alt="Hokage Creative Labs Logo-"
             className="h-32 w-32 object-contain"
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
