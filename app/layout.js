@@ -1,13 +1,8 @@
 
-import dynamic from "next/dynamic";
 import Navbar from "@/components/layout/Navbar";
 import "./globals.css";
 import Footer from "@/components/layout/Footer";
 import ClientScripts from "@/components/layout/ClientScripts";
-
-
-const Loader = dynamic(() => import("../components/ui/Loader"), { ssr: true });
-
 
 
 export const metadata = {
