@@ -1,3 +1,4 @@
+// components/sections/Hero.tsx
 "use client";
 import React, { useState, useEffect, useCallback } from "react";
 import dynamic from "next/dynamic";
@@ -17,54 +18,52 @@ const Hero = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  // Detect mobile on resize
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const updateIsMobile = () => {
-        setIsMobile(window.innerWidth < 1024);
-      };
-      updateIsMobile();
-      window.addEventListener("resize", updateIsMobile);
-      return () => window.removeEventListener("resize", updateIsMobile);
-    }
+    const updateIsMobile = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+    updateIsMobile();
+    window.addEventListener("resize", updateIsMobile);
+    return () => window.removeEventListener("resize", updateIsMobile);
   }, []);
 
+  // Show full text on mobile
   useEffect(() => {
-    if (!isMobile) {
-      let timeoutId;
-      const animateText = () => {
-        if (displayedText.length < TYPING_TEXT.length) {
-          timeoutId = setTimeout(() => {
-            setDisplayedText(
-              TYPING_TEXT.substring(0, displayedText.length + 1)
-            );
-          }, TYPING_SPEED);
-        }
-      };
-      const startDelay = setTimeout(() => animateText(), 300);
-      return () => {
-        clearTimeout(timeoutId);
-        clearTimeout(startDelay);
-      };
-    } else {
+    if (isMobile) {
       setDisplayedText(TYPING_TEXT);
+    }
+  }, [isMobile]);
+
+  // Animate typing only on non-mobile
+  useEffect(() => {
+    if (!isMobile && displayedText.length < TYPING_TEXT.length) {
+      const timeoutId = setTimeout(() => {
+        setDisplayedText(
+          TYPING_TEXT.substring(0, displayedText.length + 1)
+        );
+      }, TYPING_SPEED);
+
+      return () => clearTimeout(timeoutId);
     }
   }, [displayedText, isMobile]);
 
+  // Scroll-based CTA visibility
   useEffect(() => {
-    if (!isMobile && typeof window !== "undefined") {
-      let lastScrollTime = 0;
-      const throttleTime = 100;
-      const handleScroll = () => {
-        const now = Date.now();
-        if (now - lastScrollTime >= throttleTime) {
-          lastScrollTime = now;
-          setShowCTA(window.scrollY < 100);
-        }
-      };
-      window.addEventListener("scroll", handleScroll, { passive: true });
-      return () => window.removeEventListener("scroll", handleScroll);
-    }
-  }, [isMobile]);
+    let lastScrollTime = 0;
+    const throttleTime = 100;
+
+    const handleScroll = () => {
+      const now = Date.now();
+      if (now - lastScrollTime >= throttleTime) {
+        lastScrollTime = now;
+        setShowCTA(window.scrollY < 100);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const toggleModal = useCallback(() => {
     setIsModalOpen((prev) => !prev);
@@ -117,6 +116,7 @@ const Hero = () => {
               <Image
                 src="/optimized/idea-600.webp"
                 alt="Mobile Static Image"
+                priority
                 fill
                 sizes="(max-width: 640px) 300px, (max-width: 1024px) 600px, 900px"
                 className="object-contain rounded-[24px]"
