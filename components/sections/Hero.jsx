@@ -136,12 +136,14 @@ const Hero = () => {
                 src="/optimized/idea-600.webp"
                 alt="Mobile Static Image"
                 fill
+                priority // 👈 Add this
                 sizes="(max-width: 640px) 300px, (max-width: 1024px) 600px, 900px"
                 className="object-contain rounded-[24px]"
               />
             </div>
           </div>
         )}
+
 
         {/* Desktop Carousel */}
         {!isMobile && (

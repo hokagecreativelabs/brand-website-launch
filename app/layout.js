@@ -4,6 +4,7 @@ import "./globals.css";
 import Footer from "@/components/layout/Footer";
 import Loader from "@/components/ui/Loader";
 import ClientScripts from "@/components/layout/ClientScripts";
+import Head from "next/head";
 
 
 export const metadata = {
@@ -14,6 +15,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <Head>
+        <link
+          rel="preload"
+          as="style"
+          href="./globals.css"
+        />
+      </Head>
       <body className="min-h-screen flex flex-col">
         <Navbar />
         <main className="flex-1">
