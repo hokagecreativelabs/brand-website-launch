@@ -1,9 +1,13 @@
 
+import dynamic from "next/dynamic";
 import Navbar from "@/components/layout/Navbar";
 import "./globals.css";
 import Footer from "@/components/layout/Footer";
-import Loader from "@/components/ui/Loader";
 import ClientScripts from "@/components/layout/ClientScripts";
+
+
+const Loader = dynamic(() => import("../components/ui/Loader"), { ssr: true });
+
 
 
 export const metadata = {
@@ -16,9 +20,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className="min-h-screen flex flex-col">
         <Navbar />
-        <Loader />
         <main className="flex-1">
           {children}
+          <Loader />
         </main>
         <Footer />
         <ClientScripts />
