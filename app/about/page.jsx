@@ -1,72 +1,149 @@
-import React from "react";
+"use client";
+import Image from "next/image";
+import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-const AboutUs = () => {
+gsap.registerPlugin(ScrollTrigger);
+
+const AboutPage = () => {
+  const textRefs = useRef([]);
+
+  useEffect(() => {
+    textRefs.current.forEach((el) => {
+      if (el) {
+        const words = el.querySelectorAll("span");
+        gsap.fromTo(
+          words,
+          { opacity: 0, y: 20, scale: 0.95, letterSpacing: "0.2em" },
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            letterSpacing: "0em",
+            duration: 1,
+            ease: "power3.out",
+            stagger: 0.08,
+            scrollTrigger: {
+              trigger: el,
+              start: "top 85%",
+              end: "top 40%",
+              scrub: true,
+            },
+          }
+        );
+      }
+    });
+  }, []);
+
+  // Function to wrap each word in a span
+  const wrapWords = (text) =>
+    text.split(" ").map((word, i) => (
+      <span key={i} className="inline-block opacity-0">
+        {word}&nbsp;
+      </span>
+    ));
+
   return (
-    <main className="w-full flex flex-col items-center bg-[#F9F9F9]">
-      {/* Banner Section */}
-      <section className="relative w-full h-[400px] lg:h-[600px] bg-[url('/path/to/banner-image.jpg')] bg-cover bg-center flex items-center justify-center">
-        <div className="absolute inset-0 bg-black opacity-40"></div>
-        <h1 className="relative text-white text-5xl lg:text-7xl font-vastago font-bold">
-          About Us
-        </h1>
+    <div className="w-full flex flex-col items-center">
+      {/* Banner Section with Background Image */}
+      <section className="relative w-full h-[60vh] flex items-center justify-center">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0" 
+          style={{ backgroundImage: "url('/images/bg-pattern.webp')" }}
+        >
+          <div className="absolute inset-0 z-0"></div>
+        </div>
+        <div className="relative z-10 container mx-auto px-6 text-center">
+          <h1 className="text-5xl md:text-6xl font-bold text-black mb-4">About Us</h1>
+          <p className="text-xl text-black/80 max-w-2xl mx-auto">
+            Crafting digital experiences that transform businesses
+          </p>
+        </div>
       </section>
 
-      {/* About Content Container */}
-      <section className="w-full max-w-[1440px] px-6 lg:px-[240px] py-20 lg:py-28 flex flex-col items-center gap-12">
-        
-        {/* First Paragraph Container */}
-        <div className="w-full max-w-[960px] h-auto lg:h-[309px] px-4 lg:px-16 py-6 bg-white shadow-lg rounded-2xl flex flex-col items-center gap-4">
-          <img
-            src="/path/to/paragraph-image-1.jpg"
-            alt="Creative Workspace"
-            className="w-full h-[300px] object-cover rounded-lg"
-          />
-          <p className="text-gray-800 font-vastago font-medium text-xl lg:text-2xl text-center leading-[116%] tracking-[-0.04em]">
-            At Hokage, we specialize in crafting next-gen web experiences that blend creativity with cutting-edge technology.
-            We deliver tailored solutions for upgrading your site or creating a new digital platform.
+      {/* About Content Section - Exactly following the AboutSection structure */}
+      <section
+        id="about-section"
+        className="w-full max-w-[1440px] h-auto pt-5 pb-32 mx-auto"
+      >
+        <div className="px-4 md:text-left flex flex-col w-full max-w-[800px] gap-10 mx-auto">
+          {/* Animated Image */}
+          <div className="flex justify-center md:justify-start">
+            <Image
+              src="/images/about-icon.webp"
+              alt="Icon"
+              width={68}
+              height={68}
+              className="transition-transform duration-700 ease-out"
+              priority
+            />
+          </div>
+
+          {/* Morphing Text 1 */}
+          <p
+            ref={(el) => (textRefs.current[0] = el)}
+            className="text-[28px] md:text-[32px] font-nohemi font-[500] leading-[116%] tracking-wide text-[#667185] overflow-hidden text-center md:text-left"
+          >
+            {wrapWords("At HCL, we specialize in crafting")}
+            <span className="font-[600] text-black"> next-gen web experiences </span>
+            {wrapWords("that blend creativity with cutting-edge technology.")}
+          </p>
+
+          {/* Morphing Text 2 */}
+          <p
+            ref={(el) => (textRefs.current[1] = el)}
+            className="text-[28px] md:text-[32px] font-nohemi font-[500] leading-[116%] tracking-wide text-[#667185] overflow-hidden text-center md:text-left"
+          >
+            {wrapWords("We deliver tailored solutions for")}
+            <span className="font-[600] text-black">
+              {" "}
+              upgrading your site or creating a new digital platform.
+            </span>
           </p>
         </div>
+      </section>
 
-        {/* Second Paragraph Container */}
-        <div className="w-full max-w-[960px] h-auto lg:h-[440px] px-4 lg:px-16 py-6 bg-white shadow-lg rounded-2xl flex flex-col gap-8">
-          <p className="text-gray-700 font-vastago font-normal text-xl lg:text-2xl leading-[140%] tracking-[-0.01em]">
-            Since the inception of our company, we have been instrumental in aiding our clients to discover outstanding solutions for their businesses, forging unforgettable brands and digital offerings.
+      {/* Our Goals Section */}
+      <section className="w-full max-w-[1440px] px-4 py-12">
+        <div className="flex flex-col max-w-[800px] mx-auto">
+          <h2 className="text-[40px] md:text-4xl font-semibold mb-6 text-left">Our Goals</h2>
+          
+          <p className="text-[32px] font-normal mb-6 text-center md:text-left">
+            Since the inception of our company, we have been instrumental in aiding our clients to discover 
+            outstanding solutions for their businesses, forging unforgettable brands and digital offerings.
           </p>
-          <p className="text-gray-700 font-vastago font-normal text-xl lg:text-2xl leading-[140%] tracking-[-0.01em]">
-            With each passing year, our expertise deepens, allowing our accumulated knowledge to guide us in crafting products precisely as they are meant to be.
+          
+          <p className="text-[32px] font-normal mb-10 text-center md:text-left">
+            With each passing year, our expertise deepens, allowing our accumulated knowledge to guide us in 
+            crafting products precisely as they are meant to be.
           </p>
         </div>
+      </section>
 
-        {/* Double Image Container */}
-        <div className="w-full max-w-[724px] h-auto flex gap-6 justify-center">
-          <div className="relative w-[352px] h-[388px] rounded-3xl overflow-hidden shadow-lg">
-            <img
-              src="/path/to/office-image-1.jpg"
+      {/* Double Image Section */}
+      <section className="w-full max-w-[1440px] px-4 py-8 flex justify-center">
+        <div className="w-full max-w-[800px] h-auto flex flex-col md:flex-row gap-6 justify-center">
+          <div className="relative w-full md:w-[352px] h-[388px] rounded-3xl overflow-hidden shadow-lg">
+            <Image
+              src="/images/office-image-1.jpg"
               alt="Modern Office Space"
-              className="w-full h-full object-cover"
+              fill
+              className="object-cover"
             />
           </div>
-          <div className="relative w-[352px] h-[388px] rounded-3xl overflow-hidden shadow-lg mt-12">
-            <img
-              src="/path/to/office-image-2.jpg"
+          <div className="relative w-full md:w-[352px] h-[388px] rounded-3xl overflow-hidden shadow-lg mt-6 md:mt-12">
+            <Image
+              src="/images/hat.webp"
               alt="Team Collaboration"
-              className="w-full h-full object-cover"
+              fill
+              className="object-contain"
             />
           </div>
         </div>
-
-        {/* CTA Section */}
-        {/* <div className="w-full max-w-[1088px] mt-12 lg:mt-16 flex flex-col items-center bg-green-500 text-white rounded-3xl p-8">
-          <h3 className="text-3xl lg:text-4xl font-vastago font-semibold">
-            Have a project in mind? Let’s get to work
-          </h3>
-          <button className="mt-4 px-6 py-3 bg-white text-green-600 font-nohemi font-medium rounded-full hover:bg-gray-100 transition">
-            Book a call ↗
-          </button>
-        </div> */}
       </section>
-    </main>
+    </div>
   );
 };
 
-export default AboutUs;
+export default AboutPage;

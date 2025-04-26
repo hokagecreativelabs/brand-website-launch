@@ -1,19 +1,19 @@
 export default function TestimonialSection() {
   const testimonials = [
     {
-      text: "Working with Hokage was a game-changer for our brand. Their attention to detail and creativity in designing our brand identity truly set us apart. We’ve never looked better!",
-      name: "Joao M.",
-      role: "Startup Founder",
+      text: "Working with the team was very seamless and their attention to detail and professional feedback / suggestions helped in the smooth success of the 2025 edition of the conference. Looking forward to 2026!",
+      name: "Kenny .O",
+      role: "Co-Founder at The ITL Netowrks",
     },
     {
-      text: "Our website's transformation was incredible. The development team built a lightning-fast, responsive site that perfectly captures our brand’s essence. We’ve seen a significant boost in traffic and engagement!",
-      name: "Chinwe Obi",
-      role: "Marketing Lead at GreenSprout",
+      text: "I needed a quick website for my book launch, a place to upload my articles and also facilitate sales. The team Hokage was able to deliver a simple yet elegant website in 2 weeks + Design and a Custom Dashboard. Impressive!",
+      name: "Barrister Mfon Usoro",
+      role: "Author, Mfon Usoro Books",
     },
     {
-      text: "We needed a custom dashboard for our analytics, and Hokage delivered a masterpiece. Now, our decision-making process is faster and more informed than ever.",
-      name: "Lais A.",
-      role: "E-commerce Manager at StyleBay",
+      text: "Last year in December 2024, I reached out to the team to help register mt business on google and also help with the design of my business logo / brand identity. Party Deal has had over 150 organic views on google since then. I was also impressed with the quality of work and the speed at which they delivered.",
+      name: "Party Deal Ng",
+      role: "Head Chef",
     },
   ];
 
