@@ -92,8 +92,7 @@ const Hero = () => {
         <div className="h-[56px] mt-[10px] md:mt-[40px] mb-[-30px] w-[191px]">
           <button
             type="button"
-            aria-label="Request a Quote"
-            onClick={toggleModal}
+            aria-label="see our works"
             className={`bg-purple text-white tracking-wide flex items-center justify-center gap-[8px] w-full h-full border border-[#21083F] rounded-[40px] px-[16px] py-[16px] hover:bg-white hover:text-black transition duration-300 ease-out whitespace-nowrap ${
               showCTA ? "opacity-100" : "opacity-0"
             }`}
