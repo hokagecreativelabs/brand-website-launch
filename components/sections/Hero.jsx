@@ -98,8 +98,8 @@ const Hero = () => {
               showCTA ? "opacity-100" : "opacity-0"
             }`}
           >
-            Request a Quote
-            <div className="w-6 h-6 flex-shrink-0 relative">
+            See Our Works
+            <a href="/projects" className="w-6 h-6 flex-shrink-0 relative">
               <Image
                 src="/images/right-arrow.webp"
                 alt="Arrow Icon"
@@ -107,7 +107,7 @@ const Hero = () => {
                 height={24}
                 className="object-contain"
               />
-            </div>
+            </a>
           </button>
         </div>
 
