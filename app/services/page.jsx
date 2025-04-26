@@ -202,9 +202,9 @@ export default function ServicesPage() {
                 </motion.div>
 
         {/* Trusted Clients */}
-        <div className='mt-12'>
+        {/* <div className='mt-12'>
           <TrustedBy />
-        </div>
+        </div> */}
 
         {isCalendlyOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">

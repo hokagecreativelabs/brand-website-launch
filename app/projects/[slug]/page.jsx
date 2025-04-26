@@ -1,138 +1,113 @@
-"use client"
-import { useParams } from 'react-router-dom'; // Use React Router's useParams
-import Link from 'next/link'; // If you're using React, you can use React Router's Link instead
-import { motion } from 'framer-motion';
+"use client";
 
-const works = [
-  {
-    id: 1,
-    title: "Mfon Usoro Books",
-    slug: "mfon-usoro-books",
-    description: "A book launch platform using Sanity CMS.",
-    image1: "/images/MP.webp",
-    image2: "/images/MP-2.webp",
-    details: [
-      { title: "Category", value: "Website + CMS" },
-      { title: "Duration", value: "2 weeks" },
-      { title: "Type", value: "Book Launch" },
-    ],
-  },
-  {
-    id: 2,
-    title: "The Oladayo Akinmokun",
-    slug: "the-oladayo-akinmokun",
-    description: "A personal portfolio website for a designer.",
-    image1: "/images/daylee.webp",
-    image2: "/images/daylee-2.webp",
-    details: [
-      { title: "Category", value: "SPA" },
-      { title: "Duration", value: "1 Week" },
-      { title: "Type", value: "Portfolio" },
-    ],
-  },
-  {
-    id: 3,
-    title: "Enauf Homes",
-    slug: "enauf-homes",
-    description: "A real estate web platform with property listings.",
-    image1: "/images/enauf.webp",
-    image2: "/images/enauf-2.webp",
-    details: [
-      { title: "Category", value: "Web Development" },
-      { title: "Duration", value: "1 week" },
-      { title: "Type", value: "Real Estate" },
-    ],
-  },
-  {
-    id: 4,
-    title: "ITL Conference",
-    slug: "itl-conference",
-    description: "A conference website with custom dashboard.",
-    image1: "/images/itl.webp",
-    image2: "/images/itl-2.webp",
-    details: [
-      { title: "Category", value: "Website + Dashboard" },
-      { title: "Duration", value: "12 weeks" },
-      { title: "Type", value: "Conference" },
-    ],
-  },
-];
+import Head from "next/head";
+import { useParams } from "next/navigation";
+import Link from "next/link";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { projects } from "@/data/projects";
 
 export default function SingleProjectPage() {
-  const { slug } = useParams(); // Get the slug from the URL
-  const decodedSlug = decodeURIComponent(slug);
-  const project = works.find((work) => work.slug === decodedSlug);
+  const { slug } = useParams();
+  const project = projects.find((p) => p.slug === slug);
 
   if (!project) {
-    return <p className="text-center text-gray-500 mt-12">Project not found.</p>;
+    return (
+      <div className="min-h-[50vh] flex items-center justify-center">
+        <p className="text-gray-500">Project not found.</p>
+      </div>
+    );
   }
 
   return (
-    <motion.div
-      className="flex flex-col items-center w-full px-4 py-16 md:pt-32"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-    >
-      {/* Back to Projects */}
-      <div className="w-full max-w-[800px]">
-        <Link to="/projects" className="flex items-center gap-2 text-lg text-purple font-nohemi hover:underline">
-          ← Back to Projects
-        </Link>
-      </div>
+    <>
+      <Head>
+        <title>{project.title}</title>
+      </Head>
 
-      {/* Project Title */}
-      <h1 className="font-vastago font-medium text-[46px] md:text-[78px] leading-[104%] tracking-[-4%] mt-6 text-left w-full max-w-[800px]">
-        {project.title}
-      </h1>
-
-      {/* Project Description */}
-      <p className="font-vastago text-[16px] leading-[132%] tracking-[-2%] text-gray-600 mt-4 text-left w-full max-w-[800px]">
-        {project.description}
-      </p>
-
-      {/* Project Details - Stacked */}
-      <div className="mt-8 w-full max-w-[800px]">
-        {project.details.map((detail, index) => (
-          <div key={index} className="text-left">
-            <h3 className="text-gray-800 font-semibold text-lg">{detail.title}</h3>
-            <p className="text-gray-600 text-md">{detail.value}</p>
-            <hr className="my-4 border-gray-300" />
-          </div>
-        ))}
-      </div>
-
-      {/* Live Preview CTA */}
-      <a
-        href="#"
-        className="inline-flex items-center justify-center gap-2 w-[158px] h-[56px] bg-black text-white rounded-md mt-6"
+      <motion.div
+        className="px-6 py-16 md:pt-32 flex flex-col items-center"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.4 }}
       >
-        <span className="font-vastago font-semibold text-[16px] leading-[145%] text-center">
-          Live Preview
-        </span>
-        <div className="w-[22px] h-[22px] bg-[#7FF41A] flex items-center justify-center rounded-full">
-          →
+        {/* Back Link */}
+        <div className="w-full max-w-3xl mb-6">
+          <Link legacyBehavior href="/projects">
+            <a className="text-lg font-nohemi flex items-center gap-2 hover:underline">
+              ← Back to Projects
+            </a>
+          </Link>
         </div>
-      </a>
 
-      {/* Project Images */}
-      <div className="mt-16 flex flex-col gap-10 items-center w-full">
-        <img
-          src={project.image1}
-          alt={project.title}
-          className="w-full max-w-[800px] h-auto object-cover rounded-[32px] p-[72px] md:p-[40px] sm:p-[20px]"
-        />
-        <img
-          src={project.image2}
-          alt={`${project.title} preview`}
-          className="w-full max-w-[800px] h-auto object-cover rounded-[32px]"
-        />
-      </div>
+        {/* Title */}
+        <h1 className="font-vastago text-[46px] md:text-[78px] font-medium mb-4 text-center max-w-3xl">
+          {project.title}
+        </h1>
 
-      {/* Testimonials */}
-      {/* <div className="mt-16 w-full max-w-[800px]">
-        <TestimonialSection />
-      </div> */}
-    </motion.div>
+        {/* Description */}
+        <p className="text-gray-600 text-[16px] md:text-[18px] leading-relaxed mb-8 max-w-3xl text-center">
+          {project.description}
+        </p>
+
+        {/* Tags */}
+        {/* <div className="flex flex-wrap gap-3 mb-8">
+          {project.tags.map((tag, i) => (
+            <span
+              key={i}
+              className="bg-gray-100 text-gray-700 rounded-full px-4 py-2 text-sm md:text-base font-medium"
+            >
+              {tag}
+            </span>
+          ))}
+        </div> */}
+
+        {/* Details */}
+        <div className="w-full max-w-3xl mb-8 space-y-4">
+          {project.details.map((d, i) => (
+            <div key={i} className="flex gap-[50px] border-b border-gray-200 pb-2">
+              <span className="font-semibold">{d.title}</span>
+              <span className="text-gray-600">{d.value}</span>
+            </div>
+          ))}
+        </div>
+
+        {/* Live Preview */}
+        {project.liveLink && (
+          <div className="inline-flex items-center gap-2 text-white px-6 py-3 rounded-full mb-12">
+                    <button
+                      type="button"
+                      aria-label="Request a Quote"
+                      className={"bg-purple text-white tracking-wide flex items-center justify-center gap-[8px] w-full h-full border border-[#21083F] rounded-[40px] px-[16px] py-[16px]"}
+                    >
+                      Live Preview
+                      <a href={project.liveLink} className="w-6 h-6 flex-shrink-0 relative">
+                        <Image
+                          src="/images/web-icon.png"
+                          alt="Arrow Icon"
+                          width={24}
+                          height={24}
+                          className="object-contain"
+                        />
+                      </a>
+                    </button>
+                  </div>
+        )}
+
+        {/* Images */}
+        <div className="w-full max-w-3xl space-y-10">
+          {[project.image1, project.image2].map((src, i) => (
+            <Image
+              key={i}
+              src={src}
+              alt={`${project.title} screenshot ${i + 1}`}
+              width={1200}
+              height={800}
+              className="w-full h-auto object-cover rounded-2xl"
+            />
+          ))}
+        </div>
+      </motion.div>
+    </>
   );
 }

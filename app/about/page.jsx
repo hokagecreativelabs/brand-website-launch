@@ -3,6 +3,7 @@ import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import OurTeam from "@/components/sections/OurTeam";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -45,9 +46,9 @@ const AboutPage = () => {
     ));
 
   return (
-    <div className="w-full flex flex-col items-center">
+    <div className="pt-16 md:pt-20 flex flex-col items-center">
       {/* Banner Section with Background Image */}
-      <section className="relative w-full h-[60vh] flex items-center justify-center">
+      <section className="relative w-full h-[200px] md:h-[275px] flex items-center justify-center">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0" 
           style={{ backgroundImage: "url('/images/bg-pattern.webp')" }}
@@ -56,12 +57,9 @@ const AboutPage = () => {
         </div>
         <div className="relative z-10 container mx-auto px-6 text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-black mb-4">About Us</h1>
-          <p className="text-xl text-black/80 max-w-2xl mx-auto">
-            Crafting digital experiences that transform businesses
-          </p>
         </div>
       </section>
-
+      
       {/* About Content Section - Exactly following the AboutSection structure */}
       <section
         id="about-section"
@@ -111,12 +109,12 @@ const AboutPage = () => {
           
           <p className="text-[32px] font-normal mb-6 text-center md:text-left">
             Since the inception of our company, we have been instrumental in aiding our clients to discover 
-            outstanding solutions for their businesses, forging unforgettable brands and digital offerings.
+            outstanding solutions for their businesses, forging unforgettable brands.
           </p>
           
           <p className="text-[32px] font-normal mb-10 text-center md:text-left">
-            With each passing year, our expertise deepens, allowing our accumulated knowledge to guide us in 
-            crafting products precisely as they are meant to be.
+            With each passing year, our expertise grows, allowing our accumulated knowledge to guide us in 
+            crafting products precisely as they are meant to be and in time!.
           </p>
         </div>
       </section>
@@ -126,7 +124,7 @@ const AboutPage = () => {
         <div className="w-full max-w-[800px] h-auto flex flex-col md:flex-row gap-6 justify-center">
           <div className="relative w-full md:w-[352px] h-[388px] rounded-3xl overflow-hidden shadow-lg">
             <Image
-              src="/images/office-image-1.jpg"
+              src="/images/about.jpeg"
               alt="Modern Office Space"
               fill
               className="object-cover"
@@ -134,14 +132,46 @@ const AboutPage = () => {
           </div>
           <div className="relative w-full md:w-[352px] h-[388px] rounded-3xl overflow-hidden shadow-lg mt-6 md:mt-12">
             <Image
-              src="/images/hat.webp"
+              src="/images/icon-1.jpg"
               alt="Team Collaboration"
               fill
-              className="object-contain"
+              className="object-cover"
             />
           </div>
         </div>
       </section>
+      {/* Mission and Vision Section */}
+      <section className="w-full max-w-[1440px] px-4 py-16 flex flex-col items-center">
+        <div className="w-full max-w-[800px] flex flex-col gap-12">
+          
+          {/* Mission */}
+          <div>
+            <h2 className="text-[40px] md:text-4xl font-semibold mb-6 text-center md:text-left">
+              Our Mission
+            </h2>
+            <p className="text-[28px] font-normal text-center md:text-left text-[#667185]">
+              To build digital products that are <span className="text-purple font-bold">bold</span>, <span className="text-purple font-bold italic">creative</span> and <span className="text-[#667185] font-semibold">lasting.</span>  
+              We help businesses grow by blending technology with imagination.
+            </p>
+          </div>
+
+          {/* Vision */}
+          <div>
+            <h2 className="text-[40px] md:text-4xl font-semibold mb-6 text-center md:text-left">
+              Our Vision
+            </h2>
+            <p className="text-[28px] font-normal text-center md:text-left text-[#667185]">
+              To become be and to create a lasting brand building the next generation of digital innovations.  
+              <span className="text-purple font-semibold">We aim to inspire, to innovate, and to lead by example.</span>
+            </p>
+          </div>
+
+        </div>
+      </section>
+      {/* Team Section */}
+      <div>
+        <OurTeam />
+      </div>
     </div>
   );
 };
