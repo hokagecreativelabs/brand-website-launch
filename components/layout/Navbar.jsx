@@ -60,7 +60,7 @@ const Navbar = () => {
     >
       <div className="w-full max-w-[1248px] h-full flex items-center justify-between relative">
         {/* Logo - Fixed dimensions to prevent layout shift */}
-        <div className="relative w-[150px] h-[60px]">
+        <a href="/" className="relative w-[150px] h-[60px]">
           <Image
             src="/images/LOGO.webp"
             alt="Logo"
@@ -69,7 +69,7 @@ const Navbar = () => {
             priority
             className="object-contain pl-4"
           />
-        </div>
+        </a>
 
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-8 bg-[#F0F2F5] w-[318px] h-[55px] px-10 rounded-full">
