@@ -81,7 +81,7 @@ const AboutPage = () => {
           {/* Morphing Text 1 */}
           <p
             ref={(el) => (textRefs.current[0] = el)}
-            className="text-[28px] md:text-[32px] font-nohemi font-[500] leading-[116%] tracking-wide text-[#667185] overflow-hidden text-center md:text-left"
+            className="text-[28px] md:text-[32px] font-nohemi font-[500] leading-[116%] tracking-wide text-[#667185] overflow-hidden text-center"
           >
             {wrapWords("At HCL, we specialize in crafting")}
             <span className="font-[600] text-black"> next-gen web experiences </span>
@@ -91,7 +91,7 @@ const AboutPage = () => {
           {/* Morphing Text 2 */}
           <p
             ref={(el) => (textRefs.current[1] = el)}
-            className="text-[28px] md:text-[32px] font-nohemi font-[500] leading-[116%] tracking-wide text-[#667185] overflow-hidden text-center md:text-left"
+            className="text-[28px] md:text-[32px] font-nohemi font-[500] leading-[116%] tracking-wide text-[#667185] overflow-hidden text-center"
           >
             {wrapWords("We deliver tailored solutions for")}
             <span className="font-[600] text-black">
@@ -105,14 +105,14 @@ const AboutPage = () => {
       {/* Our Goals Section */}
       <section className="w-full max-w-[1440px] px-4 py-12">
         <div className="flex flex-col max-w-[800px] mx-auto">
-          <h2 className="text-[40px] md:text-4xl font-semibold mb-6 text-left">Our Goals</h2>
+          <h2 className="text-[40px] md:text-4xl font-semibold mb-6 text-center">Our Goals</h2>
           
-          <p className="text-[32px] font-normal mb-6 text-center md:text-left">
+          <p className="text-[32px] font-light mb-6 text-center">
             Since the inception of our company, we have been instrumental in aiding our clients to discover 
             outstanding solutions for their businesses, forging unforgettable brands.
           </p>
           
-          <p className="text-[32px] font-normal mb-10 text-center md:text-left">
+          <p className="text-[32px] font-normal mb-10 text-center">
             With each passing year, our expertise grows, allowing our accumulated knowledge to guide us in 
             crafting products precisely as they are meant to be and in time!.
           </p>
@@ -146,10 +146,10 @@ const AboutPage = () => {
           
           {/* Mission */}
           <div>
-            <h2 className="text-[40px] md:text-4xl font-semibold mb-6 text-center md:text-left">
+            <h2 className="text-[40px] md:text-4xl font-semibold mb-6 text-center">
               Our Mission
             </h2>
-            <p className="text-[28px] font-normal text-center md:text-left text-[#667185]">
+            <p className="text-[28px] font-normal text-center text-[#667185]">
               To build digital products that are <span className="text-purple font-bold">bold</span>, <span className="text-purple font-bold italic">creative</span> and <span className="text-[#667185] font-semibold">lasting.</span>  
               We help businesses grow by blending technology with imagination.
             </p>
@@ -157,12 +157,12 @@ const AboutPage = () => {
 
           {/* Vision */}
           <div>
-            <h2 className="text-[40px] md:text-4xl font-semibold mb-6 text-center md:text-left">
+            <h2 className="text-[40px] md:text-4xl font-semibold mb-6 text-center">
               Our Vision
             </h2>
-            <p className="text-[28px] font-normal text-center md:text-left text-[#667185]">
+            <p className="text-[28px] font-normal text-center text-[#667185]">
               To become be and to create a lasting brand building the next generation of digital innovations.  
-              <span className="text-purple font-semibold">We aim to inspire, to innovate, and to lead by example.</span>
+              <span className="text-purple font-semibold">We aim to inspire, to innovate and to lead by example.</span>
             </p>
           </div>
 
