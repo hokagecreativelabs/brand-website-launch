@@ -13,7 +13,7 @@ module.exports = {
       },
       fontFamily: {
         vastago: ["Vastago Grotesque", "sans-serif"],
-        nohemi: ["Nohemi", "sans-serif"],
+        nohemi: ["Raleway", "sans-serif"],
       },
     },
   },
