@@ -52,12 +52,12 @@ const services = [
     description: 'Gain hands-on experience with modern web development techniques. Master scalable solutions and future-ready skills for real-world projects.', 
     image: '/images/training.jpg' 
   },
-  { 
-    id: 9, 
-    title: 'DevOps & SRE', 
-    description: 'Ensure the reliability, scalability, and performance of your applications and services with best practices for DevOps and Site Reliability Engineering (SRE).', 
-    image: '/images/devops.jpg' 
-  },
+  // { 
+  //   id: 9, 
+  //   title: 'DevOps & SRE', 
+  //   description: 'Ensure the reliability, scalability, and performance of your applications and services with best practices for DevOps and Site Reliability Engineering (SRE).', 
+  //   image: '/images/devops.jpg' 
+  // },
 ];
 
 export default function Services() {
