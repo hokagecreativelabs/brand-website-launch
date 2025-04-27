@@ -8,7 +8,7 @@ export const projects = [
       description: "An innovative conference platform designed for seamless event management, attendee engagement, and global networking.",
       image1: "/images/itl.webp",
       image2: "/images/itl-2.webp",
-      tags: ["8 weeks", "Conference Web Application", "MERN Stack"],
+      tags: ["Conference Web Application", "MERN Stack"],
       details: [
         { title: "Category", value: "Website + Dashboard" },
         { title: "Duration", value: "8 weeks" },
@@ -23,7 +23,7 @@ export const projects = [
       description: "A clean, elegant platform for a major author's book launch, showcasing books, author profile, and press information.",
       image1: "/images/MP.webp",
       image2: "/images/MP-2.webp",
-      tags: ["2 weeks", "Book Launch Web Application", "UI/UX Design + Web Development"],
+      tags: ["Book Launch Web Application", "UI/UX Design + Web Development"],
       details: [
         { title: "Category", value: "Website + CMS" },
         { title: "Duration", value: "2 weeks" },
@@ -38,7 +38,7 @@ export const projects = [
       description: "Branding and identity design for a community-centered food business, focused on authentic local flavors.",
       image1: "/images/asake.jpg",
       image2: "/images/asake.jpg",
-      tags: ["1 week", "Local Food Store", "Logo + Full Brand Identity"],
+      tags: ["Local Food Store", "Logo + Full Brand Identity"],
       details: [
         { title: "Category", value: "Brand Identity" },
         { title: "Duration", value: "1 week" },
@@ -53,7 +53,7 @@ export const projects = [
       description: "Full brand identity creation for a catering service that specializes in unforgettable events and delicious meals.",
       image1: "/images/party-deal.jpg",
       image2: "/images/party-deal.jpg",
-      tags: ["1 week", "Catering Services Company", "Logo + Full Brand Identity"],
+      tags: ["Catering Services Company", "Logo + Full Brand Identity"],
       details: [
         { title: "Category", value: "Brand Identity" },
         { title: "Duration", value: "1 week" },
@@ -68,7 +68,7 @@ export const projects = [
       description: "A modern, authoritative portfolio for a cybersecurity-focused legal practitioner, emphasizing trust and expertise.",
       image1: "/images/projects/daylee.png",
       image2: "/images/projects/daylee.png",
-      tags: ["1 week", "Portfolio Website", "Personal Branding"],
+      tags: ["Portfolio Website", "Personal Branding"],
       details: [
         { title: "Category", value: "Portfolio Website" },
         { title: "Duration", value: "1 week" },
@@ -83,7 +83,7 @@ export const projects = [
       description: "Website and admin dashboard for a dynamic, multi-location church organization, enhancing member engagement and resource management.",
       image1: "/images/projects/kings.png",
       image2: "/images/projects/kings.png",
-      tags: ["4 weeks", "Church Website", "Website + Custom Dashboard"],
+      tags: ["Church Website", "Website + Custom Dashboard"],
       details: [
         { title: "Category", value: "Website + Admin Dashboard" },
         { title: "Duration", value: "4 weeks" },

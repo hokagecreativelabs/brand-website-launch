@@ -9,28 +9,28 @@ const projects = [
     title: "The ITL Conference, Canada",
     slug: "itl-conference-canada",
     image: "/images/projects/itl.png",
-    tags: ["8 weeks", "Conference Web Application", "MERN Stack"],
+    tags: ["Conference Web Application", "MERN Stack"],
   },
   {
     id: 2,
     title: "Mfon Usoro Books",
     slug: "mfon-usoro-books",
     image: "/images/projects/mp.png",
-    tags: ["2 weeks", "Book Launch Web Application", "UI/UX Design + Web Development"],
+    tags: ["Book Launch Web Application", "UI/UX Design + Web Development"],
   },
   {
     id: 3,
     title: "The Cyber Lawyer",
     slug: "cyber-lawyer",
     image: "/images/projects/daylee.png",
-    tags: ["1 week", "Portfolio Website", "Personal Branding"],
+    tags: ["Portfolio Website", "Personal Branding"],
   },
   {
     id: 4,
     title: "KingsWord",
     slug: "kings-word",
     image: "/images/projects/kings.png",
-    tags: ["4 weeks", "Church Website", "Website + Custom Dashboard"],
+    tags: ["Church Website", "Website + Custom Dashboard"],
   },
 ];
 
@@ -73,13 +73,15 @@ export default function SelectedWorks() {
           <div key={project.id} className="space-y-4">
             {/* Project Image - Improved touch target */}
             <Link href={`/projects/${project.slug}`} className="block">
-              <div className="w-full h-[280px] md:h-[350px] lg:h-[400px] rounded-[25px] overflow-hidden group relative cursor-pointer">
+              <div className="w-full h-[auto] aspect-w-16 aspect-h-9 rounded-[25px] overflow-hidden group relative cursor-pointer">
                 <Image
                   src={project.image}
                   alt={project.title}
+                  layout="responsive"
                   width={500}
-                  height={400}
-                  className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
+                  height={300}
+                  objectFit="cover"   // Ensuring proper cover for images
+                  className="transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
             </Link>

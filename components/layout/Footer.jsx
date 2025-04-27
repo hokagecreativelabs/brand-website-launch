@@ -50,7 +50,7 @@ const Footer = () => {
 
                         {/* Bottom Center (Social Icons) */}
                         <div className="flex gap-6 mt-2 md:mt-0">
-                            <a href="https://facebook.com" aria-label="Facebook" className="hover:opacity-80 transition-opacity">
+                            {/* <a href="https://facebook.com" aria-label="Facebook" className="hover:opacity-80 transition-opacity">
                                 <FaFacebook className="text-white text-xl" />
                             </a>
                             <a href="https://instagram.com" aria-label="Instagram" className="hover:opacity-80 transition-opacity">
@@ -58,7 +58,7 @@ const Footer = () => {
                             </a>
                             <a href="https://twitter.com" aria-label="Twitter" className="hover:opacity-80 transition-opacity">
                                 <FaTwitter className="text-white text-xl" />
-                            </a>
+                            </a> */}
                             <a href="mailto:hello@hokage.com" aria-label="Email" className="hover:opacity-80 transition-opacity">
                                 <FaEnvelope className="text-white text-xl" />
                             </a>

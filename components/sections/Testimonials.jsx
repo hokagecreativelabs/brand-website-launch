@@ -5,11 +5,11 @@ export default function TestimonialSection() {
       name: "Kenny .O",
       role: "Co-Founder at The ITL Netowrks",
     },
-    {
-      text: "I needed a quick website for my book launch, a place to upload my articles and also facilitate sales. The team Hokage was able to deliver a simple yet elegant website in 2 weeks + Design and a Custom Dashboard. Impressive!",
-      name: "Barrister Mfon Usoro",
-      role: "Author, Mfon Usoro Books",
-    },
+    // {
+    //   text: "I needed a quick website for my book launch, a place to upload my articles and also facilitate sales. The team Hokage was able to deliver a simple yet elegant website in 2 weeks + Design and a Custom Dashboard. Impressive!",
+    //   name: "Barrister (Mrs) Mfon Usoro",
+    //   role: "Author, Mfon Usoro Books",
+    // },
     {
       text: "Last year in December 2024, I reached out to the team to help register mt business on google and also help with the design of my business logo / brand identity. Party Deal has had over 150 organic views on google since then. I was also impressed with the quality of work and the speed at which they delivered.",
       name: "Party Deal Ng",

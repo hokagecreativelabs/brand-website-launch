@@ -134,7 +134,7 @@ export default function Services() {
                     height={80} 
                     className="rounded-lg shadow-lg"
                   /> */}
-                  <p className="font-light text-lg leading-relaxed tracking-wider">
+                  <p className="font-light text-xl leading-relaxed tracking-wider">
                     {service.description}
                   </p>
                 </motion.div>

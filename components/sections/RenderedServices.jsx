@@ -56,12 +56,12 @@ export default function RenderedServices() {
         <div className="flex flex-col md:flex-row gap-8 w-full">
           {/* Starter Card */}
           <motion.div
-            className="h-auto md:h-[330px] w-full md:w-[532px] bg-[#F0F2F5] border rounded-[32px] p-3"
+            className="h-auto md:h-[380px] w-full md:w-[532px] bg-[#F0F2F5] border rounded-[32px] p-3"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="p-7 rounded-2xl border border-[#D0D5DD] w-full bg-white text-left">
+            <div className="p-6 md:p-7 rounded-2xl border border-[#D0D5DD] w-full bg-white text-left">
               <h3 className="font-medium tracking-tight text-[20px] md:text-[24px]">
                 Starter 
                 {/* Fixed contrast for Small Projects tag */}
@@ -69,11 +69,11 @@ export default function RenderedServices() {
                   Small Projects
                 </span>
               </h3>
-              <h4 className="font-medium text-[24px] md:text-[32px] max-w-[344px] mt-[24px] md:mt-[32px]">
+              <h4 className="font-medium text-[20px] md:text-[24px] max-w-[344px] mt-[16px] md:mt-[24px]">
                 <span className="text-[#475367]">Ideal for </span> Small Businesses & Startups
               </h4>
             </div>
-            <ul className="p-7 flex flex-col md:grid md:grid-cols-2 gap-x-4 gap-y-3 text-left">
+            <ul className="p-6 md:p-7 flex flex-col md:grid md:grid-cols-2 gap-x-4 gap-y-3 text-left">
               {["Branding", "UI/UX Design", "Basic Development", "eCommerce Shop"].map((item, index) => (
                 <li key={index} className="flex items-center gap-2">
                   <span className="w-2 h-2 bg-[#98A2B3] rounded-full"></span> {item}
@@ -84,12 +84,12 @@ export default function RenderedServices() {
 
           {/* Professional Card */}
           <motion.div
-            className="h-auto md:h-[380px] w-full md:w-[532px] bg-black text-white border rounded-[32px] p-3"
+            className="h-auto md:h-[380px] w-full md:w-[532px] bg-black text-white border rounded-[32px] p-3" 
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="p-7 rounded-2xl border border-[#323232] w-full bg-[#101928] text-left">
+            <div className="p-6 md:p-7 rounded-2xl border border-[#323232] w-full bg-[#101928] text-left">
               <h4 className="font-medium tracking-tight text-[20px] md:text-[24px]">
                 Professional 
                 {/* Fixed contrast for Big Projects tag */}
@@ -97,11 +97,11 @@ export default function RenderedServices() {
                   Big Projects
                 </span>
               </h4>
-              <h3 className="font-medium text-[24px] md:text-[32px] max-w-[394px] mt-[24px] md:mt-[32px]">
+              <h3 className="font-medium text-[20px] md:text-[24px] max-w-[394px] mt-[16px] md:mt-[24px]">
                 <span className="text-[#98A2B3]">Great for </span> Scaling Businesses & Ventures
               </h3>
             </div>
-            <ul className="p-7 flex flex-col md:grid md:grid-cols-2 gap-x-4 gap-y-3 text-left">
+            <ul className="p-6 md:p-7 flex flex-col md:grid md:grid-cols-2 gap-x-4 gap-y-3 text-left">
               {["Branding", "UI/UX Design", "App/Dashboard Revamp", "Advanced Development", "eCommerce Shop", "SEO Optimization"].map((item, index) => (
                 <li key={index} className="flex items-center gap-2">
                   <span className="w-2 h-2 bg-[#98A2B3] rounded-full"></span> {item}
