@@ -1,6 +1,7 @@
 'use client';
 
 import { notFound } from 'next/navigation';
+import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { use } from 'react';
@@ -62,6 +63,11 @@ export default function ServiceSlugPage({ params }) {
               </motion.div>
             ))}
           </div>
+          <div className="mt-12 flex justify-center">
+            <Link href="/services" className="inline-block text-purple py-3 px-6">
+                ← Back to Services
+            </Link>
+            </div>
         </motion.div>
       </section>
     </main>
