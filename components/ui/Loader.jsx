@@ -22,7 +22,7 @@ const Loader = () => {
           transition={{ duration: 0.5 }}
         >
           <motion.img
-            src="/images/Icon-1.jpg"
+            src="/images/Icon-1.webp"
             alt="Hokage Creative Labs Logo"
             className="h-72 w-72 object-contain"
             initial={{ opacity: 0, scale: 0.5 }}

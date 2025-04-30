@@ -4,6 +4,7 @@ import Script from "next/script";
 
 export default function ClientScripts() {
   useEffect(() => {
+    // Calendly functionality for when needed
     const loadCalendly = () => {
       const script = document.createElement("script");
       script.src = "https://assets.calendly.com/assets/external/widget.js";
@@ -11,14 +12,15 @@ export default function ClientScripts() {
       document.body.appendChild(script);
     };
 
-    const chatButton = document.getElementById("chatButton");
-    if (chatButton) {
-      chatButton.addEventListener("click", loadCalendly);
+    // Only load Calendly when button is clicked
+    const calendarButton = document.getElementById("calendarButton");
+    if (calendarButton) {
+      calendarButton.addEventListener("click", loadCalendly);
     }
 
     return () => {
-      if (chatButton) {
-        chatButton.removeEventListener("click", loadCalendly);
+      if (calendarButton) {
+        calendarButton.removeEventListener("click", loadCalendly);
       }
     };
   }, []);
@@ -44,18 +46,18 @@ export default function ClientScripts() {
         }}
       />
 
-      {/* Tawk.to - Lazy Load on Interaction */}
+      {/* Tawk.to - Load immediately on page load */}
       <Script
         id="tawkto-script"
-        strategy="lazyOnload"
+        strategy="beforeInteractive"
         dangerouslySetInnerHTML={{
           __html: `
             var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
             (function(){
               var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
               s1.async=true;
-              s1.src='https://embed.tawk.to/67dd42619b1c5d190de9b5e0/1ims4mjdm';
-              s1.charSet='UTF-8';
+              s1.src='https://embed.tawk.to/68122902a34a48190eed2560/1iq3fp8ip';
+              s1.charset='UTF-8';
               s1.setAttribute('crossorigin','*');
               s0.parentNode.insertBefore(s1,s0);
             })();
@@ -63,12 +65,14 @@ export default function ClientScripts() {
         }}
       />
 
-      <button
-        id="chatButton"
-        className="fixed bottom-4 right-4 p-2 bg-blue-600 text-white rounded-full"
+      {/* Calendar button is separate from Tawk.to chat */}
+      {/* <button
+        id="calendarButton"
+        className="fixed bottom-24 right-4 p-3 bg-purple text-white rounded-full shadow-lg z-40 hover:bg-white hover:text-black transition duration-300 ease-out"
+        aria-label="Open calendar"
       >
-        Chat with Us
-      </button>
+        Calendar
+      </button> */}
     </>
   );
 }

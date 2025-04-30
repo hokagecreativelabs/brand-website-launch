@@ -33,6 +33,20 @@ export default function Head() {
       {/* Preload critical assets */}
       <link rel="preload" as="image" href="/images/LOGO.webp" />
       <link rel="preload" as="style" href="/globals.css" />
+      <link
+          rel="preload"
+          href="/fonts/Nohemi-Regular.woff"
+          as="font"
+          type="font/woff"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/VastagoGrotesk-Regular.otf"
+          as="font"
+          type="font/woff"
+          crossOrigin="anonymous"
+        />
 
       {/* Robots */}
       <meta name="robots" content="index, follow" />

@@ -2,8 +2,10 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Loader from "@/components/ui/Loader";
-import ClientScripts from "@/components/layout/ClientScripts";
+// import ClientScripts from "@/components/layout/ClientScripts";
 import "./globals.css";
+import { SpeedInsights } from "@vercel/speed-insights/next"
+
 
 export const metadata = {
   title: "Hokage Creative Labs",
@@ -13,15 +15,16 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head />
+      <head>
+        {/* Optional: Add preconnect for Tawk.to to improve performance */}
+        <link rel="preconnect" href="https://embed.tawk.to" />
+      </head>
       <body className="min-h-screen flex flex-col">
         <Navbar />
-        <main className="flex-1">
-          {children}
-          <Loader />
-        </main>
+        <Loader />
+        <main className="flex-1">{children}</main>
         <Footer />
-        <ClientScripts />
+        <SpeedInsights />
       </body>
     </html>
   );

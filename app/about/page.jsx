@@ -124,7 +124,7 @@ const AboutPage = () => {
         <div className="w-full max-w-[800px] h-auto flex flex-col md:flex-row gap-6 justify-center">
           <div className="relative w-full md:w-[352px] h-[388px] rounded-3xl overflow-hidden shadow-lg">
             <Image
-              src="/images/about.jpeg"
+              src="/images/about.webp"
               alt="Modern Office Space"
               fill
               className="object-cover"
@@ -132,7 +132,7 @@ const AboutPage = () => {
           </div>
           <div className="relative w-full md:w-[352px] h-[388px] rounded-3xl overflow-hidden shadow-lg mt-6 md:mt-12">
             <Image
-              src="/images/icon-1.jpg"
+              src="/images/icon-1.webp"
               alt="Team Collaboration"
               fill
               className="object-cover"

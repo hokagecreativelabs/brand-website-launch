@@ -7,7 +7,7 @@ export const projects = [
       slug: "itl-conference-canada",
       description: "An innovative conference platform designed for seamless event management, attendee engagement, and global networking.",
       image1: "/images/itl.webp",
-      image2: "/images/projects/itl-stats.png",
+      image2: "/images/projects/itl-stats.webp",
       tags: ["Conference Web Application", "MERN Stack"],
       details: [
         { title: "Category", value: "Website + Dashboard" },
@@ -22,7 +22,7 @@ export const projects = [
       slug: "mfon-usoro-books",
       description: "A clean, elegant platform for a major author's book launch, showcasing books, author profile, and press information.",
       image1: "/images/MP.webp",
-      image2: "/images/projects/MP-stats.png",
+      image2: "/images/projects/MP-stats.webp",
       tags: ["Book Launch Web Application", "UI/UX Design + Web Development"],
       details: [
         { title: "Category", value: "Website + CMS" },
@@ -36,7 +36,7 @@ export const projects = [
       title: "Asake Foods",
       slug: "asake-foods",
       description: "Branding and identity design for a community-centered food business, focused on authentic local flavors.",
-      image1: "/images/asake.jpg",
+      image1: "/images/asake.webp",
       tags: ["Local Food Store", "Logo + Full Brand Identity"],
       details: [
         { title: "Category", value: "Brand Identity" },
@@ -50,7 +50,7 @@ export const projects = [
       title: "Party Deal",
       slug: "party-deal-ng",
       description: "Full brand identity creation for a catering service that specializes in unforgettable events and delicious meals.",
-      image1: "/images/party-deal.jpg",
+      image1: "/images/party-deal.webp",
       tags: ["Catering Services Company", "Logo + Full Brand Identity"],
       details: [
         { title: "Category", value: "Brand Identity" },
@@ -64,8 +64,8 @@ export const projects = [
       title: "The Cyber Lawyer",
       slug: "cyber-lawyer",
       description: "A modern, authoritative portfolio for a cybersecurity-focused legal practitioner, emphasizing trust and expertise.",
-      image1: "/images/projects/daylee.png",
-      image2: "/images/projects/Daylee-stats.png",
+      image1: "/images/projects/daylee.webp",
+      image2: "/images/projects/Daylee-stats.webp",
       tags: ["Portfolio Website", "Personal Branding"],
       details: [
         { title: "Category", value: "Portfolio Website" },
@@ -79,8 +79,8 @@ export const projects = [
       title: "KingsWord",
       slug: "kings-word",
       description: "Website and admin dashboard for a dynamic, multi-location church organization, enhancing member engagement and resource management.",
-      image1: "/images/projects/kings.png",
-      image2: "/images/projects/kings-stats.png",
+      image1: "/images/projects/kings.webp",
+      image2: "/images/projects/kings-stats.webp",
       tags: ["Church Website", "Website + Custom Dashboard"],
       details: [
         { title: "Category", value: "Website + Admin Dashboard" },

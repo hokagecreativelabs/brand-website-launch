@@ -109,7 +109,7 @@ export default function SingleProjectPage() {
     >
       <span className="text-base font-medium">Live Preview</span>
       <Image
-        src="/images/web-icon.png"
+        src="/images/web-icon.webp"
         alt="Web Icon"
         width={24}
         height={24}
