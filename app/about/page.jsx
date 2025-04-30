@@ -121,7 +121,7 @@ const AboutPage = () => {
 
       {/* Double Image Section */}
       <section className="w-full max-w-[1440px] px-4 py-8 flex justify-center">
-        <div className="w-full max-w-[800px] h-auto flex flex-col md:flex-row gap-6 justify-center">
+        {/* <div className="w-full max-w-[800px] h-auto flex flex-col md:flex-row gap-6 justify-center">
           <div className="relative w-full md:w-[352px] h-[388px] rounded-3xl overflow-hidden shadow-lg">
             <Image
               src="/images/about.webp"
@@ -138,7 +138,7 @@ const AboutPage = () => {
               className="object-cover"
             />
           </div>
-        </div>
+        </div> */}
       </section>
       {/* Mission and Vision Section */}
       <section className="w-full max-w-[1440px] px-4 py-16 flex flex-col items-center">
