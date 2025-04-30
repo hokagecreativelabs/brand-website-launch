@@ -18,7 +18,7 @@ const Loader = () => {
     <AnimatePresence>
       {isVisible && (
         <motion.div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-white dark:bg-black"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-white"
           initial={{ opacity: 1 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
