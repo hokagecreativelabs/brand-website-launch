@@ -132,7 +132,7 @@ const AboutPage = () => {
           </div>
           <div className="relative w-full md:w-[352px] h-[388px] rounded-3xl overflow-hidden shadow-lg mt-6 md:mt-12">
             <Image
-              src="/images/icon-1.webp"
+              src="/images/Icon-1.webp"
               alt="Team Collaboration"
               fill
               className="object-cover"
