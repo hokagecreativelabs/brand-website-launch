@@ -26,6 +26,11 @@ const Navbar = () => {
     setIsMobileMenuOpen(prev => !prev);
   }, []);
 
+  // Close mobile menu when a navigation link is clicked
+  const handleLinkClick = () => {
+    setIsMobileMenuOpen(false);
+  };
+
   // Calendly implementation from RenderedServices
   const openCalendlyPopup = () => {
     setIsLoading(true);
@@ -94,6 +99,7 @@ const Navbar = () => {
     return (
       <Link 
         href={href}
+        onClick={handleLinkClick} // Close the menu when clicked
         className={`font-nohemi text-base font-medium transition-colors duration-200 ${
           isActive 
             ? "text-purple" 

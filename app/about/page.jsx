@@ -3,7 +3,7 @@ import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import OurTeam from "@/components/sections/OurTeam";
+// import OurTeam from "@/components/sections/OurTeam"; 
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -105,7 +105,7 @@ const AboutPage = () => {
       {/* Our Goals Section */}
       <section className="w-full max-w-[1440px] px-4 py-12">
         <div className="flex flex-col max-w-[800px] mx-auto">
-          <h2 className="text-[40px] md:text-4xl font-semibold mb-6 text-center">Our Goals</h2>
+          <h2 className="text-[40px] md:text-4xl font-semibold mb-6 text-center">Our Goal</h2>
           
           <p className="text-[32px] font-light mb-6 text-center">
             Since the inception of our company, we have been instrumental in aiding our clients to discover 
@@ -114,7 +114,7 @@ const AboutPage = () => {
           
           <p className="text-[32px] font-normal mb-10 text-center">
             With each passing year, our expertise grows, allowing our accumulated knowledge to guide us in 
-            crafting products precisely as they are meant to be and in time!.
+            crafting products precisely as they are meant to be and on time!.
           </p>
         </div>
       </section>
@@ -170,7 +170,7 @@ const AboutPage = () => {
       </section>
       {/* Team Section */}
       <div>
-        <OurTeam />
+        {/* <OurTeam /> */}
       </div>
     </div>
   );

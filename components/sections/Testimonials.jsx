@@ -1,7 +1,7 @@
 export default function TestimonialSection() {
   const testimonials = [
     {
-      text: "Working with the team was very seamless and their attention to detail and professional feedback / suggestions helped in the smooth success of the 2025 edition of the conference. Looking forward to 2026!",
+      text: "Working with the team was very seamless and their attention to detail and professional suggestions helped in the smooth success of the 2025 edition of the conference. Looking forward to 2026!",
       name: "Kenny .O",
       role: "Co-Founder at The ITL Netowrks",
     },
@@ -11,7 +11,7 @@ export default function TestimonialSection() {
     //   role: "Author, Mfon Usoro Books",
     // },
     {
-      text: "Last year in December 2024, I reached out to the team to help register mt business on google and also help with the design of my business logo / brand identity. Party Deal has had over 150 organic views on google since then. I was also impressed with the quality of work and the speed at which they delivered.",
+      text: "Last year in December 2024, I reached out to the team to help register mt business on google and also help with the design of my business logo & brand identity. Party Deal has had over 150 views and a few of them reaching out through that medium since then. I was also impressed with the quality of work and the speed at which they delivered.",
       name: "Party Deal Ng",
       role: "Head Chef",
     },

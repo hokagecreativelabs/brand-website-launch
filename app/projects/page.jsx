@@ -29,13 +29,14 @@ export default function SelectedWorks() {
           {projects.map((project) => (
             <div key={project.id} className="space-y-4">
               <Link legacyBehavior href={`/projects/${project.slug}`}>
-                <a className="block w-full h-[280px] md:h-[350px] lg:h-[400px] rounded-[25px] overflow-hidden group">
+                <a className="block w-full h-[280px] md:h-[350px] lg:h-[400px] rounded-[25px] overflow-hidden group relative">
                   <Image
                     src={project.image1}
                     alt={project.title}
-                    width={1200}
-                    height={800}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    fill
+                    style={{ objectFit: "cover" }}
+                    className="transition-transform duration-500 group-hover:scale-105 rounded-[25px]"
+                    priority
                   />
                 </a>
               </Link>

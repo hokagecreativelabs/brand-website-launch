@@ -80,7 +80,7 @@ export default function QnASection() {
     >
       {/* Question */}
       <div className="flex justify-between items-center">
-        <span className="text-lg font-semibold">{qna.question}</span>
+        <span className="text-lg">{qna.question}</span>
         {isActive ? <FiMinus /> : <FiPlus />}
       </div>
 

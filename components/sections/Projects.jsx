@@ -73,15 +73,13 @@ export default function SelectedWorks() {
           <div key={project.id} className="space-y-4">
             {/* Project Image - Improved touch target */}
             <Link href={`/projects/${project.slug}`} className="block">
-              <div className="w-full h-[auto] aspect-w-16 aspect-h-9 rounded-[25px] overflow-hidden group relative cursor-pointer">
+              <div className="w-full h-auto aspect-w-16 aspect-h-9 rounded-[25px] overflow-hidden group relative cursor-pointer">
                 <Image
                   src={project.image}
                   alt={project.title}
-                  layout="responsive"
-                  width={500}
-                  height={300}
-                  objectFit="cover"   // Ensuring proper cover for images
-                  className="transition-transform duration-500 group-hover:scale-105"
+                  width={600} // Fixed width to maintain aspect ratio
+                  height={338} // Fixed height to maintain aspect ratio
+                  className="transition-transform duration-500 group-hover:scale-105 object-cover" // object-cover ensures the image covers the area
                 />
               </div>
             </Link>

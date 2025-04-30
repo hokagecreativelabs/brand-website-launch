@@ -1,32 +1,44 @@
 "use client";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
+import Link from "next/link";
 
+// Constants
+const IMAGES = ["MP", "itl", "kings", "daylee", "enauf"];
+const TYPING_TEXT = "Hokage Creative Labs";
+const TYPING_SPEED = 100;
+const TYPING_DELAY = 300;
+const MOBILE_BREAKPOINT = 1024;
+const SCROLL_THRESHOLD = 100;
+
+// Dynamic import with SSR disabled
 const Carousel = dynamic(() => import("../../components/ui/Carousel"), {
   ssr: false,
 });
 
-const images = ["MP", "itl", "kings", "daylee", "enauf"];
-const TYPING_TEXT = "Hokage Creative Labs";
-const TYPING_SPEED = 100;
-
 const Hero = () => {
-  const [showCTA, setShowCTA] = useState(true);
+  // State management
   const [displayedText, setDisplayedText] = useState("");
   const [isMobile, setIsMobile] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
+  // Handle responsive detection
   useEffect(() => {
     if (typeof window !== "undefined") {
       const updateIsMobile = () => {
-        setIsMobile(window.innerWidth < 1024);
+        setIsMobile(window.innerWidth < MOBILE_BREAKPOINT);
       };
+      
       updateIsMobile();
+      
+      // Debounced resize handler
       let resizeTimer;
       const handleResize = () => {
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(updateIsMobile, 100);
       };
+      
       window.addEventListener("resize", handleResize);
       return () => {
         window.removeEventListener("resize", handleResize);
@@ -35,9 +47,11 @@ const Hero = () => {
     }
   }, []);
 
+  // Text animation effect
   useEffect(() => {
     if (!isMobile) {
       let typingTimer;
+      
       const animateText = () => {
         if (displayedText.length < TYPING_TEXT.length) {
           typingTimer = setTimeout(() => {
@@ -45,7 +59,9 @@ const Hero = () => {
           }, TYPING_SPEED);
         }
       };
-      const startDelay = setTimeout(animateText, 300);
+      
+      const startDelay = setTimeout(animateText, TYPING_DELAY);
+      
       return () => {
         clearTimeout(typingTimer);
         clearTimeout(startDelay);
@@ -55,21 +71,23 @@ const Hero = () => {
     }
   }, [displayedText, isMobile]);
 
+  // Scroll effect - tracking only, not affecting CTA visibility
   useEffect(() => {
-    if (typeof window === "undefined" || isMobile) return;
+    if (typeof window === "undefined") return;
+    
     const handleScroll = () => {
-      setShowCTA(window.scrollY < 100);
+      setIsScrolled(window.scrollY > SCROLL_THRESHOLD);
     };
+    
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [isMobile]);
+  }, []);
 
   return (
     <section
-      className="relative w-full min-h-[876px] flex flex-col items-center justify-center bg-cover bg-center overflow-hidden"
-      style={{ backgroundImage: "url('/images/bg-pattern.webp')" }}
+      className="relative w-full min-h-[876px] flex flex-col items-center justify-center overflow-hidden bg-[url('/images/bg-pattern.webp')] bg-cover bg-center"
     >
       <div className="w-full max-w-full flex flex-col items-center text-center gap-6 pt-[120px] sm:pt-[110px] px-4 sm:px-8">
         <h1
@@ -88,27 +106,22 @@ const Hero = () => {
           We craft innovative and strategic solutions that bring your ideas to life.
         </p>
 
-        <div className="h-[56px] mt-[10px] md:mt-[40px] mb-[-10px] w-[191px]">
-          <a 
-            href="/projects"
-            aria-label="See Our Works"
-            className={`bg-purple text-white tracking-wide flex items-center justify-center gap-[8px] w-full h-full border border-[#21083F] rounded-[40px] px-[16px] py-[16px] hover:bg-white hover:text-black transition-all duration-300 ease-out whitespace-nowrap ${
-              (isMobile || showCTA) ? "opacity-100 transform translate-y-0" : "opacity-0 transform translate-y-4 pointer-events-none"
-            }`}
-          >
-            See Our Works
-            <div className="w-6 h-6 flex-shrink-0 relative">
-              <Image
-                src="/images/right-arrow.webp"
-                alt="Arrow Icon"
-                width={24}
-                height={24}
-                className="object-contain"
-              />
-            </div>
-          </a>
-        </div>
-
+        <Link
+          href="/projects"
+          className="relative z-10 bg-purple text-white font-nohemi tracking-wide mt-[10px] md:mt-[40px] mb-[-30px] inline-flex items-center justify-center gap-2 w-[191px] h-[56px] border border-[#21083F] rounded-[40px] px-4 py-3 hover:bg-white hover:text-black transition duration-300 ease-out"
+          aria-label="Request a Quote"
+        >
+          <span className="flex-shrink-0">See Our Works</span>
+          <Image
+            src="/images/right-arrow.webp"
+            alt="Arrow Icon"
+            width={24}  // Width remains set
+            height={24} // Height remains set
+            className="flex-shrink-0 object-contain" // Ensures aspect ratio is preserved
+            priority
+            style={{ width: 'auto', height: 'auto' }} // Ensures aspect ratio is maintained by auto adjusting the size
+          />
+        </Link>
         {isMobile ? (
           <div className="w-full h-[338px] mt-[60px] flex justify-center items-center">
             <div className="relative w-full h-full">
@@ -124,7 +137,7 @@ const Hero = () => {
           </div>
         ) : (
           <div className="w-full h-full mt-[-70px]">
-            <Carousel images={images} />
+            <Carousel images={IMAGES} />
           </div>
         )}
       </div>

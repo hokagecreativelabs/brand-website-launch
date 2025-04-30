@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Head from "next/head";
 import { useParams } from "next/navigation";
 import Link from "next/link";
@@ -9,8 +10,28 @@ import { projects } from "@/data/projects";
 
 export default function SingleProjectPage() {
   const { slug } = useParams();
-  const project = projects.find((p) => p.slug === slug);
+  const [isLoading, setIsLoading] = useState(true);
+  const [project, setProject] = useState(null);
 
+  useEffect(() => {
+    // Find the project when the component mounts or slug changes
+    if (slug) {
+      const foundProject = projects.find((p) => p.slug === slug);
+      setProject(foundProject);
+      setIsLoading(false);
+    }
+  }, [slug]);
+
+  // Show loading state
+  if (isLoading) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-purple"></div>
+      </div>
+    );
+  }
+
+  // Show not found message if project isn't available
   if (!project) {
     return (
       <div className="min-h-[50vh] flex items-center justify-center">
@@ -18,6 +39,9 @@ export default function SingleProjectPage() {
       </div>
     );
   }
+
+  // Filter out any image properties that don't exist or are empty strings
+  const projectImages = [project.image1, project.image2].filter(img => img && img !== "");
 
   return (
     <>
@@ -33,10 +57,8 @@ export default function SingleProjectPage() {
       >
         {/* Back Link */}
         <div className="w-full max-w-3xl mb-6">
-          <Link legacyBehavior href="/projects">
-            <a className="text-lg font-nohemi flex items-center gap-2 hover:underline">
-              ← Back to Projects
-            </a>
+          <Link href="/projects" className="text-lg font-nohemi flex items-center gap-2 hover:underline">
+            ← Go to Projects
           </Link>
         </div>
 
@@ -50,63 +72,75 @@ export default function SingleProjectPage() {
           {project.description}
         </p>
 
-        {/* Tags */}
-        {/* <div className="flex flex-wrap gap-3 mb-8">
-          {project.tags.map((tag, i) => (
-            <span
-              key={i}
-              className="bg-gray-100 text-gray-700 rounded-full px-4 py-2 text-sm md:text-base font-medium"
-            >
-              {tag}
-            </span>
-          ))}
-        </div> */}
+        {/* Tags - Uncomment if you want to use tags */}
+        {/* {project.tags && project.tags.length > 0 && (
+          <div className="flex flex-wrap gap-3 mb-8">
+            {project.tags.map((tag, i) => (
+              <span
+                key={i}
+                className="bg-gray-100 text-gray-700 rounded-full px-4 py-2 text-sm md:text-base font-medium"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        )} */}
 
         {/* Details */}
-        <div className="w-full max-w-3xl mb-8 space-y-4">
-          {project.details.map((d, i) => (
-            <div key={i} className="flex gap-[50px] border-b border-gray-200 pb-2">
-              <span className="font-semibold">{d.title}</span>
-              <span className="text-gray-600">{d.value}</span>
-            </div>
-          ))}
-        </div>
-
-        {/* Live Preview */}
-        {project.liveLink && (
-          <div className="inline-flex items-center gap-2 text-white px-6 py-3 rounded-full mb-12">
-                    <button
-                      type="button"
-                      aria-label="Request a Quote"
-                      className={"bg-purple text-white tracking-wide flex items-center justify-center gap-[8px] w-full h-full border border-[#21083F] rounded-[40px] px-[16px] py-[16px]"}
-                    >
-                      Live Preview
-                      <a href={project.liveLink} className="w-6 h-6 flex-shrink-0 relative">
-                        <Image
-                          src="/images/web-icon.png"
-                          alt="Arrow Icon"
-                          width={24}
-                          height={24}
-                          className="object-contain"
-                        />
-                      </a>
-                    </button>
-                  </div>
+        {project.details && project.details.length > 0 && (
+          <div className="w-full max-w-3xl mb-8 space-y-4">
+            {project.details.map((d, i) => (
+              <div key={i} className="flex gap-[50px] border-b border-gray-200 pb-2">
+                <span className="font-semibold">{d.title}</span>
+                <span className="text-gray-600">{d.value}</span>
+              </div>
+            ))}
+          </div>
         )}
 
+        {/* Live Preview Button */}
+        {project.liveLink && (
+  <div className="mb-12">
+    <Link
+      href={project.liveLink}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="bg-purple text-white tracking-wide flex items-center justify-center gap-2 border border-[#21083F] rounded-full px-6 py-4 hover:bg-purple-700 transition-colors"
+    >
+      <span className="text-base font-medium">Live Preview</span>
+      <Image
+        src="/images/web-icon.png"
+        alt="Web Icon"
+        width={24}
+        height={24}
+        className="object-contain"
+      />
+    </Link>
+  </div>
+)}
+
+
         {/* Images */}
-        <div className="w-full max-w-3xl space-y-10">
-          {[project.image1, project.image2].map((src, i) => (
-            <Image
-              key={i}
-              src={src}
-              alt={`${project.title} screenshot ${i + 1}`}
-              width={1200}
-              height={800}
-              className="w-full h-auto object-cover rounded-2xl"
-            />
-          ))}
-        </div>
+        {projectImages.length > 0 && (
+          <div className="w-full max-w-3xl space-y-10">
+            {projectImages.map((src, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 * i, duration: 0.5 }}
+              >
+                <Image
+                  src={src}
+                  alt={`${project.title} screenshot ${i + 1}`}
+                  width={1200}
+                  height={800}
+                  className="w-full h-auto object-cover rounded-2xl shadow-lg"
+                />
+              </motion.div>
+            ))}
+          </div>
+        )}
       </motion.div>
     </>
   );
