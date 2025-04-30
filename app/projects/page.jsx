@@ -34,8 +34,8 @@ export default function SelectedWorks() {
                     src={project.image1}
                     alt={project.title}
                     fill
-                    style={{ objectFit: "cover" }}
-                    className="transition-transform duration-500 group-hover:scale-105 rounded-[25px]"
+                    style={{ objectFit: "contain" }}
+                    className="border border-[#667185] duration-500 group-hover:scale-105 rounded-[25px]"
                     priority
                   />
                 </a>

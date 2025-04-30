@@ -12,7 +12,7 @@ const Footer = () => {
                         {/* Nav Links */}
                         <div className="w-full md:w-1/2 flex items-center justify-around">
                             <a href="/projects" className="font-nohemi text-white text-base font-medium">Projects</a>
-                            <a href="/about" className="font-nohemi text-white text-base font-medium">About</a>
+                            <a href="/services" className="font-nohemi text-white text-base font-medium">Services</a>
                             <a href="/contact" className="font-nohemi text-white text-base font-medium">Contact</a>
                         </div>
 
