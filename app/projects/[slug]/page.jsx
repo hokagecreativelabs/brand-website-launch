@@ -130,7 +130,7 @@ export default function SingleProjectPage() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2 * i, duration: 0.5 }}
       >
-        <div className="relative w-full aspect-[16/9] rounded-[24px] overflow-hidden border border-[#667185]">
+        <div className="relative w-full aspect-[16/9] rounded-[24px] overflow-hidden border border-gray-300">
           <Image
             src={src}
             alt={`${project.title} screenshot ${i + 1}`}

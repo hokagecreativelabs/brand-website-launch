@@ -35,7 +35,7 @@ export default function SelectedWorks() {
                     alt={project.title}
                     fill
                     style={{ objectFit: "contain" }}
-                    className="border border-[#667185] duration-500 group-hover:scale-105 rounded-[25px]"
+                    className="border border-gray-300 duration-500 group-hover:scale-105 rounded-[25px]"
                     priority
                   />
                 </a>

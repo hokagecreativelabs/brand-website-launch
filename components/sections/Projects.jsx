@@ -72,7 +72,8 @@ export default function SelectedWorks() {
           <div key={project.id} className="space-y-4">
             {/* Project Image Container with Border */}
             <Link href={`/projects/${project.slug}`} className="block">
-              <div className="relative w-full aspect-[16/9] rounded-[25px] overflow-hidden group cursor-pointer border border-[#667185]">
+            <div className="relative w-full aspect-[16/9] rounded-[25px] overflow-hidden group cursor-pointer border border-gray-300">
+
                 <Image
                   src={project.image}
                   alt={project.title}
