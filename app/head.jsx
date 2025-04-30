@@ -26,7 +26,7 @@ export default function Head() {
       <link rel="canonical" href="https://hokagecreativelabs.com" />
 
       {/* Favicon */}
-      <link rel="icon" href="/images/Icon-1.jpg" />
+      <link rel="icon" href="/images/Icon-1.webp" />
       <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       <link rel="manifest" href="/site.webmanifest" />
 
