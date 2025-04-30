@@ -1,13 +1,16 @@
-// Loader.js
 "use client";
+
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState, useEffect } from "react";
 
 const Loader = () => {
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsVisible(false), 1500); // Adjust duration
+    const timer = setTimeout(() => {
+      setIsVisible(false);
+    }, 1500); // Hide after 1.5 seconds
+
     return () => clearTimeout(timer);
   }, []);
 
@@ -15,7 +18,7 @@ const Loader = () => {
     <AnimatePresence>
       {isVisible && (
         <motion.div
-          className="loader-container"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-white dark:bg-black"
           initial={{ opacity: 1 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}

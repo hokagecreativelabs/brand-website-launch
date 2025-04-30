@@ -9,7 +9,7 @@
   src: url('/fonts/VastagoGrotesk-Regular.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
-  font-display: swap; /* Improves CLS by showing fallback font first */
+  font-display: swap;
 }
 
 /* @font-face {

@@ -1,0 +1,22 @@
+
+export default async function sitemap() {
+  // Define your base URL
+  const baseUrl = 'https://hokagecreativelabs.com';
+  
+  // Define your routes - add all the pages you want indexed
+  const routes = [
+    '',
+    '/about',
+    '/services',
+    '/contact',
+    // Add all your other routes here
+  ];
+
+  // Create sitemap entries
+  return routes.map((route) => ({
+    url: `${baseUrl}${route}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly',
+    priority: route === '' ? 1 : 0.8,
+  }));
+}
