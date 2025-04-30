@@ -5,6 +5,7 @@ import Loader from "@/components/ui/Loader";
 // import ClientScripts from "@/components/layout/ClientScripts";
 import "./globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/react"
 
 
 export const metadata = {
@@ -25,6 +26,9 @@ export default function RootLayout({ children }) {
         <main className="flex-1">{children}</main>
         <Footer />
         <SpeedInsights />
+        <Analytics />
+        {/* <ClientScripts /> */}
+        {/* Tawk.to script will be loaded when the button is clicked */}
       </body>
     </html>
   );
