@@ -112,7 +112,7 @@ const AboutPage = () => {
             outstanding solutions for their businesses, forging unforgettable brands.
           </p>
           
-          <p className="text-[32px] font-normal mb-10 text-center">
+          <p className="text-[32px] font-light mb-10 text-center">
             With each passing year, our expertise grows, allowing our accumulated knowledge to guide us in 
             crafting products precisely as they are meant to be and on time!.
           </p>
