@@ -107,12 +107,12 @@ const AboutPage = () => {
         <div className="flex flex-col max-w-[800px] mx-auto">
           <h2 className="text-[40px] md:text-4xl font-semibold mb-6 text-center">Our Goal</h2>
           
-          <p className="text-[32px] font-light mb-6 text-center">
+          <p className="text-[32px] font-light text-text-[#667185] mb-6 text-center">
             Since the inception of our company, we have been instrumental in aiding our clients to discover 
             outstanding solutions for their businesses, forging unforgettable brands.
           </p>
           
-          <p className="text-[32px] font-light mb-10 text-center">
+          <p className="text-[32px] text-text-[#667185] font-light mb-10 text-center">
             With each passing year, our expertise grows, allowing our accumulated knowledge to guide us in 
             crafting products precisely as they are meant to be and on time!.
           </p>

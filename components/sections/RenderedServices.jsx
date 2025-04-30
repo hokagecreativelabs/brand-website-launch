@@ -9,8 +9,8 @@ import Image from 'next/image';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function RenderedServices() {
-    const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
-    const [isLoading, setIsLoading] = useState(false);
+  const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const openCalendlyPopup = () => {
     setIsLoading(true);
@@ -42,12 +42,12 @@ export default function RenderedServices() {
       <div className="max-w-[1088px] mx-auto flex flex-col gap-20">
         
         {/* Title & Description */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
-          <h2 className="font-vastago section-title text-[32px] md:text-[78px] font-medium leading-[104%] tracking-[-4%] text-black text-left">
+        <div className="flex flex-col items-center text-center gap-4">
+          <h2 className="font-vastago section-title text-[32px] md:text-[78px] font-medium leading-[104%] tracking-[-4%] text-black">
             What We Can <br className="hidden md:block" /> 
             <span className="text-[#667185]">Do for You</span>
           </h2>
-          <p className="text-[14px] md:text-[16px] leading-[132%] tracking-[-2%] text-[#1B1B1B] max-w-[280px] text-left">
+          <p className="text-[14px] md:text-[16px] leading-[132%] tracking-[-2%] text-[#1B1B1B] max-w-[480px]">
             Discover various services designed to fit your needs, providing clear details on each one of them.
           </p>
         </div>
@@ -64,7 +64,6 @@ export default function RenderedServices() {
             <div className="p-6 md:p-7 rounded-2xl border border-[#D0D5DD] w-full bg-white text-left">
               <h3 className="font-medium tracking-tight text-[20px] md:text-[24px]">
                 Starter 
-                {/* Fixed contrast for Small Projects tag */}
                 <span className="bg-green-100 px-[12px] py-[6px] ml-2 rounded-full text-[#07753F] text-[12px] md:text-[14px] font-semibold tracking-wide">
                   Small Projects
                 </span>
@@ -92,7 +91,6 @@ export default function RenderedServices() {
             <div className="p-6 md:p-7 rounded-2xl border border-[#323232] w-full bg-[#101928] text-left">
               <h4 className="font-medium tracking-tight text-[20px] md:text-[24px]">
                 Professional 
-                {/* Fixed contrast for Big Projects tag */}
                 <span className="bg-gray-800 px-[12px] ml-2 py-[6px] rounded-full text-[#4AE58C] text-[12px] md:text-[14px] font-semibold tracking-wider">
                   Big Projects
                 </span>
@@ -144,9 +142,9 @@ export default function RenderedServices() {
             )}
           </button>
         </motion.div>
-
       </div>
 
+      {/* Calendly Popup */}
       {isCalendlyOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white w-full max-w-[600px] h-[80vh] p-6 relative">
