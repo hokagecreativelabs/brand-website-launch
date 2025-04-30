@@ -74,6 +74,7 @@ export default function Services() {
       transition={{ duration: 0.8 }}
       viewport={{ once: true }}
       className="w-full max-w-screen-xl mx-auto px-6 pb-20"
+      id='services-section'
     >
       {/* Section Heading */}
       <motion.h2

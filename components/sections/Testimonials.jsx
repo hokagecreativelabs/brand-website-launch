@@ -18,7 +18,7 @@ export default function TestimonialSection() {
   ];
 
   return (
-    <section className="w-full max-w-[1440px] mx-auto flex flex-col items-center gap-8 px-4 md:px-8 lg:px-16 pt-16">
+    <section className="w-full max-w-[1440px] mx-auto flex flex-col items-center gap-8 px-4 md:px-8 lg:px-16 pt-16" id="testimonials-section">
       {/* Testimonials Label */}
       <div className="flex items-center justify-center px-6 py-2 border rounded-full border-gray-300">
         <h2 className="text-[18px] md:text-[20px] lg:text-[24px] font-vastago font-medium leading-[125%] text-center">

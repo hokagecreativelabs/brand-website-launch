@@ -52,14 +52,16 @@ const AboutSection = () => {
       <div className="px-4 md:text-left flex flex-col w-full max-w-[800px] gap-10 mx-auto">
         {/* Animated Image */}
         <div className="flex justify-start">
-          <Image
-            src="/images/about-icon.webp"
-            alt="Icon"
-            width={68}
-            height={68}
-            className="transition-transform duration-700 ease-out"
-            priority
-          />
+          <div className="w-[68px] h-[68px] relative">
+            <Image
+              src="/images/about-icon.webp"
+              alt="Icon"
+              fill
+              sizes="(max-width: 768px) 48px, 68px"
+              className="object-contain"
+              priority
+            />
+          </div>
         </div>
 
         {/* Morphing Text 1 */}

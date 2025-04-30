@@ -22,6 +22,7 @@ const Hero = () => {
   const [displayedText, setDisplayedText] = useState("");
   const [isMobile, setIsMobile] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   // Handle responsive detection
   useEffect(() => {
@@ -40,6 +41,7 @@ const Hero = () => {
       };
       
       window.addEventListener("resize", handleResize);
+      setIsLoaded(true);
       return () => {
         window.removeEventListener("resize", handleResize);
         clearTimeout(resizeTimer);
@@ -47,9 +49,9 @@ const Hero = () => {
     }
   }, []);
 
-  // Text animation effect
+  // Text animation effect - Only start after page is fully loaded
   useEffect(() => {
-    if (!isMobile) {
+    if (!isMobile && isLoaded) {
       let typingTimer;
       
       const animateText = () => {
@@ -66,12 +68,12 @@ const Hero = () => {
         clearTimeout(typingTimer);
         clearTimeout(startDelay);
       };
-    } else {
+    } else if (isLoaded) {
       setDisplayedText(TYPING_TEXT);
     }
-  }, [displayedText, isMobile]);
+  }, [displayedText, isMobile, isLoaded]);
 
-  // Scroll effect - tracking only, not affecting CTA visibility
+  // Scroll effect
   useEffect(() => {
     if (typeof window === "undefined") return;
     
@@ -87,21 +89,28 @@ const Hero = () => {
 
   return (
     <section
-      className="relative w-full min-h-[876px] flex flex-col items-center justify-center overflow-hidden bg-[url('/images/bg-pattern.webp')] bg-cover bg-center"
+      className="pt-12 md:pt-8 lg:pt-0 relative w-full min-h-[876px] flex flex-col items-center justify-center overflow-hidden bg-[url('/images/bg-pattern.webp')] bg-cover bg-center"
     >
-      <div className="w-full max-w-full flex flex-col items-center text-center gap-6 pt-[120px] sm:pt-[110px] px-4 sm:px-8">
+      {/* Reserve space for content before it loads to prevent layout shift */}
+      <div 
+        className="w-full max-w-full flex flex-col items-center text-center gap-6 pt-[120px] sm:pt-[110px] px-4 sm:px-8"
+        style={{ visibility: isLoaded ? 'visible' : 'hidden' }}
+      >
         <h1
-          className="font-vastago font-semibold text-[76px] md:text-[96px] leading-[120%] tracking-[-0.02em] min-h-[140px] relative"
+          className="font-vastago font-semibold text-[76px] md:text-[96px] leading-[120%] tracking-[-0.02em] h-[140px] relative flex items-center justify-center"
           aria-label={TYPING_TEXT}
         >
-          {displayedText}
+          <span className="inline-block min-w-full">
+            {displayedText}
+            {!isMobile && displayedText.length < TYPING_TEXT.length && (
+              <span className="animate-pulse">|</span>
+            )}
+          </span>
+          {/* Hidden text to reserve proper space even before animation starts */}
           <span className="opacity-0 absolute">{TYPING_TEXT}</span>
-          {!isMobile && displayedText.length < TYPING_TEXT.length && (
-            <span className="animate-pulse">|</span>
-          )}
         </h1>
 
-        <p className="max-w-[598px] text-[20px] md:text-[24px] leading-[145%] tracking-[-0.01em] font-nohemi min-h-[64px]">
+        <p className="pt-16 md:pt-12 lg:pt-0 max-w-[598px] text-[20px] md:text-[24px] leading-[145%] tracking-[-0.01em] font-nohemi min-h-[64px]">
           <span className="font-normal">Driven By Creativity. Powered By Technology. </span>
           We craft innovative and strategic solutions that bring your ideas to life.
         </p>
@@ -112,16 +121,19 @@ const Hero = () => {
           aria-label="Request a Quote"
         >
           <span className="flex-shrink-0">See Our Works</span>
-          <Image
-            src="/images/right-arrow.webp"
-            alt="Arrow Icon"
-            width={24}  // Width remains set
-            height={24} // Height remains set
-            className="flex-shrink-0 object-contain" // Ensures aspect ratio is preserved
-            priority
-            style={{ width: 'auto', height: 'auto' }} // Ensures aspect ratio is maintained by auto adjusting the size
-          />
+          <div className="flex-shrink-0 w-6 h-6 relative">
+            <Image
+              src="/images/right-arrow.webp"
+              alt="Arrow Icon"
+              width={24}
+              height={24}
+              className="object-contain"
+              priority
+              style={{ width: '24px', height: '24px' }}
+            />
+          </div>
         </Link>
+        
         {isMobile ? (
           <div className="w-full h-[338px] mt-[60px] flex justify-center items-center">
             <div className="relative w-full h-full">
@@ -132,15 +144,26 @@ const Hero = () => {
                 sizes="(max-width: 640px) 300px, (max-width: 1024px) 600px, 900px"
                 className="object-contain rounded-[24px]"
                 priority
+                onLoad={() => {
+                  // This helps ensure image has fully loaded
+                  if (!isLoaded) setIsLoaded(true);
+                }}
               />
             </div>
           </div>
         ) : (
           <div className="w-full h-full mt-[-70px]">
-            <Carousel images={IMAGES} />
+            {isLoaded && <Carousel images={IMAGES} />}
           </div>
         )}
       </div>
+      
+      {/* Loading placeholder - shows while content is loading */}
+      {!isLoaded && (
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="w-8 h-8 border-4 border-purple border-t-transparent rounded-full animate-spin"></div>
+        </div>
+      )}
     </section>
   );
 };

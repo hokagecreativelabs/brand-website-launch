@@ -39,7 +39,7 @@ const MotionDiv = motion.div;
 
 export default function SelectedWorks() {
   return (
-    <section className="px-6 md:px-12 lg:px-24 py-12">
+    <section className="px-6 md:px-12 lg:px-24 py-12" id="projects-section">
       {/* Header Section */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4 md:gap-0">
         <h2 className="text-[28px] md:text-[40px] lg:text-[48px] font-semibold tracking-tight leading-[120%] font-vastago">
