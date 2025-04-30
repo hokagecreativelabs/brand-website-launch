@@ -8,7 +8,7 @@ import Link from "next/link";
 const IMAGES = ["MP", "itl", "kings", "daylee", "enauf"];
 const TYPING_TEXT = "Hokage Creative Labs";
 const TYPING_SPEED = 100;
-const TYPING_DELAY = 300;
+const TYPING_DELAY = 100;
 const MOBILE_BREAKPOINT = 1024;
 const SCROLL_THRESHOLD = 100;
 
