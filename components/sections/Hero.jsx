@@ -117,7 +117,7 @@ const Hero = () => {
 
         <Link
           href="/projects"
-          className="relative z-10 bg-purple text-white font-nohemi tracking-wide mt-[10px] md:mt-[40px] mb-[-30px] inline-flex items-center justify-center gap-2 w-[191px] h-[56px] border border-[#21083F] rounded-[40px] px-4 py-3 hover:bg-white hover:text-black transition duration-300 ease-out"
+          className="relative z-10 bg-purple text-white font-nohemi tracking-wide mt-[10px] -md:mt-[40px] mb-[-30px] md:mb-0 inline-flex items-center justify-center gap-2 w-[191px] h-[56px] border border-[#21083F] rounded-[40px] px-4 py-3 hover:bg-white hover:text-black transition duration-300 ease-out"
           aria-label="Request a Quote"
         >
           <span className="flex-shrink-0">See Our Works</span>
