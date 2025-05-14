@@ -18,8 +18,8 @@ const services = [
   },
   { 
     id: 3, 
-    title: 'Web Development', 
-    description: 'Develop high-performance websites with robust, scalable architectures. Optimize your online presence for speed, functionality, and success.', 
+    title: 'Software Development', 
+    description: 'Develop high-performance websites, web and mobile applications with robust, scalable architectures. Optimize your online presence for speed, functionality, and success.', 
     image: '/images/webdev.jpg' 
   },
   { 
@@ -31,7 +31,7 @@ const services = [
   { 
     id: 5, 
     title: 'Custom Dashboards', 
-    description: 'Experience data like never before with customized dashboards designed to empower smarter, data-driven decisions.', 
+    description: 'Experience data with powerful & Custom APIs like never before with customized dashboards designed to empower smarter, data-driven decisions.', 
     image: '/images/dashboards.jpg' 
   },
   { 
@@ -43,7 +43,7 @@ const services = [
   { 
     id: 7, 
     title: 'Consultations', 
-    description: 'Receive expert digital strategy guidance to refine your vision and achieve your business goals. Tailored solutions for impactful results.', 
+    description: 'Receive expert digital strategy guidance to refine your vision and achieve your business goals. Custom solutions for impactful results.', 
     image: '/images/consult.jpg' 
   },
   { 

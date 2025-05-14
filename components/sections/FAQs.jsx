@@ -5,12 +5,30 @@ import { FiPlus, FiMinus } from "react-icons/fi";
 import { motion } from "framer-motion";
 
 const qnas = [
-  { question: "What types of services do you offer?", answer: "We offer full brand identity design, Web Design & Web Developmemnt Services, Performance Optimizations, Web Developemtnt training and more." },
-  { question: "How do you ensure the quality of your projects?", answer: "We follow best practices, code reviews, and testing protocols. You can visit our projects page and see how some of our websites are performing online." },
-  { question: "What is your development process like?", answer: "We follow agile methodologies, keeping you updated at every step - from the inital contact to handover." },
-  { question: "Can you work with existing platforms?", answer: "Yes, we can seamlessly upgrade or build newly with client's preferrerd platforms even tho we still give our professional input." },
-  { question: "How do you handle project timelines?", answer: "After understanding the client's needs, we set realistic deadlines and ensure timely communication and updates." },
-  { question: "How often will I receive updates on the project?", answer: "We provide regular updates through your preferred communication channel." },
+  {
+    question: "What services do you offer?",
+    answer: "We provide complete brand identity design, custom web design and development, performance optimization, and training for individuals or teams looking to upskill in modern web development."
+  },
+  {
+    question: "How do you ensure quality in your projects?",
+    answer: "We stick to industry best practices; our work goes through code reviews, testing, and ongoing optimization. You can check out our Projects page to see real-world examples performing live."
+  },
+  {
+    question: "What does your development process look like?",
+    answer: "We work in agile cycles and keep you in the loop throughout; from discovery and strategy to design, development, and handoff."
+  },
+  {
+    question: "Can you work with an existing website or platform?",
+    answer: "Absolutely. Whether you’re looking to upgrade or rebuild from scratch, we can work with your current tech stack or recommend a better fit for your goals."
+  },
+  {
+    question: "How do you manage timelines?",
+    answer: "Once we understand the scope and goals, we set clear, realistic timelines—and stick to them. You’ll always be kept informed with progress updates."
+  },
+  {
+    question: "How often will I get updates during the project?",
+    answer: "As often as you’d like. We typically provide daily, weekly or milestone-based updates via your preferred communication method—email, Slack, Notion, or otherwise."
+  },
 ];
 
 export default function QnASection() {

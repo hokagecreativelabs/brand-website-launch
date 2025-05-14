@@ -84,7 +84,7 @@ const AboutPage = () => {
             className="text-[28px] md:text-[32px] font-nohemi font-[500] leading-[116%] tracking-wide text-[#667185] overflow-hidden text-center"
           >
             {wrapWords("At HCL, we specialize in crafting")}
-            <span className="font-[600] text-black"> next-gen web experiences </span>
+            <span className="font-[600] text-black">next-gen digital experiences </span>
             {wrapWords("that blend creativity with cutting-edge technology.")}
           </p>
 
@@ -95,7 +95,6 @@ const AboutPage = () => {
           >
             {wrapWords("We deliver tailored solutions for")}
             <span className="font-[600] text-black">
-              {" "}
               upgrading your site or creating a new digital platform.
             </span>
           </p>
@@ -150,7 +149,7 @@ const AboutPage = () => {
               Our Mission
             </h2>
             <p className="text-[28px] font-normal text-center text-[#667185]">
-              To build digital products that are <span className="text-purple font-bold">bold</span>, <span className="text-purple font-bold italic">creative</span> and <span className="text-[#667185] font-semibold">lasting.</span>  
+              To build digital products that are <span className="text-purple font-bold">bold</span>, <span className="text-purple font-bold italic">creative</span> and <span className="text-[#667185] font-semibold">lasting. </span>  
               We help businesses grow by blending technology with imagination.
             </p>
           </div>
@@ -161,8 +160,8 @@ const AboutPage = () => {
               Our Vision
             </h2>
             <p className="text-[28px] font-normal text-center text-[#667185]">
-              To become be and to create a lasting brand building the next generation of digital innovations.  
-              <span className="text-purple font-semibold">We aim to inspire, to innovate and to lead by example.</span>
+              We’re here to build a lasting brand,   
+              <span className="text-purple font-semibold"> shaping the next generation of digital innovation. Our goal is to inspire, innovate, and lead by example.</span>
             </p>
           </div>
 

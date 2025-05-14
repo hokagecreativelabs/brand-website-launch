@@ -56,7 +56,7 @@ export default function SingleProjectPage() {
         transition={{ duration: 0.4 }}
       >
         {/* Back Link */}
-        <div className="w-full max-w-3xl mb-6">
+        <div className="w-full max-w-3xl my-12">
           <Link href="/projects" className="text-lg font-nohemi flex items-center gap-2 hover:underline">
             ← Go to Projects
           </Link>
@@ -121,28 +121,26 @@ export default function SingleProjectPage() {
 
 
         {/* Images */}
-{projectImages.length > 0 && (
-  <div className="w-full max-w-3xl space-y-10">
-    {projectImages.map((src, i) => (
-      <motion.div
-        key={i}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2 * i, duration: 0.5 }}
-      >
-        <div className="relative w-full aspect-[16/9] rounded-[24px] overflow-hidden border border-gray-300">
-          <Image
-            src={src}
-            alt={`${project.title} screenshot ${i + 1}`}
-            fill
-            className="object-cover"
-          />
-        </div>
-      </motion.div>
-    ))}
-  </div>
-)}
-
+        {projectImages.length > 0 && (
+          <div className="w-full max-w-3xl space-y-10">
+            {projectImages.map((src, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 * i, duration: 0.5 }}
+              >
+                <Image
+                  src={src}
+                  alt={`${project.title} screenshot ${i + 1}`}
+                  width={1200}
+                  height={800}
+                  className="w-full h-auto object-cover rounded-2xl shadow-lg"
+                />
+              </motion.div>
+            ))}
+          </div>
+        )}
       </motion.div>
     </>
   );

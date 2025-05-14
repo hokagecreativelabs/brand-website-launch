@@ -70,7 +70,7 @@ const AboutSection = () => {
           className="text-[28px] md:text-[32px] font-nohemi font-[500] leading-[116%] tracking-wide text-[#667185] overflow-hidden"
         >
           {wrapWords("At HCL, we specialize in crafting")}
-          <span className="font-[600] text-black"> next-gen web experiences </span>
+          <span className="font-[600] text-black">next-gen digital experiences </span>
           {wrapWords("that blend creativity with cutting-edge technology.")}
         </p>
 
@@ -81,7 +81,6 @@ const AboutSection = () => {
         >
           {wrapWords("We deliver tailored solutions for")}
           <span className="font-[600] text-black">
-            {" "}
             upgrading your site or creating a new digital platform.
           </span>
         </p>

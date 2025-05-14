@@ -32,8 +32,8 @@ const services = [
   {
     id: 3,
     slug: 'web-development',
-    title: 'Web Development',
-    description: 'Develop high-performance websites with robust, scalable architectures. Optimize your online presence for speed, functionality, and success.',
+    title: 'Software Development',
+    description: 'Develop high-performance websites, web and mobile applications with robust, scalable architectures. Optimize your online presence for speed, functionality, and success.',
     image: '/images/webdev.jpg',
   },
   {
@@ -47,14 +47,14 @@ const services = [
     id: 5,
     slug: 'consultations',
     title: 'Consultations',
-    description: 'Receive expert digital strategy guidance to refine your vision and achieve your goals. Tailored solutions for impactful results.',
+    description: 'Receive expert digital strategy guidance to refine your vision and achieve your goals. Custom solutions for impactful results.',
     image: '/images/consult.jpg',
   },
   {
     id: 6,
     slug: 'custom-dashboards',
     title: 'Custom Dashboards',
-    description: 'Experience data like never before with customized dashboards designed to empower smarter, data-driven decisions.',
+    description: 'Experience data with powerful & Custom APIs like never before with customized dashboards designed to empower smarter, data-driven decisions.',
     image: '/images/dashboards.jpg',
   },
   {
@@ -71,13 +71,13 @@ const services = [
     description: 'Gain hands-on experience with modern web development techniques. Master scalable solutions and future-ready skills for real-world projects.',
     image: '/images/training.jpg',
   },
-  {
-    id: 9,
-    slug: 'devops-and-sre',
-    title: 'DevOps & SRE',
-    description: 'Achieve continuous integration and deployment pipelines with robust infrastructure management. Ensure the reliability, scalability, and performance of your applications and services with best practices for DevOps and Site Reliability Engineering (SRE).',
-    image: '/images/devops.jpg',
-  },
+  // {
+  //   id: 9,
+  //   slug: 'devops-and-sre',
+  //   title: 'DevOps & SRE',
+  //   description: 'Achieve continuous integration and deployment pipelines with robust infrastructure management. Ensure the reliability, scalability, and performance of your applications and services with best practices for DevOps and Site Reliability Engineering (SRE).',
+  //   image: '/images/devops.jpg',
+  // },
 ];
 
 export default function ServicesPage() {

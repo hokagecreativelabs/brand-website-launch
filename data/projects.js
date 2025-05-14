@@ -51,6 +51,7 @@ export const projects = [
       slug: "party-deal-ng",
       description: "Full brand identity creation for a catering service that specializes in unforgettable events and delicious meals.",
       image1: "/images/party-deal.webp",
+      image2: "/images/PD.jpg",
       tags: ["Catering Services Company", "Logo + Full Brand Identity"],
       details: [
         { title: "Category", value: "Brand Identity" },

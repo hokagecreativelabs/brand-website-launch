@@ -1,7 +1,6 @@
-// app/layout.jsx
+// app/layout.js
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import Loader from "@/components/ui/Loader";
 import "./globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
@@ -28,7 +27,7 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "/images/Icon-1.webp", // Replace with your actual OG image later
+        url: "/images/Icon-1.webp",
         width: 1200,
         height: 630,
         alt: "Hokage Creative Labs OG Image",
@@ -41,7 +40,7 @@ export const metadata = {
     description: "Driven by Creativity. Powered by Technology.",
     site: "@hokagecreativelabs",
     creator: "@hokagecreativelabs",
-    images: ["/images/Icon-1.webp"], // Replace with real Twitter image
+    images: ["/images/Icon-1.webp"],
   },
   icons: {
     icon: "/images/Icon-1.webp",
@@ -54,14 +53,12 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  
   return (
     <html lang="en">
       <body className="min-h-screen flex flex-col">
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
-      
         <SpeedInsights />
         <Analytics />
       </body>

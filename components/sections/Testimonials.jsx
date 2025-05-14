@@ -11,7 +11,7 @@ export default function TestimonialSection() {
     //   role: "Author, Mfon Usoro Books",
     // },
     {
-      text: "Last year in December 2024, I reached out to the team to help register mt business on google and also help with the design of my business logo & brand identity. Party Deal has had over 150 views and a few of them reaching out through that medium since then. I was also impressed with the quality of work and the speed at which they delivered.",
+      text: "Last year in December 2024, I reached out to the team to help register my business on google and also help with the design of my business logo & brand identity. Party Deal has had over 150 views and a few of them reaching out through that medium since then. I was also impressed with the quality of work and the speed at which they delivered.",
       name: "Party Deal Ng",
       role: "Head Chef",
     },

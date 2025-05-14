@@ -21,7 +21,7 @@ const serviceDetails = {
           'Business Cards',
           'Letterhead Design',
           'Social Media Kit',
-          'Unlimited Revisions'
+          '4 Revisions'
         ]
       },
       {
@@ -30,8 +30,8 @@ const serviceDetails = {
           'Everything in Standard',
           'Complete Brand Guide',
           'Marketing Materials',
-          'Brand Strategy Session',
-          'Digital Asset Package'
+          'Brand printing on swag items',
+          'Unlimited Revisions',
         ]
       }
     ]
@@ -67,7 +67,7 @@ const serviceDetails = {
           'Multi-platform Design',
           'Animation & Micro-interactions',
           'A/B Testing',
-          'Implementation Support'
+          'Full Development Handover'
         ]
       }
     ]
@@ -81,9 +81,9 @@ const serviceDetails = {
         tier: 'Startup',
         features: [
           'Responsive Design',
-          'CMS Integration',
+          'Basic Animations',
           'SEO Fundamentals',
-          'Contact Form',
+          'Contact Form Submission',
           '3 Pages'
         ]
       },
@@ -93,8 +93,8 @@ const serviceDetails = {
           'Everything in Startup',
           'Custom Animations',
           'Blog Setup',
-          'Social Media Integration',
-          'Up to 10 Pages'
+          'Payment Integration',
+          'Up to 7 Pages'
         ]
       },
       {
@@ -121,7 +121,7 @@ const serviceDetails = {
           'Secure Checkout',
           'Payment Gateway Integration',
           'Mobile Responsive',
-          'Up to 50 Products'
+          'Up to 20 Products'
         ]
       },
       {
@@ -131,7 +131,7 @@ const serviceDetails = {
           'Inventory Management',
           'Customer Accounts',
           'Discount Engine',
-          'Up to 500 Products'
+          'Up to 50 Products'
         ]
       },
       {
@@ -154,7 +154,7 @@ const serviceDetails = {
       {
         tier: 'Strategy Session',
         features: [
-          '90-Minute Consultation',
+          '30-Minute Consultation',
           'Current State Analysis',
           'Recommendations Document',
           'One Follow-up Call'
@@ -163,10 +163,10 @@ const serviceDetails = {
       {
         tier: 'Roadmap Planning',
         features: [
-          '3 Strategy Sessions',
+          '2 Strategy Sessions',
           'Competitive Analysis',
           'Digital Transformation Plan',
-          '30-Day Support'
+          '15-Day Support'
         ]
       },
       {
@@ -198,7 +198,7 @@ const serviceDetails = {
       {
         tier: 'Advanced Analytics',
         features: [
-          '15 Customizable Metrics',
+          '10 Customizable Metrics',
           'Real-time Data',
           'User Permissions',
           'API Integrations',
@@ -261,9 +261,9 @@ const serviceDetails = {
       {
         tier: 'Fundamentals',
         features: [
-          'HTML/CSS Basics',
-          'JavaScript Essentials',
-          '10 Hours of Instruction',
+          'Version Control Basics',
+          'HTML/CSS',
+          'JavaScript Introduction',
           'Practice Projects',
           'Certificate'
         ]
@@ -273,7 +273,6 @@ const serviceDetails = {
         features: [
           'React Framework',
           'Backend Basics',
-          '25 Hours of Instruction',
           'Mentorship Sessions',
           'Portfolio Project'
         ]
@@ -282,50 +281,49 @@ const serviceDetails = {
         tier: 'Expert',
         features: [
           'Full Stack Development',
-          'DevOps Introduction',
-          '50 Hours of Instruction',
+          'loud Deployment & Hosting',
           '3-Month Support',
           'Real Client Project'
         ]
       }
     ]
   },
-  'devops-and-sre': {
-    title: 'DevOps & SRE',
-    description: 'Achieve continuous integration and deployment pipelines with robust infrastructure management. Ensure the reliability, scalability, and performance of your applications and services with best practices for DevOps and Site Reliability Engineering (SRE).',
-    image: '/images/devops.jpg',
-    pricing: [
-      {
-        tier: 'CI/CD Setup',
-        features: [
-          'Pipeline Configuration',
-          'Basic Monitoring',
-          'Deployment Automation',
-          'Documentation'
-        ]
-      },
-      {
-        tier: 'Infrastructure as Code',
-        features: [
-          'Everything in CI/CD Setup',
-          'Cloud Architecture',
-          'Container Orchestration',
-          'Security Implementation',
-          'Performance Testing'
-        ]
-      },
-      {
-        tier: 'Full SRE',
-        features: [
-          'Everything in Infrastructure',
-          '24/7 Monitoring',
-          'Incident Response',
-          'Chaos Engineering',
-          'Custom SLIs/SLOs'
-        ]
-      }
-    ]
-  }
+  // 'devops-and-sre': {
+  //   title: 'DevOps & SRE',
+  //   description: 'Achieve continuous integration and deployment pipelines with robust infrastructure management. Ensure the reliability, scalability, and performance of your applications and services with best practices for DevOps and Site Reliability Engineering (SRE).',
+  //   image: '/images/devops.jpg',
+  //   pricing: [
+  //     {
+  //       tier: 'CI/CD Setup',
+  //       features: [
+  //         'Pipeline Configuration',
+  //         'Basic Monitoring',
+  //         'Deployment Automation',
+  //         'Documentation'
+  //       ]
+  //     },
+  //     {
+  //       tier: 'Infrastructure as Code',
+  //       features: [
+  //         'Everything in CI/CD Setup',
+  //         'Cloud Architecture',
+  //         'Container Orchestration',
+  //         'Security Implementation',
+  //         'Performance Testing'
+  //       ]
+  //     },
+  //     {
+  //       tier: 'Full SRE',
+  //       features: [
+  //         'Everything in Infrastructure',
+  //         '24/7 Monitoring',
+  //         'Incident Response',
+  //         'Chaos Engineering',
+  //         'Custom SLIs/SLOs'
+  //       ]
+  //     }
+  //   ]
+  // }
 };
 
 export default serviceDetails;
