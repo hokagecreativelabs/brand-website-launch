@@ -4,6 +4,7 @@ import Footer from "@/components/layout/Footer";
 import "./globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
+import Loader from "@/components/ui/Loader";
 
 export const metadata = {
   title: "Hokage Creative Labs",
@@ -57,7 +58,10 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className="min-h-screen flex flex-col">
         <Navbar />
-        <main className="flex-1">{children}</main>
+        <main className="flex-1">
+          <Loader />
+          {children}
+          </main>
         <Footer />
         <SpeedInsights />
         <Analytics />
