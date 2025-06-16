@@ -6,10 +6,10 @@ import { motion } from "framer-motion";
 const projects = [
   {
     id: 1,
-    title: "The ITL Conference, Canada",
-    slug: "itl-conference-canada",
-    image: "/images/projects/itl.webp",
-    tags: ["Conference Web Application", "MERN Stack"],
+    title: "Body Of Senior Advocates of Nigeria (BOSAN)",
+    slug: "bosanigeria",
+    image: "/images/projects/bosan.png",
+    tags: ["Mmbership Web Application", "MERN Stack"],
   },
   {
     id: 2,
@@ -20,13 +20,20 @@ const projects = [
   },
   {
     id: 3,
+    title: "The ITL Conference, Canada",
+    slug: "itl-conference-canada",
+    image: "/images/projects/itl.webp",
+    tags: ["Conference Web Application", "MERN Stack"],
+  },
+  {
+    id: 4,
     title: "The Cyber Lawyer",
     slug: "cyber-lawyer",
     image: "/images/projects/daylee.webp",
     tags: ["Portfolio Website", "Personal Branding"],
   },
   {
-    id: 4,
+    id: 5,
     title: "KingsWord",
     slug: "kings-word",
     image: "/images/projects/kings.webp",
