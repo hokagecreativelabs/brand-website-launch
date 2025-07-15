@@ -11,8 +11,6 @@ import Loader from "@/components/ui/Loader";
 export default function Home() {
   return (
     <>
-      
-      <Loader />
       <Hero />
       <AboutSection />
       <ServicesSection />
