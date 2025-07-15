@@ -3,6 +3,21 @@
 export const projects = [
     {
       id: 1,
+      title: "Party Deal NG",
+      slug: "partydeal",
+      image1: "/images/projects/party-hero.png",
+      description: "Top catering service in Nigeria, specializing in unforgettable events and delicious meals. This project includes a full brand identity creation from logo to website",
+      image2: "/images/projects/party2.jpg",
+      tags: ["Catering Website + Whatsapp Order", "ReactJs + Tailwind CSS"],
+      details: [
+        { title: "Category", value: "Website + Form Submission" },
+        // { title: "Duration", value: "8 weeks" },
+        { title: "Type", value: "Catering" },
+      ],
+      liveLink: "https://partydeal.ng", 
+    },
+    {
+      id: 1,
       title: "Body of Senior Advocates of Nigeria (BOSAN)",
       slug: "bosanigeria",
       image1: "/images/projects/bosan.png",
