@@ -1,10 +1,6 @@
-// app/layout.js
 import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
 import "./globals.css";
-import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Analytics } from "@vercel/analytics/next"
-// import Loader from "@/components/ui/Loader";
+import Footer from "@/components/layout/Footer";
 
 export const metadata = {
   title: "Hokage Creative Labs",
@@ -63,8 +59,8 @@ export default function RootLayout({ children }) {
           {children}
           </main>
         <Footer />
-        <SpeedInsights />
-        <Analytics />
+        {/* <SpeedInsights />
+        <Analytics /> */}
       </body>
     </html>
   );

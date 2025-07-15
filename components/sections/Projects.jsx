@@ -13,32 +13,39 @@ const projects = [
   },
   {
     id: 2,
+    title: "Party Deal NG",
+    slug: "partydeal",
+    image: "/images/projects/party-hero.png",
+    tags: ["Catering Website + Whatsapp Order", "ReactJs + Tailwind CSS"],
+  },
+  {
+    id: 3,
     title: "Mfon Usoro Books",
     slug: "mfon-usoro-books",
     image: "/images/projects/mp.webp",
     tags: ["Book Launch Web Application", "UI/UX Design + Web Development"],
   },
   {
-    id: 3,
+    id: 4,
     title: "The ITL Conference, Canada",
     slug: "itl-conference-canada",
     image: "/images/projects/itl.webp",
     tags: ["Conference Web Application", "MERN Stack"],
   },
-  {
-    id: 4,
-    title: "The Cyber Lawyer",
-    slug: "cyber-lawyer",
-    image: "/images/projects/daylee.webp",
-    tags: ["Portfolio Website", "Personal Branding"],
-  },
-  {
-    id: 5,
-    title: "KingsWord",
-    slug: "kings-word",
-    image: "/images/projects/kings.webp",
-    tags: ["Church Website", "Website + Custom Dashboard"],
-  },
+  // {
+  //   id: 5,
+  //   title: "The Cyber Lawyer",
+  //   slug: "cyber-lawyer",
+  //   image: "/images/projects/daylee.webp",
+  //   tags: ["Portfolio Website", "Personal Branding"],
+  // },
+  // {
+  //   id: 6,
+  //   title: "KingsWord",
+  //   slug: "kings-word",
+  //   image: "/images/projects/kings.webp",
+  //   tags: ["Church Website", "Website + Custom Dashboard"],
+  // },
 ];
 
 // Create a motion component for the button
