@@ -1,0 +1,21 @@
+{
+    "name": "HCL",
+    "short_name": "App",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#21083F",
+    "theme_color": "#7FF41A",
+    "icons": [
+      {
+        "src": "/images/icon.webp",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "/images/icon.webp",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ]
+  }
+  

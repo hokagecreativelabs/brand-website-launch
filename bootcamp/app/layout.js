@@ -1,6 +1,9 @@
 import Navbar from "@/components/layout/Navbar";
 import "./globals.css";
 import Footer from "@/components/layout/Footer";
+import Head from "next/head";
+import TransformSection from "@/components/TransformSection";
+import { ToastContainer } from "react-toastify";
 
 export const metadata = {
   title: "Hokage Creative Labs",
@@ -54,10 +57,15 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className="min-h-screen flex flex-col">
         <Navbar />
+        <Head>
+          <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&display=swap" rel="stylesheet" />
+        </Head>
         <main className="flex-1">
           {/* <Loader />  */}
           {children}
           </main>
+          <TransformSection />
+          <ToastContainer />
         <Footer />
         {/* <SpeedInsights />
         <Analytics /> */}

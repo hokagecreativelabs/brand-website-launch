@@ -10,9 +10,9 @@ export const NAV_LINKS = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About the Bootcamp" },
   { href: "/courses", label: "Courses" },
-  // { href: "/mission", label: "Our Mission" },
   { href: "/register", label: "Register" },
   { href: "/cohorts", label: "Cohorts" },
+  { href: "https://hokagecreativelabs.com", label: "Company", target: "_blank" },
 ];
 
 const Navbar = () => {
@@ -121,7 +121,7 @@ const Navbar = () => {
         className={`font-nohemi font-medium flex items-center gap-2 transition duration-300 ${
           isMobile 
             ? "justify-start text-[#101928] w-full" 
-            : "justify-center bg-purple text-white w-full h-full px-4 rounded-full hover:bg-white hover:text-purple hover:shadow-md"
+            : "justify-center bg-white text-purple w-full h-full px-4 rounded-full hover:bg-white hover:text-purple hover:shadow-md"
         } ${isLoading ? 'opacity-75' : ''}`}
       >
         {isLoading ? (
@@ -153,16 +153,16 @@ const Navbar = () => {
     <>
       <nav
         className={`w-full h-[104px] px-4 sm:px-6 md:px-24 fixed top-0 left-0 right-0 z-50 flex items-center justify-center transition-all duration-300 ${
-          isScrolled ? "bg-white/60 backdrop-blur-md shadow-md" : "bg-white"
+          isScrolled ? "bg-white/60 backdrop-blur-md shadow-md" : "bg-purple"
         }`}
         role="navigation"
         aria-label="Main Navigation"
       >
         <div className="w-full max-w-[1248px] h-full flex items-center justify-between relative">
-          {/* Logo - Responsive sizing */}
-          <a href="/" className="relative w-[120px] sm:w-[150px] h-[50px] sm:h-[60px]" aria-label="Home page">
+          {/* Logo - Dynamic based on scroll state */}
+          <a href="/" className="relative w-[120px] sm:w-[150px] h-[50px] sm:h-[90px]" aria-label="Home page">
             <Image
-              src="/images/LOGO.webp"
+              src={isScrolled ? "/images/LOGO.webp" : "/images/logo-white.png"}
               alt="Company Logo"
               fill
               sizes="(max-width: 640px) 120px, 150px"

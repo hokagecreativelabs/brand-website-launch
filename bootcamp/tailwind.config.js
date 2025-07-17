@@ -14,6 +14,7 @@ module.exports = {
       fontFamily: {
         vastago: ["Vastago Grotesque", "sans-serif"],
         nohemi: ["Raleway", "sans-serif"],
+        handwriting: ['Caveat', 'cursive'],
       },
     },
   },

@@ -11,6 +11,7 @@ const NAV_LINKS = [
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
   { href: "/projects", label: "Projects" },
+  { href: "https://academy.hokagecreativelabs.com", label: "Academy", target: "_blank" },
   // Add more links here and they'll automatically appear in both desktop and mobile menus
 ];
 
