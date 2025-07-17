@@ -29,7 +29,7 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "/images/Icon-1.webp",
+        url: "/images/Icon-2.jpg",
         width: 1200,
         height: 630,
         alt: "Hokage Creative Labs Academy OG Image",
@@ -45,7 +45,7 @@ export const metadata = {
     images: ["/images/Icon-1.webp"],
   },
   icons: {
-    icon: "/images/Icon-1.webp",
+    icon: "/images/Icon-2.jpg",
     apple: "/apple-touch-icon.png",
   },
   manifest: "/site.webmanifest",
