@@ -3,8 +3,6 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import TransformSection from "@/components/TransformSection";
 import { ToastContainer } from "react-toastify";
-import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Analytics } from "@vercel/analytics/next";
 import Head from "next/head";
 
 export const metadata = {
@@ -72,8 +70,6 @@ export default function RootLayout({ children }) {
         <TransformSection />
         <ToastContainer />
         <Footer />
-        <SpeedInsights />
-        <Analytics />
       </body>
     </html>
   );
