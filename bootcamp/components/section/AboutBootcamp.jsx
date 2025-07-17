@@ -26,9 +26,12 @@ export default function AboutBootcamp() {
           </p>
 
           <div className="mt-8 flex flex-col sm:flex-row gap-4">
+          <Link href="/courses">
             <button className="group relative bg-white text-purple text-lg px-8 py-4 rounded-full font-semibold hover:bg-lemon hover:text-purple transition-all">
               Explore Our Programs
             </button>
+          </Link>
+
             {/* <div className="flex items-center gap-3 text-purple-100 hover:text-white cursor-pointer">
               <span className="text-base font-medium">Learn about our approach</span>
               <svg 

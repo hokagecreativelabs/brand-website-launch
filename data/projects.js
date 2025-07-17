@@ -18,6 +18,21 @@ export const projects = [
     },
     {
       id: 2,
+      title: "Hokage Creative Labs Academy",
+      slug: "hcl-academy",
+      image1: "/images/projects/academy.png",
+      description: "Top digital agency academy in Nigeria, specializing in training and mentorship for aspiring digital professionals.",
+      image2: "/images/projects/academy-1.png",
+      tags: ["Bootcamp + Digital Academy Agency", "ReactJs + Tailwind CSS"],
+      details: [
+        { title: "Category", value: "Website + Form Submission" },
+        // { title: "Duration", value: "8 weeks" },
+        { title: "Type", value: "Bootcamp" },
+      ],
+      liveLink: "https://academy.hokagecreativelabs.com", 
+    },
+    {
+      id: 3,
       title: "Body of Senior Advocates of Nigeria (BOSAN)",
       slug: "bosanigeria",
       image1: "/images/projects/bosan.png",
@@ -32,7 +47,7 @@ export const projects = [
       liveLink: "https://bosanigeria.com", 
     },
     {
-      id: 3,
+      id: 4,
       title: "Mfon Usoro Books",
       slug: "mfon-usoro-books",
       description: "A clean, elegant platform for a major author's book launch, showcasing books, author profile, and press information.",
@@ -47,7 +62,7 @@ export const projects = [
       liveLink: "https://mfonusorobooks.com",
     },
     {
-      id: 4,
+      id: 5,
       title: "The ITL Conference 2025, Canada",
       slug: "itl-conference-canada",
       description: "An innovative conference platform designed for seamless event management, attendee engagement, and global networking.",
@@ -62,7 +77,7 @@ export const projects = [
       liveLink: "https://itlconference.ca/", 
     },
     {
-      id: 5,
+      id: 6,
       title: "Jaaiye",
       slug: "jaaiye",
       description: "Jaaiye exists to make social experiences seamless by eliminating the friction in planning, coordinating, and booking social activities. ",
@@ -76,7 +91,7 @@ export const projects = [
       liveLink: "/images/projects/jaiiye.pdf",
     },
     {
-      id: 6,
+      id: 7,
       title: "Elvora",
       slug: "elvora",
       description: "At Elvora, we don’t just create events, we shape unforgettable experiences.",
@@ -90,7 +105,7 @@ export const projects = [
       liveLink: "/images/projects/elvora.pdf",
     },
     {
-      id: 7,
+      id: 8,
       title: "Party Deal",
       slug: "party-deal-ng",
       description: "Full brand identity creation for a catering service that specializes in unforgettable events and delicious meals.",
@@ -105,7 +120,7 @@ export const projects = [
       liveLink: "/images/projects/asake-foods-Logo-IDentity-Guide.pdf",
     },
     {
-      id: 8,
+      id: 9,
       title: "The Cyber Lawyer",
       slug: "cyber-lawyer",
       description: "A modern, authoritative portfolio for a cybersecurity-focused legal practitioner, emphasizing trust and expertise.",
@@ -120,7 +135,7 @@ export const projects = [
       liveLink: "https://oladayo-akinmokun.vercel.app/",
     },
     {
-      id: 9,
+      id: 10,
       title: "KingsWord",
       slug: "kings-word",
       description: "Website and admin dashboard for a dynamic, multi-location church organization, enhancing member engagement and resource management.",

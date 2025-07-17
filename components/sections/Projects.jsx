@@ -6,27 +6,34 @@ import { motion } from "framer-motion";
 const projects = [
   {
     id: 1,
+    title: "Hokage Creative Labs Academy",
+    slug: "hcl-academy",
+    image: "/images/projects/academy.png",
+    tags: ["Digital Agency Academy", "MERN Stack"],
+  },
+  {
+    id: 2,
     title: "Body Of Senior Advocates of Nigeria (BOSAN)",
     slug: "bosanigeria",
     image: "/images/projects/bosan.png",
     tags: ["Mmbership Web Application", "MERN Stack"],
   },
   {
-    id: 2,
+    id: 3,
     title: "Party Deal NG",
     slug: "partydeal",
     image: "/images/projects/party-hero.png",
     tags: ["Catering Website + Whatsapp Order", "ReactJs + Tailwind CSS"],
   },
   {
-    id: 3,
+    id: 4,
     title: "Mfon Usoro Books",
     slug: "mfon-usoro-books",
     image: "/images/projects/mp.webp",
     tags: ["Book Launch Web Application", "UI/UX Design + Web Development"],
   },
   {
-    id: 4,
+    id: 5,
     title: "The ITL Conference, Canada",
     slug: "itl-conference-canada",
     image: "/images/projects/itl.webp",

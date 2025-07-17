@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import { Clock } from 'lucide-react';
+import Link from 'next/link';
 
 export default function ComingSoonPage() {
   return (
@@ -21,14 +22,18 @@ export default function ComingSoonPage() {
 
         {/* Optional Notify Button */}
         <div className="flex justify-center gap-6">
-          <button className="bg-white hover:bg-purple hover:text-white hover:border text-purple font-semibold py-3 px-6 rounded-lg transition duration-300">
-            <a href="/">Go back to Home</a>
-          </button>
-          <button className="border hover:bg-white text-white hover:text-purple font-semibold py-3 px-6 rounded-lg transition duration-300">
-            <a href="https://hokagecreativelabs.com">Our Company</a>
-          </button>
-        </div>
+          <Link href="/" passHref>
+            <button className="bg-white hover:bg-purple hover:text-white hover:border text-purple font-semibold py-3 px-6 rounded-lg transition duration-300">
+              Go back to Home
+            </button>
+          </Link>
 
+          <Link href="https://hokagecreativelabs.com" passHref>
+            <button className="border hover:bg-white text-white hover:text-purple font-semibold py-3 px-6 rounded-lg transition duration-300">
+              Our Company
+            </button>
+          </Link>
+        </div>
         <p className="text-sm text-lemon">© {new Date().getFullYear()} HCL Academy. All rights reserved.</p>
       </div>
     </main>

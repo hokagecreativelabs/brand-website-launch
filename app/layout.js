@@ -7,7 +7,7 @@ import { Analytics } from "@vercel/analytics/next"
 // import Loader from "@/components/ui/Loader";
 
 export const metadata = {
-  title: "Hokage Creative Labs",
+  title: "Hokage Creative Labs - Digital Agency",
   description: "Driven by Creativity. Powered by Technology.",
   keywords: [
     "web development",

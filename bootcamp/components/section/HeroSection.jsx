@@ -50,7 +50,7 @@ export default function HeroSection() {
             </div>
           </div>
         </div>
-        <blockquote className="px-4 mt-8 text-center text-2xl sm:text-3xl md:mt-16 italic font-black font-handwriting text-purple/40">
+        <blockquote className="px-4 mt-8 text-center text-2xl sm:text-3xl md:mt-16 italic font-black font-vastago text-purple/40">
             “Tell me and I forget, teach me and I may remember, involve me and I learn.”
             </blockquote>
         <div className="absolute inset-0 z-0"></div>

@@ -6,7 +6,7 @@ import { ToastContainer } from "react-toastify";
 import Head from "next/head";
 
 export const metadata = {
-  title: "Hokage Creative Labs Academy",
+  title: "Hokage Creative Labs Academy - Digital Agency Academy",
   description: "Level up your skills with expert-led training at Hokage Creative Labs Academy.",
   keywords: [
     "web development training",
