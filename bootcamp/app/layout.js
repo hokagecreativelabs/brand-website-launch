@@ -1,13 +1,11 @@
-import Navbar from "@/components/layout/Navbar";
 import "./globals.css";
+import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import Head from "next/head";
 import TransformSection from "@/components/TransformSection";
 import { ToastContainer } from "react-toastify";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Analytics } from "@vercel/analytics/next"
-
-
+import { Analytics } from "@vercel/analytics/next";
+import Head from "next/head";
 
 export const metadata = {
   title: "Hokage Creative Labs Academy",
@@ -58,41 +56,24 @@ export const metadata = {
   authors: [{ name: "Hokage Creative Labs" }],
 };
 
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <Head>
+        {/* Google Fonts or others */}
+        <link
+          href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&display=swap"
+          rel="stylesheet"
+        />
+      </Head>
       <body className="min-h-screen flex flex-col">
         <Navbar />
-        <main className="flex-1">
-          {/* <Loader />  */}
-          {children}
-          </main>
+        <main className="flex-1">{children}</main>
+        <TransformSection />
+        <ToastContainer />
         <Footer />
         <SpeedInsights />
         <Analytics />
-      </body>
-    </html>
-  );
-}
-
-export default function RootLayout({ children }) {
-  return (
-    <html lang="en">
-      <body className="min-h-screen flex flex-col">
-        <Navbar />
-        <Head>
-          <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&display=swap" rel="stylesheet" />
-        </Head>
-        <main className="flex-1">
-          {/* <Loader />  */}
-          {children}
-          </main>
-          <TransformSection />
-          <ToastContainer />
-        <Footer />
-        {/* <SpeedInsights />
-        <Analytics /> */}
       </body>
     </html>
   );
