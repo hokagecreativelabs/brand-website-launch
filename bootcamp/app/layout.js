@@ -4,14 +4,11 @@ import Footer from "@/components/layout/Footer";
 import Head from "next/head";
 import TransformSection from "@/components/TransformSection";
 import { ToastContainer } from "react-toastify";
-
-// app/layout.js
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
-import "./globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next"
-// import Loader from "@/components/ui/Loader";
+
+
+
 export const metadata = {
   title: "Hokage Creative Labs Academy",
   description: "Level up your skills with expert-led training at Hokage Creative Labs Academy.",
