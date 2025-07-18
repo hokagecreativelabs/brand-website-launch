@@ -7,7 +7,7 @@ export default function HeroSection() {
   return (
     <>
       <section 
-        className="py-36 pb-24 sm:py-32 lg:py-40 relative overflow-hidden"
+        className="py-36 pb-24 sm:py-32 lg:py-48 relative overflow-hidden"
         style={{
           backgroundImage: `url('/images/bg-pattern.webp')`,
           backgroundSize: 'cover',
@@ -25,7 +25,7 @@ export default function HeroSection() {
               <span className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600">
                 Skills
               </span>{' '}
-              of the Future
+              of Tomorrow
             </h1>
             <p className="mt-4 text-lg sm:text-xl max-w-2xl mx-auto text-gray-700">
               Master modern web development through real-world projects, expert guidance, and a supportive tech community.

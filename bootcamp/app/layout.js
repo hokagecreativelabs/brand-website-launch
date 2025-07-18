@@ -4,6 +4,7 @@ import Footer from "@/components/layout/Footer";
 import TransformSection from "@/components/TransformSection";
 import { ToastContainer } from "react-toastify";
 import Head from "next/head";
+import BannerSlider from "@/components/BannerSlider";
 
 export const metadata = {
   title: "Hokage Creative Labs Academy - Digital Agency Academy",
@@ -65,6 +66,7 @@ export default function RootLayout({ children }) {
         />
       </Head>
       <body className="min-h-screen flex flex-col">
+        <BannerSlider />
         <Navbar />
         <main className="flex-1">{children}</main>
         <TransformSection />
