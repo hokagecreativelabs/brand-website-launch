@@ -1,10 +1,9 @@
-// app/layout.js
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import BannerSlider from "@/components/BannerSlider"; // Import the BannerSlider
 import "./globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Analytics } from "@vercel/analytics/next"
-// import Loader from "@/components/ui/Loader";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata = {
   title: "Hokage Creative Labs - Digital Agency",
@@ -57,11 +56,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="min-h-screen flex flex-col">
+        <BannerSlider /> {/* Place BannerSlider above Navbar */}
         <Navbar />
         <main className="flex-1">
-          {/* <Loader />  */}
           {children}
-          </main>
+        </main>
         <Footer />
         <SpeedInsights />
         <Analytics />

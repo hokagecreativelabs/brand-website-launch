@@ -5,10 +5,10 @@ import Carousel from "../../components/ui/Carousel";
 
 const Hero = () => {
   const TYPING_TEXT = "Hokage Creative Labs";
-  const IMAGES = ["MP", "itl", "kings", "daylee", "enauf"];
+  const IMAGES = ["bosan", "academy", "party", "MP", "itll"];
 
   return (
-    <section className="pt-12 md:pt-8 lg:pt-0 relative w-full min-h-[876px] flex flex-col items-center justify-center overflow-hidden bg-[url('/images/bg-pattern.webp')] bg-cover bg-center">
+    <section className="pt-28 md:pt-12 lg:pt-16 relative w-full min-h-[876px] flex flex-col items-center justify-center overflow-hidden bg-[url('/images/bg-pattern.webp')] bg-cover bg-center">
       <div className="w-full max-w-full flex flex-col items-center text-center gap-6 pt-[120px] sm:pt-[110px] px-4 sm:px-8">
         <h1
           className="font-vastago font-semibold text-[76px] md:text-[96px] leading-[120%] tracking-[-0.02em] h-[140px] flex items-center justify-center"

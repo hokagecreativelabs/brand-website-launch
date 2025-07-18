@@ -40,8 +40,8 @@ export default function SingleProjectPage() {
     );
   }
 
-  // Filter out any image properties that don't exist or are empty strings
-  const projectImages = [project.image1, project.image2].filter(img => img && img !== "");
+  // Filter out any invalid or empty image paths
+  const projectImages = project.images.filter((img) => img && img.trim() !== "");
 
   return (
     <>
@@ -72,53 +72,58 @@ export default function SingleProjectPage() {
           {project.description}
         </p>
 
-        {/* Tags - Uncomment if you want to use tags */}
-        {/* {project.tags && project.tags.length > 0 && (
-          <div className="flex flex-wrap gap-3 mb-8">
-            {project.tags.map((tag, i) => (
-              <span
-                key={i}
-                className="bg-gray-100 text-gray-700 rounded-full px-4 py-2 text-sm md:text-base font-medium"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        )} */}
+        {/* Categories */}
+        <div className="flex flex-wrap gap-3 mb-8">
+          {project.categories.service.map((service, i) => (
+            <span
+              key={i}
+              className="bg-gray-100 text-gray-700 rounded-full px-4 py-2 text-sm md:text-base font-medium"
+            >
+              {service}
+            </span>
+          ))}
+        </div>
 
         {/* Details */}
-        {project.details && project.details.length > 0 && (
+        {project.categories.type && (
           <div className="w-full max-w-3xl mb-8 space-y-4">
-            {project.details.map((d, i) => (
-              <div key={i} className="flex gap-[50px] border-b border-gray-200 pb-2">
-                <span className="font-semibold">{d.title}</span>
-                <span className="text-gray-600">{d.value}</span>
+            <div className="flex gap-[50px] border-b border-gray-200 pb-2">
+              <span className="font-semibold">Type</span>
+              <span className="text-gray-600">{project.categories.type}</span>
+            </div>
+            <div className="flex gap-[50px] border-b border-gray-200 pb-2">
+              <span className="font-semibold">Industry</span>
+              <span className="text-gray-600">{project.categories.industry}</span>
+            </div>
+            {project.categories.techStack && project.categories.techStack.length > 0 && (
+              <div className="flex gap-[50px] border-b border-gray-200 pb-2">
+                <span className="font-semibold">Tech Stack</span>
+                <span className="text-gray-600">{project.categories.techStack.join(", ")}</span>
               </div>
-            ))}
+            )}
           </div>
         )}
 
         {/* Live Preview Button */}
         {project.liveLink && (
-  <div className="mb-12">
-    <Link
-      href={project.liveLink}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="bg-purple text-white tracking-wide flex items-center justify-center gap-2 border border-[#21083F] rounded-full px-6 py-4 hover:bg-purple-700 transition-colors"
-    >
-      <span className="text-base font-medium">Live Preview</span>
-      <Image
-        src="/images/web-icon.webp"
-        alt="Web Icon"
-        width={24}
-        height={24}
-        className="object-contain"
-      />
-    </Link>
-  </div>
-)}
-
+          <div className="mb-12">
+            <Link
+              href={project.liveLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-purple text-white tracking-wide flex items-center justify-center gap-2 border border-[#21083F] rounded-full px-6 py-4 hover:bg-purple-700 transition-colors"
+            >
+              <span className="text-base font-medium">Live Preview</span>
+              <Image
+                src="/images/web-icon.webp"
+                alt="Web Icon"
+                width={24}
+                height={24}
+                className="object-contain"
+              />
+            </Link>
+          </div>
+        )}
 
         {/* Images */}
         {projectImages.length > 0 && (
@@ -132,7 +137,7 @@ export default function SingleProjectPage() {
               >
                 <Image
                   src={src}
-                  alt={`${project.title} screenshot ${i + 1}`}
+                  alt={`${project.image} screenshot ${i + 1}`}
                   width={1200}
                   height={800}
                   className="w-full h-auto object-cover rounded-2xl shadow-lg"

@@ -135,3 +135,16 @@ main {
 }
 
 
+@keyframes slide {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-slide {
+  display: inline-flex;
+  animation: slide linear infinite;
+}

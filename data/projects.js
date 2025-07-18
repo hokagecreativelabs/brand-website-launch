@@ -1,153 +1,137 @@
-// Full Projects Data (shared between main page and slug page)
-
 export const projects = [
-    {
-      id: 1,
-      title: "Party Deal NG",
-      slug: "partydeal",
-      image1: "/images/projects/party-hero.png",
-      description: "Top catering service in Nigeria, specializing in unforgettable events and delicious meals. This project includes a full brand identity creation from logo to website",
-      image2: "/images/projects/party2.jpg",
-      tags: ["Catering Website + Whatsapp Order", "ReactJs + Tailwind CSS"],
-      details: [
-        { title: "Category", value: "Website + Form Submission" },
-        // { title: "Duration", value: "8 weeks" },
-        { title: "Type", value: "Catering" },
-      ],
-      liveLink: "https://partydeal.ng", 
-    },
-    {
-      id: 2,
-      title: "Hokage Creative Labs Academy",
-      slug: "hcl-academy",
-      image1: "/images/projects/academy.png",
-      description: "Top digital agency academy in Nigeria, specializing in training and mentorship for aspiring digital professionals.",
-      image2: "/images/projects/academy-1.png",
-      tags: ["Bootcamp + Digital Academy Agency", "ReactJs + Tailwind CSS"],
-      details: [
-        { title: "Category", value: "Website + Form Submission" },
-        // { title: "Duration", value: "8 weeks" },
-        { title: "Type", value: "Bootcamp" },
-      ],
-      liveLink: "https://academy.hokagecreativelabs.com", 
-    },
-    {
-      id: 3,
-      title: "Body of Senior Advocates of Nigeria (BOSAN)",
-      slug: "bosanigeria",
-      image1: "/images/projects/bosan.png",
-      description: "A professional body in Nigeria focused on promoting legal excellence and ethics among its members. This project includes a membership web application with a custom dashboard for managing members, events, and resources.",
-      image2: "/images/projects/bosan-info.png",
-      tags: ["Membership Web Application", "MERN Stack"],
-      details: [
-        { title: "Category", value: "Website + Dashboard" },
-        // { title: "Duration", value: "8 weeks" },
-        { title: "Type", value: "Membership" },
-      ],
-      liveLink: "https://bosanigeria.com", 
-    },
-    {
-      id: 4,
-      title: "Mfon Usoro Books",
-      slug: "mfon-usoro-books",
-      description: "A clean, elegant platform for a major author's book launch, showcasing books, author profile, and press information.",
-      image1: "/images/MP.webp",
-      image2: "/images/projects/MP-stats.webp",
-      tags: ["Book Launch Web Application", "UI/UX Design + Web Development"],
-      details: [
-        { title: "Category", value: "Website + CMS" },
-        // { title: "Duration", value: "2 weeks" },
-        { title: "Type", value: "Book Launch" },
-      ],
-      liveLink: "https://mfonusorobooks.com",
-    },
-    {
-      id: 5,
-      title: "The ITL Conference 2025, Canada",
-      slug: "itl-conference-canada",
-      description: "An innovative conference platform designed for seamless event management, attendee engagement, and global networking.",
-      image1: "/images/itl.webp",
-      image2: "/images/projects/itl-stats.webp",
-      tags: ["Conference Web Application", "MERN Stack"],
-      details: [
-        { title: "Category", value: "Website + Dashboard" },
-        // { title: "Duration", value: "8 weeks" },
-        { title: "Type", value: "Conference" },
-      ],
-      liveLink: "https://itlconference.ca/", 
-    },
-    {
-      id: 6,
-      title: "Jaaiye",
-      slug: "jaaiye",
-      description: "Jaaiye exists to make social experiences seamless by eliminating the friction in planning, coordinating, and booking social activities. ",
-      image1: "/images/projects/jaiye-logo.png",
-      tags: ["Social / Event Company", "Logo + Full Brand Identity"],
-      details: [
-        { title: "Category", value: "Brand Identity" },
-        // { title: "Duration", value: "1 week" },
-        { title: "Type", value: "Community" },
-      ],
-      liveLink: "/images/projects/jaiiye.pdf",
-    },
-    {
-      id: 7,
-      title: "Elvora",
-      slug: "elvora",
-      description: "At Elvora, we don’t just create events, we shape unforgettable experiences.",
-      image1: "/images/projects/elvora-logo.png",
-      tags: ["Event Planning", "Logo + Full Brand Identity"],
-      details: [
-        { title: "Category", value: "Brand Identity" },
-        // { title: "Duration", value: "1 week" },
-        { title: "Type", value: "Event Planning" },
-      ],
-      liveLink: "/images/projects/elvora.pdf",
-    },
-    {
-      id: 8,
-      title: "Party Deal",
-      slug: "party-deal-ng",
-      description: "Full brand identity creation for a catering service that specializes in unforgettable events and delicious meals.",
-      image1: "/images/party-deal.webp",
-      image2: "/images/PD.jpg",
-      tags: ["Catering Services Company", "Logo + Full Brand Identity"],
-      details: [
-        { title: "Category", value: "Brand Identity" },
-        // { title: "Duration", value: "1 week" },
-        { title: "Type", value: "Catering Service" },
-      ],
-      liveLink: "/images/projects/asake-foods-Logo-IDentity-Guide.pdf",
-    },
-    {
-      id: 9,
-      title: "The Cyber Lawyer",
-      slug: "cyber-lawyer",
-      description: "A modern, authoritative portfolio for a cybersecurity-focused legal practitioner, emphasizing trust and expertise.",
-      image1: "/images/projects/daylee.webp",
-      image2: "/images/projects/Daylee-stats.webp",
-      tags: ["Portfolio Website", "Personal Branding"],
-      details: [
-        { title: "Category", value: "Portfolio Website" },
-        // { title: "Duration", value: "1 week" },
-        { title: "Type", value: "Portfolio" },
-      ],
-      liveLink: "https://oladayo-akinmokun.vercel.app/",
-    },
-    {
-      id: 10,
-      title: "KingsWord",
-      slug: "kings-word",
-      description: "Website and admin dashboard for a dynamic, multi-location church organization, enhancing member engagement and resource management.",
-      image1: "/images/projects/kings.webp",
-      image2: "/images/projects/kings-stats.webp",
-      tags: ["Church Website", "Website + Custom Dashboard"],
-      details: [
-        { title: "Category", value: "Website + Admin Dashboard" },
-        // { title: "Duration", value: "4 weeks" },
-        { title: "Type", value: "Church" },
-      ],
-      liveLink: "https://www.kingsword.ca/",
-    },
-  ];
-  
+  {
+    id: 1,
+    title: "Hokage Creative Labs Academy",
+    slug: "hcl-academy",
+    image: "/images/projects/academy.png",
+    images: ["/images/projects/academy-1.png"],
+    description: "Digital agency academy offering hands-on training and mentorship to tech talents.",
+    liveLink: "https://academy.hokagecreativelabs.com",
+    categories: {
+      type: "Bootcamp",
+      industry: "Education",
+      service: ["web-development", "consultations", "education"], // Normalized
+      techStack: ["React", "Tailwind CSS"]
+    }
+  },
+  {
+    id: 2,
+    title: "Party Deal NG",
+    slug: "party-deal-ng",
+    image: "/images/projects/party-hero.png",
+    images: ["/images/projects/party2.jpg"],
+    description: "Top catering service in Nigeria, specializing in unforgettable events and delicious meals. Full brand identity creation from logo to website.",
+    liveLink: "https://partydeal.ng",
+    categories: {
+      type: "Catering",
+      industry: "Food & Events",
+      service: ["web-development", "whatsapp-orders"], // Normalized
+      techStack: ["React", "Tailwind CSS"]
+    }
+  },
+  {
+    id: 3,
+    title: "Body of Senior Advocates of Nigeria (BOSAN)",
+    slug: "bosanigeria",
+    image: "/images/projects/bosan.png",
+    images: ["/images/projects/bosan-info.png"],
+    description: "Membership web app with a custom dashboard for legal professionals.",
+    liveLink: "https://bosanigeria.com",
+    categories: {
+      type: "Membership Platform",
+      industry: "Legal",
+      service: ["custom-dashboards", "web-development", "payment-integration"], // Normalized
+      techStack: ["MERN Stack"]
+    }
+  },
+  {
+    id: 4,
+    title: "Mfon Usoro Books",
+    slug: "mfon-usoro-books",
+    image: "/images/MP.webp",
+    images: ["/images/projects/MP-stats.webp"],
+    description: "Elegant author website showcasing books, press and biography.",
+    liveLink: "https://mfonusorobooks.com",
+    categories: {
+      type: "Book Launch",
+      industry: "Publishing",
+      service: ["web-development", "payment-integration", "document-download"], // Normalized
+      techStack: ["React", "Tailwind CSS"]
+    }
+  },
+  {
+    id: 5,
+    title: "ITL Conference Canada",
+    slug: "itl-conference-canada",
+    image: "/images/itll.webp",
+    images: ["/images/projects/itl-stats.webp"],
+    description: "Conference platform designed for seamless attendee engagement.",
+    liveLink: "https://itlconference.ca",
+    categories: {
+      type: "Conference Platform",
+      industry: "Events",
+      service: ["custom-dashboards", "web-development", "payment-integration"], // Normalized
+      techStack: ["MERN Stack"]
+    }
+  },
+  {
+    id: 6,
+    title: "Jaaiye",
+    slug: "jaaiye",
+    image: "/images/projects/jaiye-logo.png",
+    images: ["/images/Icon-1.webp"],
+    description: "Brand identity for a social coordination platform.",
+    liveLink: "/images/projects/jaiiye.pdf",
+    categories: {
+      type: "Brand Identity",
+      industry: "Lifestyle",
+      service: ["branding"], // Normalized
+      techStack: []
+    }
+  },
+  {
+    id: 7,
+    title: "Elvora",
+    slug: "elvora",
+    image: "/images/projects/elvora-logo.png",
+    images: ["/images/Icon-1.webp"],
+    description: "Event planning company brand identity project.",
+    liveLink: "/images/projects/elvora.pdf",
+    categories: {
+      type: "Brand Identity",
+      industry: "Events",
+      service: ["branding"], // Normalized
+      techStack: []
+    }
+  },
+  {
+    id: 8,
+    title: "Party Deal Ng",
+    slug: "party-deal",
+    image: "/images/projects/party-hero.png",
+    images: ["/images/Icon-1.webp"],
+    description: "Catering service brand identity design.",
+    liveLink: "/images/projects/party-deal-Logo-IDentity-Guide.pdf",
+    categories: {
+      type: "Brand Identity",
+      industry: "Events & Catering",
+      service: ["branding", "brand-identity-design"], // Normalized
+      techStack: ["PhotoShop", "Illustrator"]
+    }
+  },
+  {
+    id: 9,
+    title: "KingsWord",
+    slug: "kings-word",
+    image: "/images/projects/kings.webp",
+    images: ["/images/projects/kings-stats.webp"],
+    description: "Church website and dashboard to manage multi-location congregations.",
+    liveLink: "https://www.kingsword.ca/",
+    categories: {
+      type: "Admin Dashboard",
+      industry: "Faith & Religion",
+      service: ["custom-dashboards", "web-development"], // Normalized
+      techStack: ["MERN Stack"]
+    }
+  }
+];
