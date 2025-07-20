@@ -1,8 +1,9 @@
 // app/blog/[slug]/page.tsx
 async function getPost(slug){
-  const res = await fetch(`http://localhost:5000/api/posts/${slug}`, {
-    next: { revalidate: 60 },
-  });
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/posts`, {
+        next: { revalidate: 60 },
+      });
+      
   if (!res.ok) throw new Error('Post not found');
   return res.json();
 }
