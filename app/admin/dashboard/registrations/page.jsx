@@ -19,7 +19,7 @@ export default function AdminRegistrationsPage() {
 
   const fetchRegistrations = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/register');
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/register`);
       const data = await res.json();
 
       if (data.success) {
@@ -37,7 +37,7 @@ export default function AdminRegistrationsPage() {
     
     setDeleting(true);
     try {
-      const res = await fetch(`http://localhost:5000/api/register/${registrationToDelete._id}`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/register/${registrationToDelete._id}`, {
         method: 'DELETE',
       });
       

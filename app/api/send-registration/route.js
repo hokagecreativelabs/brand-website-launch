@@ -5,7 +5,7 @@ export async function POST(req) {
     const body = await req.json();
 
     // 👇 Save to backend
-    await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/registrations`, {
+    await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/registrations`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(body),

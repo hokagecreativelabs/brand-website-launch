@@ -12,7 +12,7 @@ export default function AdminDashboard() {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const res = await fetch('http://localhost:5000/api/register');
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/register`);
         const data = await res.json();
 
         if (res.ok && data.data) {

@@ -65,7 +65,7 @@ export default function BlogFormClient() {
       try {
         const token = localStorage.getItem('hokage_admin_token');
 
-        const res = await axios.post('http://localhost:5000/api/upload-image', formData, {
+        const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/api/upload-image`, formData, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

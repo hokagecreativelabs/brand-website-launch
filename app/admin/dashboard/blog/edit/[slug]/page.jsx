@@ -14,7 +14,7 @@ export default function EditBlog({ params }) {
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const { data } = await axios.get(`http://localhost:5000/api/posts/slug/${slug}`);
+        const { data } = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/posts/slug/${slug}`);
         setForm({ title: data.title, content: data.content });
       } catch (err) {
         toast.error('Failed to fetch blog post');
@@ -33,7 +33,7 @@ export default function EditBlog({ params }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:5000/api/posts/slug/${slug}`, form, {
+      await axios.put(`${process.env.NEXT_PUBLIC_API_URL}/api/posts/slug/${slug}`, form, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`,
         },

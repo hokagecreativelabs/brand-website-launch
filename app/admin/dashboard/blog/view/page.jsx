@@ -21,7 +21,7 @@ export default function BlogList() {
 
   const fetchPosts = async () => {
     try {
-      const { data } = await axios.get('http://localhost:5000/api/posts');
+      const { data } = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/posts`);
       setPosts(data);
     } catch (error) {
       toast.error('Failed to fetch posts');
@@ -33,7 +33,7 @@ export default function BlogList() {
   const handleDelete = async (id) => {
     if (!confirm('Are you sure you want to delete this post?')) return;
     try {
-      await axios.delete(`http://localhost:5000/api/posts/${id}`, {
+      await axios.delete(`${process.env.NEXT_PUBLIC_API_URL}/api/posts/${id}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('hokage_admin_token')}`,
         },
@@ -49,7 +49,7 @@ export default function BlogList() {
     setIsUpdating(true);
     try {
       await axios.put(
-        `http://localhost:5000/api/posts/${editingPost._id}`,
+        `${process.env.NEXT_PUBLIC_API_URL}/api/posts/${editingPost._id}`,
         {
           title: editingPost.title,
           content: editingPost.content,
