@@ -4,10 +4,8 @@
   "description": "",
   "main": "app.js",
 "scripts": {
-  "dev": "next dev",
-  "build": "next build",
-  "start": "next start",
-  "lint": "next lint"
+  "dev": "nodemon app.js",
+  "start": "node app.js"
 },
   "keywords": [],
   "author": "",
