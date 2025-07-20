@@ -8,7 +8,7 @@ export default function BlogListPage() {
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/posts`)
+    fetch('http://localhost:5000/api/posts')
       .then((res) => res.json())
       .then(setPosts)
       .catch(() => setError(true));
