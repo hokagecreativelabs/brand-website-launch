@@ -58,7 +58,7 @@ export default function AdminRegistrationsPage() {
       setDeleting(false);
     }
   };
-
+  
   const openDeleteModal = (registration) => {
     setRegistrationToDelete(registration);
     setShowDeleteModal(true);

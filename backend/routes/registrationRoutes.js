@@ -15,7 +15,7 @@ router.post('/', async (req, res) => {
       if (existing) {
         return res.status(409).json({
           success: false,
-          error: 'You’ve already registered using this email or phone number.',
+          error: 'You have already registered using this email or phone number.',
         });
       }
   
@@ -62,10 +62,9 @@ router.post('/', async (req, res) => {
         error: 'Something went wrong with registration.',
       });
     }
-  });
+});
 
-
-  // GET all registrations
+// GET all registrations
 router.get('/', async (req, res) => {
     try {
       const registrations = await Registration.find().sort({ submittedAt: -1 });
@@ -74,8 +73,36 @@ router.get('/', async (req, res) => {
       console.error('Fetching registrations failed:', err.message);
       res.status(500).json({ success: false, error: 'Could not fetch registrations' });
     }
-  });
-  
-  
+});
+
+// DELETE a specific registration
+router.delete('/:id', async (req, res) => {
+    try {
+      const { id } = req.params;
+      
+      // Find and delete the registration
+      const deletedRegistration = await Registration.findByIdAndDelete(id);
+      
+      if (!deletedRegistration) {
+        return res.status(404).json({
+          success: false,
+          error: 'Registration not found'
+        });
+      }
+      
+      res.status(200).json({
+        success: true,
+        message: 'Registration deleted successfully',
+        data: deletedRegistration
+      });
+      
+    } catch (err) {
+      console.error('Delete registration failed:', err.message);
+      res.status(500).json({
+        success: false,
+        error: 'Could not delete registration'
+      });
+    }
+});
 
 module.exports = router;

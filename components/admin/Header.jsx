@@ -23,7 +23,7 @@ const Header = ({ toggleSidebar }) => {
   };
 
   return (
-    <header className="flex items-center justify-between px-6 py-4 bg-white border-b border-slate-200 sticky top-0 z-50">
+    <header className="flex items-center justify-between px-6 py-4 bg-purple text-white border-b border-slate-200 sticky top-0 z-50">
       {/* Sidebar toggle */}
       <button onClick={toggleSidebar} className="lg:hidden text-purple">
         <Menu className="w-6 h-6" />
@@ -31,15 +31,15 @@ const Header = ({ toggleSidebar }) => {
 
       {/* Greeting */}
       <div className="hidden md:flex flex-col">
-        <span className="text-sm font-nohemi text-slate-600">{date}</span>
-        <h1 className="text-lg font-bold text-purple">{greeting()}, {user?.name?.split(' ')[0]} 👋</h1>
+        <span className="text-sm font-nohemi text-slate-200">{date}</span>
+        <h1 className="text-lg font-bold text-white">{greeting()}, {user?.name?.split(' ')[0]} 👋</h1>
       </div>
 
       {/* User Info */}
       <div className="relative flex items-center space-x-4">
         <button
           onClick={() => setShowDropdown(!showDropdown)}
-          className="flex items-center space-x-2 px-3 py-2 rounded-xl bg-purple text-white text-sm hover:bg-opacity-90"
+          className="flex items-center space-x-2 px-3 py-2 rounded-xl bg-white text-purple text-lg hover:bg-opacity-90"
         >
           <User className="w-4 h-4" />
           <span className="hidden md:block">{user?.name}</span>
