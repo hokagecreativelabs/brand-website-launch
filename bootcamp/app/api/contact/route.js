@@ -1,5 +1,4 @@
-const { sendMail } = require('@/utils/mailer');
-
+import { sendMail } from '@/utils/mailer';
 
 export async function POST(req) {
   try {
