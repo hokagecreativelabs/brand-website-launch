@@ -1,5 +1,6 @@
 
-import { sendMail } from '../../../utils/mailer'; // Adjust path to your mailer.js
+const { sendMail } = require('@/utils/mailer');
+
 
 export async function POST(req) {
   try {
