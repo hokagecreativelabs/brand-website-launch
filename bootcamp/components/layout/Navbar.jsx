@@ -145,7 +145,7 @@
     return (
       <>
         <nav
-          className={`w-full h-[104px] px-4 sm:px-6 md:px-24 fixed top-[48px] left-0 right-0 z-40 flex items-center justify-center transition-all duration-300 ${
+          className={`w-full h-[104px] px-4 sm:px-6 md:px-24 fixed top-[18px] left-0 right-0 z-40 flex items-center justify-center transition-all duration-300 ${
             isScrolled ? "bg-white/60 backdrop-blur-md shadow-md" : "bg-white"
           }`}
           role="navigation"
