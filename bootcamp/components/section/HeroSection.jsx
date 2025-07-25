@@ -33,7 +33,7 @@ export default function HeroSection() {
 
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
-                href="#"
+                href="/register"
                 className="inline-flex items-center px-8 py-4 font-semibold text-white bg-purple rounded-full hover:bg-purple/90 transition-all duration-300"
               >
                 Join Upcoming Bootcamp

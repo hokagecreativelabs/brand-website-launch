@@ -20,7 +20,7 @@ export const useAuth = () => {
       }
 
       // Verify token with backend using your endpoint
-      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/auth/verify`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/auth/verify`, {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,

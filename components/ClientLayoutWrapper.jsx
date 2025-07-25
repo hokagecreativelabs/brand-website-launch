@@ -15,7 +15,7 @@ export default function ClientLayoutWrapper({ children }) {
 
   return (
     <>
-      <BannerSlider />
+      {/* <BannerSlider /> */}
       <Navbar />
       <main className="flex-1">{children}</main>
       <Footer />
