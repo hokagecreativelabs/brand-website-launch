@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Registration = require('../models/Registration');
-const { sendMail } = require('../../utils/mailer');
+const { sendMail } = require('../utils/mailer');
 
 router.post('/', async (req, res) => {
     try {
