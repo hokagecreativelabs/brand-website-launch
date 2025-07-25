@@ -23,7 +23,7 @@ export default function BannerSlider() {
 
   return (
     <div
-      className="bg-purple h-[7vh] text-white font-medium fixed top-0 left-0 w-full z-50 overflow-hidden cursor-pointer hover:bg-purple-700 transition-colors"
+      className="bg-purple h-[4vh] text-white font-medium fixed top-0 left-0 w-full z-50 overflow-hidden cursor-pointer hover:bg-purple-700 transition-colors"
       onClick={handleClick}
       title="Click to register - academy.hokagecreativelabs.com/register"
     >
