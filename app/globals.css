@@ -6,19 +6,11 @@
 
 @font-face {
   font-family: 'Vastago Grotesque';
-  src: url('/fonts/VastagoGrotesk-Regular.otf') format('opentype');
+  src: url('/fonts/VastagoGrotesk-Regular.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
-
-/* @font-face {
-  font-family: 'Nohemi';
-  src: url('/fonts/Nohemi-Regular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-} */
 
 * {
   margin: 0;
@@ -35,10 +27,6 @@ html, body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Vastago Grotesque", sans-serif;
-}
-
-p, a, span, button {
-  font-family: "Nohemi", sans-serif;
 }
 
 .loader-container {
