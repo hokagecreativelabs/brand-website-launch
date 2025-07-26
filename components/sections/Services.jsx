@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 
 const services = [
   { 
@@ -73,9 +74,21 @@ export default function Services() {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
       viewport={{ once: true }}
-      className="w-full max-w-screen-xl mx-auto px-6 pb-20"
+      className="w-full max-w-screen-xl mx-auto px-2 pb-20"
       id='services-section'
     >
+      <div className="flex justify-start">
+        <div className="w-[68px] h-[68px] relative">
+          <Image
+            src="/images/about-icon.webp"
+            fill
+            sizes="(max-width: 768px) 48px, 68px"
+            className="object-contain"
+            priority
+            alt="Icon"
+          />
+        </div>
+      </div>
       {/* Section Heading */}
       <motion.h2
         initial={{ opacity: 0, y: -20 }}

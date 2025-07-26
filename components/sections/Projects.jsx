@@ -5,7 +5,6 @@ import Image from 'next/image';
 import { projects } from '../../data/projects';
 
 export default function SelectedWorks() {
-  // Get the first 2 branding projects
   const brandingProjects = projects.filter((p) =>
     Array.isArray(p.categories?.service) &&
     p.categories.service.some((service) =>
@@ -13,12 +12,10 @@ export default function SelectedWorks() {
     )
   ).slice(0, 2);
 
-  // Get the rest that are not in brandingProjects
   const nonBrandingProjects = projects.filter(
     (p) => !brandingProjects.includes(p)
   );
 
-  // Grab up to 2 more branding projects that weren't already in brandingProjects
   const additionalBrandingProjects = projects.filter((p) =>
     Array.isArray(p.categories?.service) &&
     p.categories.service.some((service) =>
@@ -27,25 +24,35 @@ export default function SelectedWorks() {
     !brandingProjects.includes(p)
   ).slice(0, 3);
 
-  // Final display list: 4 non-branding + 2 branding
   const displayProjects = [
     ...nonBrandingProjects.slice(0, 5),
     ...additionalBrandingProjects,
   ];
 
   return (
-    <section className="px-6 md:px-12 lg:px-24 py-12" id="projects-section">
+    <section className="px-2 md:px-12 lg:px-24 py-12" id="projects-section">
       {/* Header */}
+      <div className="flex justify-start">
+        <div className="w-[68px] h-[68px] relative">
+          <Image
+            src="/images/about-icon.webp"
+            alt="Icon"
+            fill
+            sizes="(max-width: 768px) 48px, 68px"
+            className="object-contain"
+            priority
+          />
+        </div>
+      </div>
+
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4 md:gap-0">
         <h2 className="text-[28px] md:text-[40px] lg:text-[48px] font-semibold tracking-tight leading-[120%] font-vastago">
           Selected Works
         </h2>
 
         <Link href="/projects" className="inline-block">
-          <div
-            className="inline-flex items-center gap-2 text-lg font-semibold transition-all ease-in-out hover:opacity-80 
-            md:border md:border-[#21083F] md:py-4 md:px-6 md:rounded-full min-h-[48px] min-w-[100px] cursor-pointer"
-          >
+          <div className="inline-flex items-center gap-2 text-lg font-semibold transition-all ease-in-out hover:opacity-80 
+              md:border md:border-[#21083F] md:py-4 md:px-6 md:rounded-full min-h-[48px] min-w-[100px] cursor-pointer">
             <span className="hidden md:inline">View All</span>
             <span className="md:hidden text-blue-600 underline py-2">View All</span>
             <Image
@@ -54,6 +61,7 @@ export default function SelectedWorks() {
               width={24}
               height={24}
               className="ml-1"
+              loading="lazy"
             />
           </div>
         </Link>
@@ -70,6 +78,7 @@ export default function SelectedWorks() {
                   alt={project.title}
                   fill
                   className="object-contain transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
                 />
               </div>
             </Link>

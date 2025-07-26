@@ -49,7 +49,6 @@ const AboutSection = () => {
       id="about-section"
       className="w-full max-w-[1440px] h-auto pt-5 pb-32 mx-auto"
     >
-      <div className="px-4 md:text-left flex flex-col w-full max-w-[800px] gap-10 mx-auto">
         {/* Animated Image */}
         <div className="flex justify-start">
           <div className="w-[68px] h-[68px] relative">
@@ -63,6 +62,7 @@ const AboutSection = () => {
             />
           </div>
         </div>
+      <div className="px-2 md:text-left flex flex-col w-full max-w-[800px] gap-10 mx-auto">
 
         {/* Morphing Text 1 */}
         <p

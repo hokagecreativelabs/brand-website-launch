@@ -6,34 +6,29 @@ import { usePathname } from "next/navigation";
 import React, { useState, useEffect, useCallback } from "react";
 import { FiMenu, FiX, FiLoader } from "react-icons/fi";
 
-// Navigation links configuration - centralized for easy updates
+// Navigation links
 const NAV_LINKS = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
   { href: "/projects", label: "Projects" },
-  { href: "/blog", label: "Blog" },
   { href: "https://academy.hokagecreativelabs.com", label: "Academy", target: "_blank" },
 ];
 
 const Navbar = () => {
-  const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-  // Toggle mobile menu
   const toggleMobileMenu = useCallback(() => {
     setIsMobileMenuOpen((prev) => !prev);
   }, []);
 
-  // Close mobile menu when a navigation link is clicked
   const handleLinkClick = () => {
     setIsMobileMenuOpen(false);
   };
 
-  // Calendly implementation
   const openCalendlyPopup = () => {
     setIsLoading(true);
     setTimeout(() => {
@@ -42,15 +37,12 @@ const Navbar = () => {
     }, 1000);
   };
 
-  // Close mobile menu on route change and handle clicks outside
   useEffect(() => {
-    const handleRouteChange = () => setIsMobileMenuOpen(false);
-
     const handleOutsideClick = (e) => {
       if (
         isMobileMenuOpen &&
-        !e.target.closest(".mobile-menu-container") &&
-        !e.target.closest(".menu-toggle-button")
+        !(e.target).closest(".mobile-menu-container") &&
+        !(e.target).closest(".menu-toggle-button")
       ) {
         setIsMobileMenuOpen(false);
       }
@@ -71,7 +63,6 @@ const Navbar = () => {
     };
   }, [isMobileMenuOpen]);
 
-  // Optimized scroll handler
   useEffect(() => {
     let ticking = false;
 
@@ -89,8 +80,12 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // NavLink component with consistent styling
+  useEffect(() => {
+    document.body.style.overflow = isMobileMenuOpen ? "hidden" : "";
+  }, [isMobileMenuOpen]);
+
   const NavLink = ({ href, label, className = "" }) => {
+    const pathname = usePathname();
     const isActive = pathname === href;
 
     return (
@@ -106,47 +101,44 @@ const Navbar = () => {
     );
   };
 
-  // Book Call Button component with loading state
-  const BookCallButton = ({ isMobile = false }) => {
-    return (
-      <button
-        onClick={openCalendlyPopup}
-        disabled={isLoading}
-        className={`font-nohemi font-medium flex items-center gap-2 transition duration-300 ${
-          isMobile
-            ? "justify-start text-[#101928] w-full"
-            : "justify-center bg-purple text-white w-full h-full px-4 rounded-full hover:bg-white hover:text-purple hover:shadow-md"
-        } ${isLoading ? "opacity-75" : ""}`}
-      >
-        {isLoading ? (
-          <>
-            <FiLoader className="animate-spin" />
-            <span className="font-vastago">Loading...</span>
-          </>
-        ) : (
-          <>
-            <span className="font-vastago">Book a Call</span>
-            {!isMobile && (
-              <div className="relative w-6 h-6 flex-shrink-0">
-                <Image
-                  src="/images/call-icon.webp"
-                  alt="Call Icon"
-                  fill
-                  sizes="24px"
-                  className="object-contain"
-                />
-              </div>
-            )}
-          </>
-        )}
-      </button>
-    );
-  };
+  const BookCallButton = ({ isMobile = false }) => (
+    <button
+      onClick={openCalendlyPopup}
+      disabled={isLoading}
+      className={`font-nohemi font-medium flex items-center gap-2 transition duration-300 ${
+        isMobile
+          ? "justify-start text-[#101928] w-full"
+          : "justify-center bg-purple text-white w-full h-full px-4 rounded-full hover:bg-white hover:text-purple hover:shadow-md"
+      } ${isLoading ? "opacity-75" : ""}`}
+    >
+      {isLoading ? (
+        <>
+          <FiLoader className="animate-spin" />
+          <span className="font-vastago">Loading...</span>
+        </>
+      ) : (
+        <>
+          <span className="font-vastago">Book a Call</span>
+          {!isMobile && (
+            <div className="relative w-6 h-6 flex-shrink-0">
+              <Image
+                src="/images/call-icon.webp"
+                alt="Call Icon"
+                fill
+                sizes="24px"
+                className="object-contain"
+              />
+            </div>
+          )}
+        </>
+      )}
+    </button>
+  );
 
   return (
     <>
       <nav
-        className={`w-full h-[104px] px-4 sm:px-6 md:px-24 fixed left-0 right-0 z-40 flex items-center justify-center transition-all duration-300 ${
+        className={`w-full h-[84px] px-4 sm:px-6 md:px-24 fixed top-0 left-0 right-0 z-40 flex items-center justify-center transition-all duration-300 ${
           isScrolled ? "bg-white/60 backdrop-blur-md shadow-md" : "bg-white"
         }`}
         role="navigation"
@@ -179,8 +171,8 @@ const Navbar = () => {
             <BookCallButton />
           </div>
 
-          {/* Mobile Hamburger */}
-          <div className="relative flex md:hidden">
+          {/* Mobile Hamburger + Menu */}
+          <div className="relative md:hidden z-50">
             <button
               onClick={toggleMobileMenu}
               aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
@@ -194,7 +186,7 @@ const Navbar = () => {
             {/* Mobile Menu */}
             <div
               id="mobile-menu"
-              className={`absolute top-[60px] right-0 transition-all duration-200 ease-out mobile-menu-container ${
+              className={`absolute top-full right-0 mt-2 transition-all duration-200 ease-out mobile-menu-container ${
                 isMobileMenuOpen
                   ? "opacity-100 translate-y-0 scale-100 pointer-events-auto"
                   : "opacity-0 -translate-y-2 scale-95 pointer-events-none"
@@ -210,7 +202,7 @@ const Navbar = () => {
                     <NavLink key={link.href} href={link.href} label={link.label} className="py-1" />
                   ))}
                   <div className="mt-2">
-                    <BookCallButton isMobile={true} />
+                    <BookCallButton isMobile />
                   </div>
                 </div>
               </div>
@@ -219,7 +211,7 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* Calendly Modal Popup */}
+      {/* Calendly Modal */}
       {isCalendlyOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white w-full max-w-[600px] h-[80vh] p-6 relative">

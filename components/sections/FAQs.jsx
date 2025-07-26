@@ -39,7 +39,7 @@ export default function QnASection() {
   };
 
   return (
-    <section className="w-full px-4 md:py-32 py-12 md:px-8 lg:px-16 flex justify-center items-center">
+    <section className="w-full px-2 md:py-32 py-12 md:px-8 lg:px-16 flex justify-center items-center">
       <div className="max-w-[1088px] flex flex-col items-center gap-8">
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold">
           <span className="text-black">Common</span>{" "}

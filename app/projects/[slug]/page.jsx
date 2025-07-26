@@ -50,7 +50,7 @@ export default function SingleProjectPage() {
       </Head>
 
       <motion.div
-        className="px-6 py-16 md:pt-32 flex flex-col items-center"
+        className="px-2 py-16 md:pt-32 flex flex-col items-center"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.4 }}
@@ -111,7 +111,7 @@ export default function SingleProjectPage() {
               href={project.liveLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-purple text-white tracking-wide flex items-center justify-center gap-2 border border-[#21083F] rounded-full px-6 py-4 hover:bg-purple-700 transition-colors"
+              className="bg-purple text-white tracking-wide flex items-center justify-center gap-2 border border-[#21083F] rounded-full px-2 py-4 hover:bg-purple-700 transition-colors"
             >
               <span className="text-base font-medium">Live Preview</span>
               <Image

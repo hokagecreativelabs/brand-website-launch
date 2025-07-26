@@ -38,7 +38,7 @@ export default function RenderedServices() {
   }, []);
 
   return (
-    <section className="w-full max-w-[1440px] px-6 md:px-16 py-20 mx-auto">
+    <section className="w-full max-w-[1440px] px-2 md:px-16 py-20 mx-auto">
       <div className="max-w-[1088px] mx-auto flex flex-col gap-20">
         
         {/* Title & Description */}

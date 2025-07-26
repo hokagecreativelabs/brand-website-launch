@@ -8,10 +8,10 @@ const Hero = () => {
   const IMAGES = ["bosan", "academy", "party", "MP", "itll"];
 
   return (
-    <section className="pt-28 md:pt-12 lg:pt-16 relative w-full min-h-[876px] flex flex-col items-center justify-center overflow-hidden bg-[url('/images/bg-pattern.webp')] bg-cover bg-center">
-      <div className="w-full max-w-full flex flex-col items-center text-center gap-6 pt-[120px] sm:pt-[110px] px-4 sm:px-8">
+    <section className="pt-10 md:pt-12 lg:pt-16 relative w-full flex flex-col items-center justify-center overflow-hidden bg-[url('/images/bg-pattern.webp')] bg-cover bg-center">
+      <div className="w-full max-w-full flex flex-col items-center text-center gap-6 pt-[120px] sm:pt-[110px] px-2 sm:px-8">
         <h1
-          className="font-vastago font-semibold text-[76px] md:text-[96px] leading-[120%] tracking-[-0.02em] h-[140px] flex items-center justify-center"
+          className="font-vastago font-semibold text-[70px] md:text-[96px] leading-[120%] tracking-[-0.02em] h-[140px] flex items-center justify-center"
           aria-label={TYPING_TEXT}
         >
           <span className="inline-block">{TYPING_TEXT}</span>
@@ -21,7 +21,7 @@ const Hero = () => {
           <span className="font-normal">
             Driven By Creativity. Powered By Technology.{" "}
           </span>
-          We craft innovative and strategic solutions that bring your ideas to
+          We craft innovative and strategize solutions that bring your ideas to
           life.
         </p>
 
@@ -44,7 +44,20 @@ const Hero = () => {
           </div>
         </Link>
 
-        <div className="w-full h-full mt-[-70px]">
+        {/* Mobile: Static Image */}
+        <div className="block md:hidden mt-[35px] w-full h-auto">
+          <Image
+            src="/images/idea.webp"
+            alt="Hero Preview"
+            width={1200}
+            height={600}
+            className="w-full rounded-xl h-auto object-contain"
+            priority
+          />
+        </div>
+
+        {/* Desktop: Carousel */}
+        <div className="hidden md:block w-full h-full mt-[-70px]">
           <Carousel images={IMAGES} />
         </div>
       </div>

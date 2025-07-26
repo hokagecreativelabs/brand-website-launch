@@ -189,7 +189,7 @@ const serviceDetails = {
       {
         tier: 'Basic Analytics',
         features: [
-          '5 Key Metrics',
+          '3 Key Metrics',
           'Data Visualization',
           'Export Functionality',
           'Monthly Updates'
@@ -198,7 +198,7 @@ const serviceDetails = {
       {
         tier: 'Advanced Analytics',
         features: [
-          '10 Customizable Metrics',
+          '5 Customizable Metrics',
           'Real-time Data',
           'User Permissions',
           'API Integrations',

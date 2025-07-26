@@ -5,15 +5,23 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import serviceDetails from '@/data/serviceDetails';
+import { projects } from '@/data/projects';
+
 
 export default function ServiceSlugPage({ params }) {
   const { slug } = use(params);
   const service = serviceDetails[slug];
 
+
+  const relatedProjects = projects.filter((project) =>
+    project.categories.service.includes(slug)
+  );
+  
+
   if (!service) return notFound();
 
   return (
-    <main className="px-4 md:px-8 lg:px-16 text-gray-900 min-h-screen">
+    <main className="px-2 md:px-8 lg:px-16 text-gray-900 min-h-screen">
       {/* Hero */}
       <section className="relative w-full h-64 md:h-96 overflow-hidden rounded-xl mb-12">
         <Image
@@ -71,6 +79,38 @@ export default function ServiceSlugPage({ params }) {
             Go to Services
           </Link>
         </div>
+        {/* Related Projects */}
+{relatedProjects.length > 0 && (
+  <section className="mt-16">
+    <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+      Related Projects
+    </h2>
+    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {relatedProjects.map((project) => (
+        <Link href={`/projects/${project.slug}`} key={project.id} className="group">
+          <div className="bg-white border rounded-2xl overflow-hidden shadow hover:shadow-lg transition">
+            <Image
+              src={project.image}
+              alt={project.title}
+              width={400}
+              height={250}
+              className="w-full h-[200px] object-cover group-hover:scale-105 transition-transform duration-300"
+            />
+            <div className="p-4">
+              <h3 className="text-lg font-semibold text-purple-700 group-hover:text-purple-900 transition-colors">
+                {project.title}
+              </h3>
+              <p className="text-sm text-gray-600 mt-1 line-clamp-2">
+                {project.description}
+              </p>
+            </div>
+          </div>
+        </Link>
+      ))}
+    </div>
+  </section>
+)}
+
       </section>
     </main>
   );

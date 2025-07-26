@@ -71,13 +71,13 @@ export default function ProjectsPage() {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: "url('/images/bg-pattern.webp')" }}
         />
-        <div className="relative z-10 text-center px-6">
+        <div className="relative z-10 text-center px-2">
           <h1 className="text-4xl md:text-6xl font-bold text-purple drop-shadow-lg">Our Projects</h1>
         </div>
       </section>
 
       {/* Filters */}
-      <div className="px-6 md:px-12 lg:px-24 py-8">
+      <div className="px-2 md:px-12 lg:px-24 py-8">
         {/* Mobile Dropdown */}
         <div className="md:hidden relative" ref={dropdownRef}>
           <button
@@ -106,7 +106,7 @@ export default function ProjectsPage() {
                 <button
                   key={service.id}
                   onClick={() => handleFilterSelect(service.slug)}
-                  className={`w-full text-left px-4 py-3 hover:bg-gray-100 ${
+                  className={`w-full text-left px-2 py-3 hover:bg-gray-100 ${
                     activeFilter === service.slug ? 'bg-gray-200' : ''
                   }`}
                 >
@@ -121,7 +121,7 @@ export default function ProjectsPage() {
         <div className="hidden md:flex flex-wrap gap-4 justify-center">
           <button
             onClick={() => handleFilterSelect(null)}
-            className={`px-5 py-2 rounded-full border font-medium transition ${
+            className={`px-2 py-2 rounded-full border font-medium transition ${
               !activeFilter ? 'bg-black text-white' : 'bg-gray-100 text-gray-800'
             }`}
           >
@@ -131,7 +131,7 @@ export default function ProjectsPage() {
             <button
               key={service.id}
               onClick={() => handleFilterSelect(service.slug)}
-              className={`px-5 py-2 rounded-full border font-medium transition ${
+              className={`px-2 py-2 rounded-full border font-medium transition ${
                 activeFilter === service.slug ? 'bg-black text-white' : 'bg-gray-100 text-gray-800'
               }`}
             >
@@ -142,7 +142,7 @@ export default function ProjectsPage() {
       </div>
 
       {/* Project Grid */}
-      <section className="px-6 md:px-12 lg:px-24 pb-12">
+      <section className="px-2 md:px-12 lg:px-24 pb-12">
         {filteredProjects.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             {filteredProjects.map((project) => (
@@ -176,7 +176,7 @@ export default function ProjectsPage() {
                     project.categories.service.map((service, i) => (
                       <span
                         key={i}
-                        className="bg-gray-100 text-gray-700 rounded-full px-4 py-1.5 text-[14px] md:text-[16px] font-medium font-vastago"
+                        className="bg-gray-100 text-gray-700 rounded-full px-2 py-1.5 text-[14px] md:text-[16px] font-medium font-vastago"
                       >
                         {service}
                       </span>

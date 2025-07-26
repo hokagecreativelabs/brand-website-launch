@@ -25,7 +25,7 @@ export const projects = [
     categories: {
       type: "Catering",
       industry: "Food & Events",
-      service: ["web-development", "whatsapp-orders"], // Normalized
+      service: ["web-development", "whatsapp-orders"],
       techStack: ["React", "Tailwind CSS"]
     }
   },

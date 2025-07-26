@@ -46,7 +46,7 @@ const AboutPage = () => {
     ));
 
   return (
-    <div className="pt-16 md:pt-20 flex flex-col items-center">
+    <div className="px-2 pt-16 md:pt-20 flex flex-col items-center">
       {/* Banner Section with Background Image */}
       <section className="relative w-full h-[200px] md:h-[275px] flex items-center justify-center">
         <div 
@@ -55,7 +55,7 @@ const AboutPage = () => {
         >
           <div className="absolute inset-0 z-0"></div>
         </div>
-        <div className="relative z-10 container mx-auto px-6 text-center">
+        <div className="relative z-10 container mx-auto px-2 text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-black mb-4">About Us</h1>
         </div>
       </section>
@@ -65,7 +65,7 @@ const AboutPage = () => {
         id="about-section"
         className="w-full max-w-[1440px] h-auto pt-5 pb-32 mx-auto"
       >
-        <div className="px-4 md:text-left flex flex-col w-full max-w-[800px] gap-10 mx-auto">
+        <div className="px-2 md:text-left flex flex-col w-full max-w-[800px] gap-10 mx-auto">
           {/* Animated Image */}
           <div className="flex justify-center md:justify-start">
             <Image
@@ -102,7 +102,7 @@ const AboutPage = () => {
       </section>
 
       {/* Our Goals Section */}
-      <section className="w-full max-w-[1440px] px-4 py-12">
+      <section className="w-full max-w-[1440px] px-2 py-12">
         <div className="flex flex-col max-w-[800px] mx-auto">
           <h2 className="text-[40px] md:text-4xl font-semibold mb-6 text-center">Our Goal</h2>
           
@@ -119,7 +119,7 @@ const AboutPage = () => {
       </section>
 
       {/* Double Image Section */}
-      <section className="w-full max-w-[1440px] px-4 py-8 flex justify-center">
+      <section className="w-full max-w-[1440px] px-2 py-8 flex justify-center">
         {/* <div className="w-full max-w-[800px] h-auto flex flex-col md:flex-row gap-6 justify-center">
           <div className="relative w-full md:w-[352px] h-[388px] rounded-3xl overflow-hidden shadow-lg">
             <Image
@@ -140,7 +140,7 @@ const AboutPage = () => {
         </div> */}
       </section>
       {/* Mission and Vision Section */}
-      <section className="w-full max-w-[1440px] px-4 py-16 flex flex-col items-center">
+      <section className="w-full max-w-[1440px] px-2 py-16 flex flex-col items-center">
         <div className="w-full max-w-[800px] flex flex-col gap-12">
           
           {/* Mission */}

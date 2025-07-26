@@ -199,7 +199,7 @@ export default function ServicesPage() {
           initial="hidden"
           animate={isLoaded ? 'visible' : 'hidden'}
           variants={containerVariants}
-          className="w-full max-w-screen-xl mx-auto px-4 sm:px-6 pb-16 sm:pb-20 mt-8 sm:mt-12 md:mt-16"
+          className="w-full max-w-screen-xl mx-auto px-2 sm:px-6 pb-16 sm:pb-20 mt-8 sm:mt-12 md:mt-16"
         >
           <div className="-mt-12 sm:-mt-16 md:-mt-24 flex flex-col divide-y">
             {services.map((service) => (
@@ -243,7 +243,7 @@ export default function ServicesPage() {
            <button
              role="button"
              onClick={openCalendlyPopup}
-             className="w-full md:w-[200px] h-[56px] px-4 py-4 font-medium tracking-relaxed font-nohemi flex items-center justify-center gap-2 bg-purple text-white rounded-full transition duration-300 ease-out hover:bg-white hover:text-purple flex-col md:flex-row"
+             className="w-full md:w-[200px] h-[56px] px-2 py-4 font-medium tracking-relaxed font-nohemi flex items-center justify-center gap-2 bg-purple text-white rounded-full transition duration-300 ease-out hover:bg-white hover:text-purple flex-col md:flex-row"
            >
              {isLoading ? (
                <FiLoader className="animate-spin" />
