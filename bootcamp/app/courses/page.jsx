@@ -37,27 +37,31 @@ const courses = [
 
 export default function CoursesPage() {
   return (
-    <main className="min-h-screen pt-24 ">
+    <main className="min-h-screen pt-32">
 
       {/* Hero Section */}
-      <section className="relative h-64 md:h-80 overflow-hidden">
+      <section className="relative py-8 md:py-36 px-4 bg-white">
+        {/* Background Pattern */}
         <img
           src="/images/bg-pattern.webp"
-          alt=""
+          alt="background pattern"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0"></div>
-        <div className="relative z-10 h-full flex items-center justify-center px-4">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-black text-purple tracking-tight">
-              Our Avaivalbe Courses
-            </h1>
-          </div>
+
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-white/80 backdrop-blur-sm"></div>
+
+        {/* Text Content */}
+        <div className="relative z-10 flex items-center justify-center">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-black text-purple text-center leading-tight">
+            Our Available Courses
+          </h1>
         </div>
       </section>
 
+
       {/* Courses Grid */}
-      <section className="py-16 px-4 sm:px-6 md:px-8 lg:px-16">
+      <section className="py-8 px-2 sm:px-6 md:px-8 lg:px-16">
   <div className="max-w-6xl mx-auto">
     <div className="text-center mb-12">
       <p className="text-slate-600 max-w-2xl mx-auto text-2xl">

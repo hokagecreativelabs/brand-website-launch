@@ -25,7 +25,7 @@ export default function CoursesWeOffer() {
       },
       {
         title: 'Web Development',
-        description: 'Build complete web applications from concept to deployment using modern frameworks',
+        description: 'Build and deploy frontent interfaces using modern frameworks',
         image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg'
       },
       {
@@ -58,7 +58,7 @@ export default function CoursesWeOffer() {
               <div key={index} className="relative flex items-start mb-12 last:mb-0 group">
                 {/* Timeline dot */}
                 <div className="relative z-10 flex-shrink-0">
-                  <div className="w-12 h-12 bg-white border-4 border-[#21083F] rounded-full flex items-center justify-center shadow-lg group-hover:border-[#7FF41A] transition-colors duration-300 p-2">
+                  <div className="w-12 h-12 bg-white border-4 border-[#21083F] rounded-full flex items-center justify-center shadow-lg group-hover:border-black transition-colors duration-300 p-2">
                     <img 
                       src={course.image} 
                       alt={course.title}
@@ -68,12 +68,12 @@ export default function CoursesWeOffer() {
                 </div>
                 
                 {/* Connecting line */}
-                <div className="w-8 h-0.5 bg-[#21083F]/30 mt-6 group-hover:bg-[#7FF41A]/60 transition-colors duration-300"></div>
+                <div className="w-8 h-0.5 bg-[#21083F]/30 mt-6 group-hover:bg-black transition-colors duration-300"></div>
                 
                 {/* Content */}
                 <div className="flex-1 ml-2">
                   <div className="bg-gray-50 p-6 rounded-2xl shadow-sm border border-gray-100 group-hover:shadow-md group-hover:border-[#7FF41A]/20 transition-all duration-300">
-                    <h3 className="text-2xl font-vastago font-bold text-[#21083F] mb-3 group-hover:text-[#7FF41A] transition-colors duration-300">
+                    <h3 className="text-2xl font-vastago font-bold text-[#21083F] mb-3 group-hover:text-black transition-colors duration-300">
                       {course.title}
                     </h3>
                     <p className="text-gray-600 font-nohemi leading-relaxed">
@@ -88,7 +88,7 @@ export default function CoursesWeOffer() {
         </div>
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
-                href="#"
+                href="/register"
                 className="inline-flex items-center px-8 py-4 font-semibold text-white bg-purple rounded-full hover:bg-purple/90 transition-all duration-300"
               >
                 Join Upcoming Bootcamp

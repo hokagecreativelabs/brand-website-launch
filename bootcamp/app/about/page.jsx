@@ -10,8 +10,8 @@ export default function AboutBootcampPage() {
   const features = [
     {
         icon: <Clock className="w-8 h-8" />,
-        title: "Flexible Schedule",
-        desc: "Balance your learning with work or school — no rigid timelines.",
+        title: "Structured Learning",
+        desc: "Gain clear, step-by-step guidance through our curriculum.",
         color: "bg-emerald-500"
       },
       {
@@ -29,7 +29,7 @@ export default function AboutBootcampPage() {
       {
         icon: <Hammer className="w-8 h-8" />,
         title: "Hands-On Projects",
-        desc: "Build real-world applications from day one.",
+        desc: "Gain practical skills from day one.",
         color: "bg-orange-500"
       },
       {
@@ -70,32 +70,32 @@ export default function AboutBootcampPage() {
   ]
 
   return (
-    <main className="min-h-screen pt-24">
+    <main className="min-h-screen pt-32">
       {/* Hero Banner */}
-      <section className="relative h-64 md:h-80 overflow-hidden">
-  {/* Background Image */}
-  <img
-    src="/images/bg-pattern.webp"
-    alt=""
-    className="absolute inset-0 w-full h-full object-cover"
-  />
+      <section className="relative h-24 md:h-80 overflow-hidden">
+        {/* Background Image */}
+        <img
+          src="/images/bg-pattern.webp"
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover"
+        />
 
-  {/* Overlay to improve contrast */}
-  <div className="absolute inset-0"></div>
+        {/* Overlay to improve contrast */}
+        <div className="absolute inset-0"></div>
 
-  {/* Text Content */}
-  <div className="relative z-10 h-full flex items-center justify-center px-4">
-    <div className="text-center">
-      <h1 className="text-4xl md:text-6xl font-black text-purple tracking-tight">
-        About The Academy
-      </h1>
-    </div>
-  </div>
-</section>
+        {/* Text Content */}
+        <div className="relative z-10 h-full flex items-center justify-center px-2">
+          <div className="text-center">
+            <h1 className="text-4xl md:text-6xl font-black text-purple tracking-tight">
+              About The Academy
+            </h1>
+          </div>
+        </div>
+      </section>
 
 
       {/* About Section */}
-      <section className="py-16 px-2">
+      <section className="py-12 px-2">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-5xl font-black text-purple mb-8 leading-tight">
             Master Web Development Through Real-World Experience
@@ -166,49 +166,57 @@ export default function AboutBootcampPage() {
 
 
       {/* Benefits Section with Code Snippet */}
-      <section className="py-16 md:py-24 px-2 bg-purple">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-3xl md:text-5xl font-black text-white mb-8 leading-tight">
-                What to Expect from Our Bootcamp
-              </h2>
-              <div className="space-y-8">
-                {benefits.map((benefit, i) => (
-                  <div key={i} className="flex gap-6">
-                    <div className="flex-shrink-0 w-12 h-12 bg-slate-900 text-white rounded-full flex items-center justify-center font-bold">
-                      {benefit.number}
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-white mb-2">{benefit.title}</h3>
-                      <p className="text-slate-400 leading-relaxed">{benefit.text}</p>
-                    </div>
-                  </div>
-                ))}
+      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-purple">
+  <div className="max-w-6xl mx-auto">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      
+      {/* Left - Text */}
+      <div>
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-8 leading-tight">
+          What to Expect from Our Bootcamp
+        </h2>
+        <div className="space-y-8">
+          {benefits.map((benefit, i) => (
+            <div key={i} className="flex items-start gap-4 sm:gap-6">
+              <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-slate-900 text-white rounded-full flex items-center justify-center font-bold text-sm sm:text-base">
+                {benefit.number}
+              </div>
+              <div>
+                <h3 className="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2">
+                  {benefit.title}
+                </h3>
+                <p className="text-slate-400 leading-relaxed text-sm sm:text-base">
+                  {benefit.text}
+                </p>
               </div>
             </div>
-            
-            <div className="relative">
-              <div className="bg-slate-900 rounded-2xl p-32 text-white">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                  <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                  <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                </div>
-                <div className="font-mono text-sm space-y-2">
-                  <div className="text-green-400">// Your future starts here</div>
-                  <div className="text-blue-400">function</div>
-                  <div className="text-yellow-400 ml-4">buildYourCareer</div>
-                  <div className="text-white">()</div>
-                  <div className="text-purple-400 ml-4">return</div>
-                  <div className="text-green-400 ml-8">'success'</div>
-                  <div className="text-white"></div>
-                </div>
-              </div>
-            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Right - Code Block */}
+      <div className="relative">
+        <div className="bg-slate-900 rounded-2xl p-6 sm:p-10 md:p-20 text-white text-sm sm:text-base overflow-auto">
+          <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+            <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-red-500 rounded-full"></div>
+            <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-yellow-500 rounded-full"></div>
+            <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-green-500 rounded-full"></div>
+          </div>
+          <div className="font-mono text-xs sm:text-sm space-y-1 sm:space-y-2">
+            <div className="text-green-400">// Your future starts here</div>
+            <div className="text-blue-400">function</div>
+            <div className="text-yellow-400 ml-4">buildYourCareer</div>
+            <div className="text-white">()</div>
+            <div className="text-purple-400 ml-4">return</div>
+            <div className="text-green-400 ml-8">'success'</div>
           </div>
         </div>
-      </section>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
       {/* CTA Section */}
       {/* <TransformSection /> */}

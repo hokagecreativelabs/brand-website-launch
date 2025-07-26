@@ -63,7 +63,7 @@ export default function AboutBootcamp() {
             {
               icon: "🛠",
               title: "Portfolio Projects",
-              desc: "Build real, employer-ready work you can showcase",
+              desc: "proof of learning through projects you can showcase",
             },
             {
               icon: "🌐",

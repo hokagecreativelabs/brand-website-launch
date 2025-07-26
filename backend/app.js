@@ -8,7 +8,12 @@ const path = require('path');
 
 const app = express();
 
-app.use(cors({ origin: '*' }));
+app.use(cors({
+  origin: ['https://bootcamp.hokagecreativelabs.com', 'http://localhost:3000', 'http://localhost:3001'],
+  methods: ['GET', 'POST', 'DELETE'],
+  credentials: false
+}));
+
 app.use(express.json());
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 

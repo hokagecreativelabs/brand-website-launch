@@ -201,7 +201,7 @@ const Navbar = () => {
     {NAV_LINKS.map((link) => (
       <NavLink
         key={link.href}
-        href={link.href}
+        href={link.href} 
         label={link.label}
         className="py-1"
         tabIndex={isMobileMenuOpen ? 0 : -1}
