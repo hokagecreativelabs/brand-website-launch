@@ -31,26 +31,29 @@ router.post('/', async (req, res) => {
 
     await newRegistration.save();
 
-    // Admin Notification
-    const teamEmailResult = await sendMail({
+    // Send to Admin
+    const adminResult = await sendMail({
       to: process.env.TO_EMAIL,
       subject: '🚨 New Bootcamp Form Submission',
       html: buildAdminAlertTemplate({ fullName, email, phone }),
     });
 
-    // User Welcome Email
-    const userEmailResult = await sendMail({
-      to: email,
-      subject: '🎉 You’re in! Welcome to Hokage Bootcamp',
-      html: buildUserWelcomeTemplate({ fullName }),
-    });
+    // Prevent duplicate if user = admin
+    let userResult = { success: false };
+    if (email !== process.env.TO_EMAIL) {
+      userResult = await sendMail({
+        to: email,
+        subject: '🎉 You’re in! Welcome to Hokage Bootcamp',
+        html: buildUserWelcomeTemplate({ fullName }),
+      });
+    }
 
     return res.status(201).json({
       success: true,
       message: 'Registered, saved to DB, and emails sent',
       emailStatus: {
-        admin: teamEmailResult.success,
-        user: userEmailResult.success,
+        admin: adminResult.success,
+        user: userResult.success,
       },
     });
   } catch (err) {
