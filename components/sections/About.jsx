@@ -47,7 +47,7 @@ const AboutSection = () => {
   return (
     <section
       id="about-section"
-      className="w-full max-w-[1440px] h-auto pt-20 pb-32 mx-auto"
+      className="w-full max-w-[1440px] h-auto pt-32 md:pt-0 pb-32 mx-auto"
     >
         {/* Animated Image */}
         <div className="flex justify-center">
@@ -67,7 +67,8 @@ const AboutSection = () => {
         {/* Morphing Text 1 */}
         <p
           ref={(el) => (textRefs.current[0] = el)}
-          className="text-[28px] md:text-[32px] font-nohemi font-[500] leading-[116%] tracking-wide text-[#667185] overflow-hidden"
+          className="text-[28px] md:text-[32px] font-nohemi font-[500] leading-[116%] tracking-wide text-[#3D3C42] overflow-hidden"
+
         >
           {wrapWords("At HCL, we specialize in crafting")}
           <span className="font-[600] text-black">next-gen digital experiences </span>
@@ -77,7 +78,8 @@ const AboutSection = () => {
         {/* Morphing Text 2 */}
         <p
           ref={(el) => (textRefs.current[1] = el)}
-          className="text-[28px] md:text-[32px] font-nohemi font-[500] leading-[116%] tracking-wide text-[#667185] overflow-hidden"
+          className="text-[28px] md:text-[32px] font-nohemi font-[500] leading-[116%] tracking-wide text-[#3D3C42] overflow-hidden"
+
         >
           {wrapWords("We deliver tailored solutions for")}
           <span className="font-[600] text-black">

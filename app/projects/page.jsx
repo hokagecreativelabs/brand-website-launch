@@ -46,10 +46,11 @@ export default function ProjectsPage() {
       (project) =>
         Array.isArray(project.categories?.service) &&
         project.categories.service.some((s) =>
-          s.toLowerCase().includes(activeFilter)
+          s.toLowerCase().indexOf(activeFilter) !== -1
         )
     );
   }, [activeFilter]);
+  
 
   const currentFilterText =
     services.find((s) => s.slug === activeFilter)?.title || 'All';
