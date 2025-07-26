@@ -30,7 +30,7 @@ export default function SelectedWorks() {
   ];
 
   return (
-    <section className="px-2 md:px-12 lg:px-24 py-12" id="projects-section">
+    <section className="px-2 md:px-12 lg:px-24" id="projects-section">
       {/* Header */}
       <div className="flex justify-start">
         <div className="w-[68px] h-[68px] relative">
