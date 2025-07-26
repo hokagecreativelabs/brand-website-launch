@@ -14,8 +14,12 @@ const Hero = () => {
     >
       <div className="w-full max-w-full flex flex-col items-center text-center gap-6 px-2 sm:px-8">
         {/* Title */}
-          <h1 className="font-vastago font-semibold text-[52px] sm:text-[60px] md:text-[96px] leading-[120%] tracking-[-0.02em] h-[100px] sm:h-[110px] md:h-[140px] flex items-center justify-center"
-          aria-label={TYPING_TEXT}>Hokage Creative Labs</h1>
+        <h1
+          className="font-vastago font-semibold text-[72px] sm:text-[60px] md:text-[96px] leading-[120%] tracking-[-0.02em] h-[100px] sm:h-[110px] md:h-[140px] flex items-center justify-center"
+          aria-label={TYPING_TEXT}
+        >
+          Hokage Creative Labs
+        </h1>
 
         {/* Subtext */}
         <p className="pt-10 md:pt-6 max-w-[600px] text-[18px] sm:text-[20px] md:text-[24px] leading-[145%] tracking-[-0.01em] font-nohemi">
@@ -43,6 +47,13 @@ const Hero = () => {
             />
           </div>
         </Link>
+
+        {/* Quote Section */}
+        <div className="md:hidden mt-12 text-center px-4">
+          <p className="italic text-[46px] sm:text-[18px] md:text-[60px] font-light text-black/40 leading-[150%] tracking-tight">
+            “An idea is only as powerful as its execution.”
+          </p>
+        </div>
 
         {/* Desktop Only Carousel */}
         <div className="hidden md:block w-full h-[480px] mt-[-60px] overflow-hidden">

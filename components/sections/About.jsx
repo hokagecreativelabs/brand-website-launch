@@ -47,7 +47,7 @@ const AboutSection = () => {
   return (
     <section
       id="about-section"
-      className="w-full max-w-[1440px] h-auto pt-32 md:pt-0 pb-32 mx-auto"
+      className="w-full max-w-[1440px] h-auto pt-12 md:pt-0 pb-32 mx-auto"
     >
         {/* Animated Image */}
         <div className="flex justify-center">

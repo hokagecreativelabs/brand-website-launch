@@ -184,29 +184,36 @@ const Navbar = () => {
             </button>
 
             {/* Mobile Menu */}
-            <div
-              id="mobile-menu"
-              className={`absolute top-full right-0 mt-2 transition-all duration-200 ease-out mobile-menu-container ${
-                isMobileMenuOpen
-                  ? "opacity-100 translate-y-0 scale-100 pointer-events-auto"
-                  : "opacity-0 -translate-y-2 scale-95 pointer-events-none"
-              }`}
-              style={{ transformOrigin: "top right" }}
-              role="menu"
-              aria-hidden={!isMobileMenuOpen}
-            >
-              <div className="relative">
-                <div className="absolute right-4 -top-2 w-3 h-3 rotate-45 bg-white border-t border-l border-[#EEEEEE] shadow-[0px_2px_4px_rgba(0,0,0,0.05)] z-0" />
-                <div className="bg-white w-[90vw] max-w-[280px] py-6 px-6 rounded-[20px] border border-[#EEEEEE] shadow-[0px_10px_30px_rgba(27,27,27,0.1)] flex flex-col gap-6 text-left z-10 relative">
-                  {NAV_LINKS.map((link) => (
-                    <NavLink key={link.href} href={link.href} label={link.label} className="py-1" />
-                  ))}
-                  <div className="mt-2">
-                    <BookCallButton isMobile />
-                  </div>
-                </div>
-              </div>
-            </div>
+            {/* Mobile Menu */}
+<div
+  id="mobile-menu"
+  role="menu"
+  aria-hidden={!isMobileMenuOpen}
+  className="absolute top-full right-0 mt-2 transition-all duration-200 ease-out mobile-menu-container"
+  style={{ transformOrigin: "top right" }}
+>
+  <div
+    className={`bg-white w-[90vw] max-w-[280px] py-6 px-6 rounded-[20px] border border-[#EEEEEE] shadow-[0px_10px_30px_rgba(27,27,27,0.1)] flex flex-col gap-6 text-left z-10 relative transition-opacity duration-200 ${
+      isMobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+    }`}
+    aria-hidden={!isMobileMenuOpen}
+  >
+    {NAV_LINKS.map((link) => (
+      <NavLink
+        key={link.href}
+        href={link.href}
+        label={link.label}
+        className="py-1"
+        tabIndex={isMobileMenuOpen ? 0 : -1}
+      />
+    ))}
+
+    <div className="mt-2" tabIndex={isMobileMenuOpen ? 0 : -1}>
+      <BookCallButton isMobile />
+    </div>
+  </div>
+</div>
+
           </div>
         </div>
       </nav>
