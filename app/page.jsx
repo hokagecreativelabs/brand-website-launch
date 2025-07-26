@@ -8,6 +8,7 @@ import FAQSection from "@/components/sections/FAQs";
 import Loader from "@/components/ui/Loader";
 import BrandingProjectsSection from "@/components/sections/Projects";
 import BannerSlider from "@/components/BannerSlider";
+import Whining from "@/components/sections/Whining";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <TestimonialSection />
       <RenderedServices />
       <FAQSection />
+      <Whining />
     </>
   );
 }
